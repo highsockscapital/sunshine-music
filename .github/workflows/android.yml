@@ -54,10 +54,17 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v4
         with:
-          # Overrides the default list, which includes the obsolete "tools" package.
-          # android-37 does not exist in any published SDK channel (highest is 36, plus a
-          # codename CANARY in channel 3), so this targets 36, same as Sunshinussy.
-          packages: 'platform-tools platforms;android-36 build-tools;36.0.0'
+          # Overrides the action's default list, which includes the obsolete "tools" package.
+          #
+          # Deliberately does NOT install a platform. compileSdk is 37 and android-37 is a
+          # PREVIEW platform: the default sdkmanager channel stops at 36, so requesting it by
+          # name dies with "Failed to find package 'platforms;android-37'". It does exist, but
+          # only under a later channel (android-37.0 / 37.1 / 37.2, plus a codename CANARY).
+          #
+          # Nothing needs installing anyway: the ubuntu runner image already ships
+          # android-37.0, android-37.1, android-37.2 and build-tools 37.0.0. Upstream
+          # Gramophone builds on that same preinstalled SDK and has no setup-android step.
+          packages: 'platform-tools'
 
       - name: Make Gradle executable
         run: chmod +x ./gradlew
