@@ -172,8 +172,6 @@ class ContributorsSettingsActivity : BaseComposeActivity() {
         Scaffold(
             topBar = {
                 TopAppBar(
-                    tonalElevation = 0.dp,
-                    shadowElevation = 0.dp,
                     title = { Text(stringResource(R.string.settings_contributors)) },
                     navigationIcon = {
                         IconButton(onClick = { finish() }) {

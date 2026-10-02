@@ -24,10 +24,9 @@
         <item name="materialCardViewOutlinedStyle">@style/Widget.App.FlatCardOutlined</item>
         <item name="materialButtonStyle">@style/Widget.App.FlatButton</item>
         <item name="materialButtonOutlinedStyle">@style/Widget.App.FlatButtonOutlined</item>
-        <item name="materialButtonTextButtonStyle">@style/Widget.App.FlatButtonText</item>
         <item name="materialButtonTonalStyle">@style/Widget.App.FlatButtonTonal</item>
         <item name="floatingActionButtonStyle">@style/Widget.App.FlatFab</item>
-        <item name="extendedFloatingActionButtonStyle">@style/Widget.App.FlatFab</item>
+        <item name="extendedFloatingActionButtonStyle">@style/Widget.App.FlatFabExtended</item>
     </style>
 
     <style name="Widget.App.FlatCard" parent="Widget.Material3.CardView.Filled">
@@ -45,12 +44,7 @@
         <item name="android:stateListAnimator">@null</item>
     </style>
 
-    <style name="Widget.App.FlatButtonOutlined" parent="Widget.Material3.Button.Outlined">
-        <item name="android:elevation">0dp</item>
-        <item name="android:stateListAnimator">@null</item>
-    </style>
-
-    <style name="Widget.App.FlatButtonText" parent="Widget.Material3.Button.TextButton">
+    <style name="Widget.App.FlatButtonOutlined" parent="Widget.Material3.Button.OutlinedButton">
         <item name="android:elevation">0dp</item>
         <item name="android:stateListAnimator">@null</item>
     </style>
@@ -60,7 +54,12 @@
         <item name="android:stateListAnimator">@null</item>
     </style>
 
-    <style name="Widget.App.FlatFab" parent="Widget.Material3.FloatingActionButton">
+    <style name="Widget.App.FlatFab" parent="Widget.Material3.FloatingActionButton.Primary">
+        <item name="elevation">0dp</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+
+    <style name="Widget.App.FlatFabExtended" parent="Widget.Material3.ExtendedFloatingActionButton.Primary">
         <item name="elevation">0dp</item>
         <item name="android:stateListAnimator">@null</item>
     </style>

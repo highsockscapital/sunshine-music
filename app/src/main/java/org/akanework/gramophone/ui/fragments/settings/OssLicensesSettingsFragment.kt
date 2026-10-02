@@ -37,7 +37,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import com.mikepenz.aboutlibraries.ui.compose.android.produceLibraries
 import com.mikepenz.aboutlibraries.ui.compose.m3.LibrariesContainer
 import org.akanework.gramophone.R
@@ -64,8 +63,6 @@ class OssLicensesSettingsActivity : BaseComposeActivity() {
             modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
             topBar = {
                 TopAppBar(
-                    tonalElevation = 0.dp,
-                    shadowElevation = 0.dp,
                     title = { Text(stringResource(R.string.settings_open_source_licenses)) },
                     navigationIcon = {
                         IconButton(onClick = { finish() }) {
