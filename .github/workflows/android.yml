@@ -100,3 +100,14 @@ jobs:
 
       - name: Run Android unit tests
         run: ./gradlew :app:testDebugUnitTest --stacktrace --max-workers=2
+
+      # Gradle's console output truncates assertion messages to the first frame, which makes a
+      # failing fixture impossible to diagnose. The HTML and XML reports carry the full diff.
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: |
+            app/build/reports/tests/testDebugUnitTest/
+            app/build/test-results/testDebugUnitTest/

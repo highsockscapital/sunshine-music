@@ -1,670 +1,543 @@
-Build APK	Run Android unit tests	﻿2026-10-02T21:43:16.4735600Z ##[group]Run ./gradlew :app:testDebugUnitTest --stacktrace --max-workers=2
-Build APK	Run Android unit tests	2026-10-02T21:43:16.4736662Z ^[[36;1m./gradlew :app:testDebugUnitTest --stacktrace --max-workers=2^[[0m
-Build APK	Run Android unit tests	2026-10-02T21:43:16.4818639Z shell: /usr/bin/bash -e {0}
-Build APK	Run Android unit tests	2026-10-02T21:43:16.4818956Z env:
-Build APK	Run Android unit tests	2026-10-02T21:43:16.4819332Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-Build APK	Run Android unit tests	2026-10-02T21:43:16.4819931Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
-Build APK	Run Android unit tests	2026-10-02T21:43:16.4820424Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
-Build APK	Run Android unit tests	2026-10-02T21:43:16.4820787Z   GRADLE_USER_HOME: /home/runner/.gradle
-Build APK	Run Android unit tests	2026-10-02T21:43:16.4821132Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
-Build APK	Run Android unit tests	2026-10-02T21:43:16.4821635Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
-Build APK	Run Android unit tests	2026-10-02T21:43:16.4822175Z   DEVELOCITY_INJECTION_CUSTOM_VALUE: gradle-actions
-Build APK	Run Android unit tests	2026-10-02T21:43:16.4822546Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
-Build APK	Run Android unit tests	2026-10-02T21:43:16.4822885Z   ANDROID_HOME: /usr/local/lib/android/sdk
-Build APK	Run Android unit tests	2026-10-02T21:43:16.4823270Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
-Build APK	Run Android unit tests	2026-10-02T21:43:16.4823607Z ##[endgroup]
-Build APK	Run Android unit tests	2026-10-02T21:43:17.1266780Z Configuration on demand is an incubating feature.
-Build APK	Run Android unit tests	2026-10-02T21:43:17.2274618Z Calculating task graph as no cached configuration is available for tasks: :app:testDebugUnitTest
-Build APK	Run Android unit tests	2026-10-02T21:43:17.3266742Z > Task :media3:build-logic-settings:checkKotlinGradlePluginConfigurationErrors SKIPPED
-Build APK	Run Android unit tests	2026-10-02T21:43:17.4295204Z > Task :media3:build-logic-settings:generateExternalPluginSpecBuilders UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:17.4319528Z > Task :media3:build-logic-settings:extractPrecompiledScriptPluginPlugins UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:17.4329153Z > Task :media3:build-logic-settings:compilePluginsBlocks UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:17.4330728Z > Task :media3:build-logic-settings:generatePrecompiledScriptPluginAccessors UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:17.4332388Z > Task :media3:build-logic-settings:generateScriptPluginAdapters UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:17.5291308Z > Task :media3:build-logic-settings:compileKotlin UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:17.5329218Z > Task :media3:build-logic-settings:compileJava NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:17.5361745Z > Task :media3:build-logic-settings:pluginDescriptors UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:17.5388706Z > Task :media3:build-logic-settings:processResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:17.5407623Z > Task :media3:build-logic-settings:classes UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:17.5439441Z > Task :media3:build-logic-settings:jar UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:18.3254487Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:18.3255468Z > Configure project :app
-Build APK	Run Android unit tests	2026-10-02T21:43:18.3259399Z WARNING: The option setting 'android.builtInKotlin=false' is deprecated.
-Build APK	Run Android unit tests	2026-10-02T21:43:18.3260629Z The current default is 'true'.
-Build APK	Run Android unit tests	2026-10-02T21:43:18.3261738Z It will be removed in version 10.0 of the Android Gradle plugin.
-Build APK	Run Android unit tests	2026-10-02T21:43:18.3263008Z WARNING: The option setting 'android.newDsl=false' is deprecated.
-Build APK	Run Android unit tests	2026-10-02T21:43:18.3264064Z The current default is 'true'.
-Build APK	Run Android unit tests	2026-10-02T21:43:18.3265098Z It will be removed in version 10.0 of the Android Gradle plugin.
-Build APK	Run Android unit tests	2026-10-02T21:43:18.7274526Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:18.7309201Z > Task :media3:buildSrc:checkKotlinGradlePluginConfigurationErrors SKIPPED
-Build APK	Run Android unit tests	2026-10-02T21:43:18.7318622Z > Task :media3:buildSrc:compileKotlin NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:18.7338696Z > Task :media3:buildSrc:compileJava NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:18.7368828Z > Task :media3:buildSrc:compileGroovy NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:18.7398681Z > Task :media3:buildSrc:pluginDescriptors UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:18.7399587Z > Task :media3:buildSrc:processResources NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:18.7404565Z > Task :media3:buildSrc:classes UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:18.7405451Z > Task :media3:buildSrc:jar UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:18.7406703Z > Task :media3:build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED
-Build APK	Run Android unit tests	2026-10-02T21:43:18.8272881Z > Task :media3:build-logic:generateExternalPluginSpecBuilders UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:18.8274558Z > Task :media3:build-logic:extractPrecompiledScriptPluginPlugins UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:18.8296017Z > Task :media3:build-logic:compilePluginsBlocks UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:18.8324900Z > Task :media3:build-logic:generatePrecompiledScriptPluginAccessors UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:18.8326373Z > Task :media3:build-logic:generateScriptPluginAdapters UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:18.9256804Z > Task :media3:build-logic:compileKotlin UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:18.9270747Z > Task :media3:build-logic:compileJava NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:18.9272306Z > Task :media3:build-logic:pluginDescriptors UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:18.9273439Z > Task :media3:build-logic:processResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:18.9274496Z > Task :media3:build-logic:classes UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:18.9275446Z > Task :media3:build-logic:jar UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.7299109Z > Task :media3:lib-datasource:preBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.7342349Z > Task :media3:lib-datasource:preDebugBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.7369304Z > Task :media3:lib-datasource:extractDebugSupportedLocales UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.7403833Z > Task :misc:audiofxstub:compileJava UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.7428467Z > Task :media3:lib-decoder:preBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.7456938Z > Task :media3:lib-decoder:preDebugBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.7508803Z > Task :media3:lib-decoder:extractDebugSupportedLocales UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.7523642Z > Task :media3:lib-common:preBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.7561188Z > Task :media3:lib-common:preDebugBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.7582990Z > Task :media3:lib-common:extractDebugSupportedLocales UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.7593856Z > Task :media3:lib-exoplayer:preBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.7618918Z > Task :media3:lib-exoplayer:preDebugBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.7659081Z > Task :media3:lib-exoplayer:extractDebugSupportedLocales UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.7682936Z > Task :misc:audiofxfwd:compileJava UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.7710122Z > Task :media3:lib-database:preBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.7733831Z > Task :misc:audiofxfwd:processResources NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.7759049Z > Task :media3:lib-database:preDebugBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.7792443Z > Task :misc:audiofxfwd:classes UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.7809125Z > Task :media3:lib-database:extractDebugSupportedLocales UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.7850587Z > Task :media3:lib-extractor:preBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.7878999Z > Task :media3:lib-extractor:preDebugBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.7926410Z > Task :media3:lib-extractor:extractDebugSupportedLocales UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.7938477Z > Task :media3:lib-decoder-midi:preBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.7968506Z > Task :media3:lib-decoder-midi:preDebugBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.7995761Z > Task :misc:audiofxfwd:jar UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8002751Z > Task :media3:lib-decoder-midi:extractDebugSupportedLocales UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8045295Z > Task :app:preBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8059307Z > Task :media3:lib-container:preBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8060216Z > Task :media3:lib-container:preDebugBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8060965Z > Task :app:preDebugBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8061846Z > Task :media3:lib-container:extractDebugSupportedLocales UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8062766Z > Task :app:generateDebugBuildConfig UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8064132Z > Task :media3:lib-common-ktx:preBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8065028Z > Task :media3:lib-common-ktx:preDebugBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8085056Z > Task :media3:lib-common-ktx:extractDebugSupportedLocales UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8088496Z > Task :app:prepareLibraryDefinitionsDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8118780Z > Task :media3:lib-session:preBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8168503Z > Task :app:resourcePlaceholdersForDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8182021Z > Task :media3:lib-session:preDebugBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8198442Z > Task :app:extractDebugSupportedLocales UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8228565Z > Task :media3:lib-session:extractDebugSupportedLocales UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8250738Z > Task :app:mapDebugSourceSetPaths UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8282085Z > Task :hificore:preBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8288457Z > Task :hificore:preDebugBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8317180Z > Task :media3:lib-datasource:processDebugNavigationResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8328546Z > Task :hificore:extractDebugSupportedLocales UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8348478Z > Task :misc:alacdecoder:preBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8349315Z > Task :misc:alacdecoder:preDebugBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8350283Z > Task :media3:lib-decoder:processDebugNavigationResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8351324Z > Task :misc:alacdecoder:extractDebugSupportedLocales UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8352361Z > Task :media3:lib-session:processDebugNavigationResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8353403Z > Task :media3:lib-common:processDebugNavigationResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8354505Z > Task :media3:lib-container:processDebugNavigationResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8355622Z > Task :media3:lib-common-ktx:processDebugNavigationResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8356727Z > Task :media3:lib-extractor:processDebugNavigationResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8357996Z > Task :media3:lib-exoplayer:processDebugNavigationResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8359135Z > Task :media3:lib-decoder-midi:processDebugNavigationResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8360248Z > Task :media3:lib-database:processDebugNavigationResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8361230Z > Task :media3:lib-common:generateDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8362075Z > Task :app:generateDebugLocaleConfig UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8362924Z > Task :media3:lib-common:packageDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8363737Z > Task :app:generateDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8364605Z > Task :media3:lib-common:parseDebugLocalResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8365439Z > Task :app:packageDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8366278Z > Task :hificore:processDebugNavigationResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8367161Z > Task :media3:lib-common:generateDebugRFile UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8368344Z > Task :misc:alacdecoder:processDebugNavigationResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8369344Z > Task :media3:lib-common:compileDebugKotlin NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8370223Z > Task :media3:lib-common:javaPreCompileDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8371144Z > Task :app:processDebugNavigationResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8372081Z > Task :media3:lib-common:compileDebugJavaWithJavac UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8372961Z > Task :app:parseDebugLocalResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8373871Z > Task :media3:lib-common:bundleLibCompileToJarDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8374712Z > Task :app:generateDebugRFile UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8375583Z > Task :media3:lib-container:generateDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8376474Z > Task :hificore:generateDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8377297Z > Task :hificore:packageDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8390787Z > Task :hificore:parseDebugLocalResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8403436Z > Task :media3:lib-container:packageDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8421715Z > Task :media3:lib-container:parseDebugLocalResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8438840Z > Task :hificore:generateDebugRFile UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8478526Z > Task :media3:lib-container:generateDebugRFile UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8508542Z > Task :misc:audiofxstub2:preBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8537605Z > Task :misc:audiofxstub2:preDebugBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8567589Z > Task :misc:audiofxstub2:generateDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8592474Z > Task :media3:lib-container:compileDebugKotlin NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8614881Z > Task :media3:lib-container:javaPreCompileDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8649331Z > Task :misc:audiofxstub2:packageDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8658773Z > Task :misc:audiofxstub2:processDebugNavigationResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8660009Z > Task :media3:lib-container:compileDebugJavaWithJavac UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8688717Z > Task :misc:audiofxstub2:parseDebugLocalResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8718629Z > Task :media3:lib-container:bundleLibCompileToJarDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8740760Z > Task :media3:lib-database:generateDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8767187Z > Task :media3:lib-database:packageDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8793934Z > Task :media3:lib-database:parseDebugLocalResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8808149Z > Task :misc:audiofxstub2:generateDebugRFile UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8838476Z > Task :media3:lib-database:generateDebugRFile UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8862814Z > Task :misc:audiofxstub2:javaPreCompileDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8889222Z > Task :misc:audiofxstub2:compileDebugJavaWithJavac UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8908449Z > Task :media3:lib-database:compileDebugKotlin NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8938490Z > Task :misc:audiofxstub2:bundleLibCompileToJarDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8953557Z > Task :media3:lib-database:javaPreCompileDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8978413Z > Task :hificore:javaPreCompileDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.8990350Z > Task :misc:alacdecoder:generateDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9018922Z > Task :misc:alacdecoder:packageDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9028708Z > Task :media3:lib-database:compileDebugJavaWithJavac UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9058565Z > Task :misc:alacdecoder:parseDebugLocalResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9078261Z > Task :media3:lib-database:bundleLibCompileToJarDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9096479Z > Task :misc:alacdecoder:generateDebugRFile UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9128701Z > Task :media3:lib-datasource:generateDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9158527Z > Task :misc:alacdecoder:javaPreCompileDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9159578Z > Task :media3:lib-datasource:packageDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9188406Z > Task :app:javaPreCompileDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9218630Z > Task :media3:lib-datasource:parseDebugLocalResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9219588Z > Task :hificore:writeDebugAarMetadata UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9220481Z > Task :misc:alacdecoder:writeDebugAarMetadata UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9221384Z > Task :media3:lib-datasource:generateDebugRFile UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9222258Z > Task :app:compileDebugNavigationResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9223155Z > Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9224075Z > Task :media3:lib-datasource:compileDebugKotlin NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9224898Z > Task :app:extractDeepLinksDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9225739Z > Task :media3:lib-datasource:javaPreCompileDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9226601Z > Task :hificore:extractDeepLinksDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9227394Z > Task :hificore:processDebugManifest UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9228473Z > Task :misc:alacdecoder:extractDeepLinksDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9229489Z > Task :media3:lib-datasource:compileDebugJavaWithJavac UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9231004Z > Task :media3:lib-datasource:bundleLibCompileToJarDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9232635Z > Task :misc:alacdecoder:processDebugManifest UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9233661Z > Task :media3:lib-decoder:generateDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9234584Z > Task :hificore:mapDebugSourceSetPaths UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9235459Z > Task :hificore:compileDebugLibraryResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9236413Z > Task :media3:lib-decoder:packageDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9237391Z > Task :misc:alacdecoder:mapDebugSourceSetPaths UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9238608Z > Task :media3:lib-decoder:parseDebugLocalResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9239941Z > Task :misc:alacdecoder:compileDebugLibraryResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9240893Z > Task :app:preDebugUnitTestBuild UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9241792Z > Task :media3:lib-decoder:generateDebugRFile UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9242694Z > Task :media3:lib-decoder:compileDebugKotlin NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9243630Z > Task :media3:lib-decoder:javaPreCompileDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9244507Z > Task :app:javaPreCompileDebugUnitTest FROM-CACHE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9245294Z > Task :app:generateDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9246112Z > Task :hificore:generateDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9246875Z > Task :hificore:mergeDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9247633Z > Task :misc:alacdecoder:generateDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9359075Z > Task :media3:lib-decoder:compileDebugJavaWithJavac UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9360058Z > Task :misc:alacdecoder:mergeDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9361053Z > Task :media3:lib-decoder:bundleLibCompileToJarDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9362011Z > Task :misc:alacdecoder:processDebugJavaRes NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9362965Z > Task :media3:lib-exoplayer:generateDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9363939Z > Task :media3:lib-extractor:generateDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9364847Z > Task :media3:lib-exoplayer:packageDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9365793Z > Task :media3:lib-extractor:packageDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9366763Z > Task :media3:lib-exoplayer:parseDebugLocalResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9367901Z > Task :media3:lib-exoplayer:generateDebugRFile UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9368869Z > Task :media3:lib-extractor:parseDebugLocalResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9369816Z > Task :media3:lib-extractor:javaPreCompileDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9370722Z > Task :media3:lib-exoplayer:javaPreCompileDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9371688Z > Task :media3:lib-decoder-midi:generateDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9372719Z > Task :media3:lib-decoder-midi:packageDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9373765Z > Task :media3:lib-decoder-midi:parseDebugLocalResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9374757Z > Task :media3:lib-decoder-midi:generateDebugRFile UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9375703Z > Task :media3:lib-extractor:generateDebugRFile UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9376669Z > Task :media3:lib-decoder-midi:javaPreCompileDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9379296Z > Task :media3:lib-common-ktx:generateDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9380389Z > Task :media3:lib-common-ktx:packageDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9381482Z > Task :media3:lib-common-ktx:parseDebugLocalResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9382515Z > Task :media3:lib-common-ktx:generateDebugRFile UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9383502Z > Task :media3:lib-common-ktx:compileDebugKotlin UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9384519Z > Task :media3:lib-common-ktx:javaPreCompileDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9385570Z > Task :media3:lib-common-ktx:compileDebugJavaWithJavac NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9386684Z > Task :media3:lib-common-ktx:bundleLibCompileToJarDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9387640Z > Task :media3:lib-session:compileDebugAidl UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9479387Z > Task :media3:lib-session:generateDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9480448Z > Task :media3:lib-session:packageDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9481452Z > Task :media3:lib-session:parseDebugLocalResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9482410Z > Task :media3:lib-extractor:compileDebugKotlin NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9483314Z > Task :media3:lib-session:generateDebugRFile UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9484289Z > Task :media3:lib-extractor:compileDebugJavaWithJavac UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9485338Z > Task :media3:lib-extractor:bundleLibCompileToJarDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9486310Z > Task :media3:lib-session:compileDebugKotlin NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9487493Z > Task :media3:lib-session:javaPreCompileDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9489419Z > Task :media3:lib-session:compileDebugJavaWithJavac UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9490431Z > Task :media3:lib-session:bundleLibCompileToJarDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9491386Z > Task :media3:lib-decoder:writeDebugAarMetadata UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9492322Z > Task :media3:lib-common:writeDebugAarMetadata UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9493235Z > Task :media3:lib-extractor:writeDebugAarMetadata UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9494186Z > Task :media3:lib-common-ktx:writeDebugAarMetadata UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9495145Z > Task :media3:lib-database:writeDebugAarMetadata UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9496115Z > Task :media3:lib-exoplayer:writeDebugAarMetadata UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9497121Z > Task :media3:lib-decoder-midi:writeDebugAarMetadata UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9498303Z > Task :media3:lib-exoplayer:compileDebugKotlin NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9499277Z > Task :media3:lib-container:writeDebugAarMetadata UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9500222Z > Task :media3:lib-datasource:writeDebugAarMetadata UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9501156Z > Task :media3:lib-session:writeDebugAarMetadata UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9502074Z > Task :media3:lib-decoder:processDebugManifest UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9502988Z > Task :media3:lib-database:extractDeepLinksDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9503931Z > Task :media3:lib-decoder-midi:processDebugManifest UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9504941Z > Task :media3:lib-exoplayer:compileDebugJavaWithJavac UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9505930Z > Task :media3:lib-common:processDebugManifest UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9506925Z > Task :media3:lib-exoplayer:bundleLibCompileToJarDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9581097Z > Task :media3:lib-common-ktx:extractDeepLinksDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9582072Z > Task :media3:lib-common:extractDeepLinksDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9583054Z > Task :media3:lib-decoder-midi:compileDebugKotlin NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9584042Z > Task :media3:lib-container:processDebugManifest UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9604369Z > Task :media3:lib-session:extractDeepLinksDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9605378Z > Task :media3:lib-extractor:processDebugManifest UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9606383Z > Task :media3:lib-database:processDebugManifest UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9607341Z > Task :media3:lib-datasource:processDebugManifest UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9668789Z > Task :media3:lib-decoder:extractDeepLinksDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9669890Z > Task :media3:lib-container:extractDeepLinksDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9671031Z > Task :media3:lib-decoder-midi:compileDebugJavaWithJavac UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9672198Z > Task :media3:lib-decoder-midi:bundleLibCompileToJarDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9673273Z > Task :media3:lib-exoplayer:processDebugManifest UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9674301Z > Task :media3:lib-session:processDebugManifest UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9675378Z > Task :media3:lib-decoder-midi:extractDeepLinksDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9676442Z > Task :media3:lib-common-ktx:processDebugManifest UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9677470Z > Task :media3:lib-datasource:extractDeepLinksDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9679123Z > Task :media3:lib-extractor:extractDeepLinksDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9680082Z > Task :media3:lib-exoplayer:extractDeepLinksDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9681114Z > Task :media3:lib-common-ktx:mapDebugSourceSetPaths UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9682155Z > Task :media3:lib-common-ktx:compileDebugLibraryResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9683213Z > Task :media3:lib-datasource:mapDebugSourceSetPaths UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9684166Z > Task :media3:lib-common:mapDebugSourceSetPaths UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9685171Z > Task :media3:lib-datasource:compileDebugLibraryResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9686156Z > Task :media3:lib-common:compileDebugLibraryResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9687481Z > Task :media3:lib-extractor:mapDebugSourceSetPaths UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9688729Z > Task :media3:lib-decoder-midi:mapDebugSourceSetPaths UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9689767Z > Task :media3:lib-container:mapDebugSourceSetPaths UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9690745Z > Task :media3:lib-decoder:mapDebugSourceSetPaths UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9691684Z > Task :media3:lib-container:compileDebugLibraryResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9692624Z > Task :media3:lib-session:mapDebugSourceSetPaths UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9693501Z > Task :media3:lib-database:mapDebugSourceSetPaths UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9694423Z > Task :media3:lib-extractor:compileDebugLibraryResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9695357Z > Task :media3:lib-exoplayer:mapDebugSourceSetPaths UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9696296Z > Task :media3:lib-session:compileDebugLibraryResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9697263Z > Task :media3:lib-decoder:compileDebugLibraryResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9747268Z > Task :media3:lib-decoder-midi:compileDebugLibraryResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9748700Z > Task :media3:lib-exoplayer:compileDebugLibraryResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9749738Z > Task :media3:lib-container:generateDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9750744Z > Task :media3:lib-database:compileDebugLibraryResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9751686Z > Task :media3:lib-common:generateDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9752595Z > Task :media3:lib-container:mergeDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9753519Z > Task :media3:lib-common-ktx:generateDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9754444Z > Task :media3:lib-common-ktx:mergeDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9755332Z > Task :media3:lib-common:mergeDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9756212Z > Task :media3:lib-decoder:generateDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9757096Z > Task :media3:lib-decoder:mergeDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9758232Z > Task :media3:lib-database:generateDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9759187Z > Task :media3:lib-database:mergeDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9760048Z > Task :media3:lib-session:generateDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9760916Z > Task :media3:lib-session:mergeDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9761813Z > Task :media3:lib-exoplayer:generateDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9762724Z > Task :media3:lib-exoplayer:mergeDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9763673Z > Task :media3:lib-decoder-midi:generateDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9764633Z > Task :media3:lib-decoder-midi:mergeDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9765570Z > Task :media3:lib-datasource:generateDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9766486Z > Task :media3:lib-extractor:generateDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9767411Z > Task :media3:lib-datasource:mergeDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9798716Z > Task :media3:lib-extractor:mergeDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9799647Z > Task :media3:lib-extractor:processDebugJavaRes NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9800649Z > Task :media3:lib-common-ktx:bundleLibRuntimeToJarDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9801660Z > Task :media3:lib-decoder-midi:processDebugJavaRes NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9802898Z > Task :media3:lib-exoplayer:processDebugJavaRes NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9803799Z > Task :media3:lib-decoder:processDebugJavaRes NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9804752Z > Task :media3:lib-database:bundleLibRuntimeToJarDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9805741Z > Task :media3:lib-decoder:bundleLibRuntimeToJarDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9806733Z > Task :media3:lib-session:bundleLibRuntimeToJarDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9807955Z > Task :media3:lib-database:processDebugJavaRes NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9808998Z > Task :media3:lib-common:bundleLibRuntimeToJarDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9809981Z > Task :media3:lib-container:bundleLibRuntimeToJarDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9811232Z > Task :media3:lib-extractor:bundleLibRuntimeToJarDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9812153Z > Task :media3:lib-common-ktx:processDebugJavaRes UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9813102Z > Task :media3:lib-decoder-midi:bundleLibRuntimeToJarDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9814017Z > Task :media3:lib-session:processDebugJavaRes NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9814908Z > Task :media3:lib-datasource:processDebugJavaRes NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9815730Z > Task :hificore:compileDebugKotlin UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9816527Z > Task :media3:lib-common:processDebugJavaRes NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9817368Z > Task :media3:lib-container:processDebugJavaRes NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9818506Z > Task :media3:lib-datasource:bundleLibRuntimeToJarDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9819442Z > Task :hificore:compileDebugJavaWithJavac UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9820313Z > Task :hificore:bundleLibCompileToJarDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9821248Z > Task :media3:lib-exoplayer:bundleLibRuntimeToJarDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9822183Z > Task :misc:alacdecoder:compileDebugJavaWithJavac UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:22.9823101Z > Task :misc:alacdecoder:bundleLibCompileToJarDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:23.0268748Z > Task :app:checkDebugAarMetadata UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:23.0288498Z > Task :app:mergeDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:23.0318704Z > Task :app:processDebugMainManifest UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:23.0328473Z > Task :app:processDebugManifest UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:23.0358455Z > Task :app:processDebugManifestForPackage UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:23.0378474Z > Task :app:compileDebugKotlin UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:23.0388439Z > Task :app:processDebugResources UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:23.0418464Z > Task :app:compileDebugJavaWithJavac UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:23.0419335Z > Task :app:mergeDebugAssets UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:23.1254013Z > Task :app:bundleDebugClassesToRuntimeJar
-Build APK	Run Android unit tests	2026-10-02T21:43:23.1256764Z > Task :app:bundleDebugClassesToCompileJar
-Build APK	Run Android unit tests	2026-10-02T21:43:23.2278821Z > Task :app:packageDebugUnitTestForUnitTest
-Build APK	Run Android unit tests	2026-10-02T21:43:23.3268391Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:23.3298898Z > Task :app:processDebugUnitTestManifest
-Build APK	Run Android unit tests	2026-10-02T21:43:23.3329457Z package="org.akanework.gramophone" found in source AndroidManifest.xml: /home/runner/work/sunshine-music/sunshine-music/app/src/main/AndroidManifest.xml.
-Build APK	Run Android unit tests	2026-10-02T21:43:23.3331709Z Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
-Build APK	Run Android unit tests	2026-10-02T21:43:23.3356061Z Recommendation: remove package="org.akanework.gramophone" from the source AndroidManifest.xml: /home/runner/work/sunshine-music/sunshine-music/app/src/main/AndroidManifest.xml.
-Build APK	Run Android unit tests	2026-10-02T21:43:23.3388733Z /home/runner/work/sunshine-music/sunshine-music/app/src/debug/AndroidManifest.xml Warning:
-Build APK	Run Android unit tests	2026-10-02T21:43:23.3390961Z 	uses-permission#android.permission.ACCESS_NETWORK_STATE was tagged at AndroidManifest.xml:0 to remove other declarations but no other declaration present
-Build APK	Run Android unit tests	2026-10-02T21:43:23.3393574Z /home/runner/work/sunshine-music/sunshine-music/app/build/intermediates/tmp/manifest/test/debug/tempFile2ProcessTestManifest18156560636200415351.xml:82:5-382:19 Warning:
-Build APK	Run Android unit tests	2026-10-02T21:43:23.3396066Z 	application@android:icon was tagged at tempFile2ProcessTestManifest18156560636200415351.xml:82 to replace other declarations but no other declaration present
-Build APK	Run Android unit tests	2026-10-02T21:43:23.3397862Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:23.3398220Z > Task :app:generateDebugUnitTestConfig
-Build APK	Run Android unit tests	2026-10-02T21:43:23.3398952Z > Task :app:processDebugJavaRes UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:23.3399779Z > Task :hificore:bundleLibRuntimeToJarDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:23.3400607Z > Task :hificore:processDebugJavaRes UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:23.3401525Z > Task :misc:alacdecoder:bundleLibRuntimeToJarDebug UP-TO-DATE
-Build APK	Run Android unit tests	2026-10-02T21:43:30.8318975Z > Task :app:compileDebugUnitTestKotlin
-Build APK	Run Android unit tests	2026-10-02T21:43:30.8348760Z > Task :app:compileDebugUnitTestJavaWithJavac NO-SOURCE
-Build APK	Run Android unit tests	2026-10-02T21:43:30.8358455Z > Task :app:processDebugUnitTestJavaRes
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5283050Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5307274Z > Task :app:testDebugUnitTest
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5339153Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5354425Z LrcUtilsTest > testBidirectionalWordSplitting FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5378711Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5408188Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5418537Z LrcUtilsTest > testBogusOffsetMultiLineParser FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5438688Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5468169Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5486490Z LrcUtilsTest > testNegativeOffsetMultiLineParser FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5498764Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5536817Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5558637Z LrcUtilsTest > testLongSyncTimestamp FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5588802Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5595677Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5618794Z LrcUtilsTest > testSyntheticNewLineMultiLineParser FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5648782Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5678034Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5708526Z LrcUtilsTest > testCompressedWordScaling FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5709820Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5738240Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5768746Z LrcUtilsTest > testTemplateLrcTrimToggle FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5798563Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5799398Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5828717Z LrcUtilsTest > testDualOffsetMultiLineParser FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5862074Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5888067Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5888933Z LrcUtilsTest > voiceInsteadOfVoice1WhenNoVoice2 FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5918691Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5948207Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5970601Z LrcUtilsTest > testOnlyWordSyncPoints FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5998580Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.5999495Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6028662Z LrcUtilsTest > testTemplateLrcZeroTimestamps FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6058578Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6087982Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6088687Z LrcUtilsTest > testOffsetMultiLineParser FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6118618Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6147993Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6178534Z LrcUtilsTest > testTemplateLrcRenderBenchmark FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6179781Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6208215Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6238558Z LrcUtilsTest > testTemplateLrcSyntheticNewlines FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6239809Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6268237Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6298706Z LrcUtilsTest > testParserSkippedDoesNotEatNewlines FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6328556Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6329379Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6358563Z LrcUtilsTest > tsZeroIsNotTranslated FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6388682Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6418061Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6418794Z LrcUtilsTest > voice1WhenThereIsVoice2 FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6448760Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6478057Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6508423Z LrcUtilsTest > testTemplateLrc1 FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6509570Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6538156Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6568482Z LrcUtilsTest > testTemplateLrc2 FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6569686Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6598161Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6628676Z LrcUtilsTest > testTemplateLrcTranslationType1 FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6638575Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6658336Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6688598Z LrcUtilsTest > testCompressedWithSpaces FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6698496Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6728040Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6748622Z LrcUtilsTest > testParserSkippedHello FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6778637Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6784079Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6808565Z LrcUtilsTest > testSimpleMultiLineParser FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6838646Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6868114Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6898350Z LrcUtilsTest > testParserSkipped2 FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6899442Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6928124Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6958616Z LrcUtilsTest > testTemplateLrcTranslate2Compressed FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6986104Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.6988203Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.7018735Z LrcUtilsTest > testTemplateLrcExtendedAppleTrimToggle FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.7048592Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.7049424Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.7078440Z LrcUtilsTest > testPrintUtility FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.7108718Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.7137923Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.7138366Z LrcUtilsTest > blankInEmptyOut FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.7139239Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.7168348Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.7198398Z LrcUtilsTest > testEmptyLyricNoTranslation FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.7228551Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.7229300Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.7258439Z LrcUtilsTest > testOneLineOneWord FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.7265247Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.7288175Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.7318508Z LrcUtilsTest > explicitEndFromWordRecognized FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.7348496Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:33.7367920Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:33.7378456Z LrcUtilsTest > emptyInEmptyOut FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:33.7408536Z     java.lang.NullPointerException at LrcUtilsTest.kt:82
-Build APK	Run Android unit tests	2026-10-02T21:43:34.9255192Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:34.9288924Z PauseableFlowsTest > testPauseableFlows FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:34.9302378Z     java.lang.AssertionError at PauseableFlowsTest.kt:63
-Build APK	Run Android unit tests	2026-10-02T21:43:35.3278399Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:35.3308924Z 36 tests completed, 33 failed
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5258326Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5298214Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5298968Z > Task :app:testDebugUnitTest FAILED
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5328749Z FAILURE: Build failed with an exception.
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5330182Z gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_5-1790977397159.json
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5357908Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5358350Z 261 actionable tasks: 8 executed, 1 from cache, 252 up-to-date
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5388357Z * What went wrong:
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5418226Z Execution failed for task ':app:testDebugUnitTest'.
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5429357Z > There were failing tests. See the report at: file:///home/runner/work/sunshine-music/sunshine-music/app/build/reports/tests/testDebugUnitTest/index.html
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5468382Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5488663Z * Try:
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5500785Z > Run with --scan to get full insights from a Build Scan (powered by Develocity).
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5501619Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5502315Z * Exception is:
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5503646Z org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':app:testDebugUnitTest'.
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5505821Z 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.lambda$executeIfValid$1(ExecuteActionsTaskExecuter.java:135)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5507897Z 	at org.gradle.internal.Try$Failure.ifSuccessfulOrElse(Try.java:288)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5509800Z 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:133)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5512340Z 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:121)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5514784Z 	at org.gradle.api.internal.tasks.execution.ProblemsTaskPathTrackingTaskExecuter.execute(ProblemsTaskPathTrackingTaskExecuter.java:41)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5517328Z 	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5520260Z 	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5522716Z 	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5524925Z 	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5527097Z 	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5529560Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5531661Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5533757Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5536130Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5538928Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5541401Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5543519Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5545640Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5548047Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5550472Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5552724Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5554698Z 	at org.gradle.execution.plan.DefaultNodeExecutor.executeLocalTaskNode(DefaultNodeExecutor.java:55)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5556442Z 	at org.gradle.execution.plan.DefaultNodeExecutor.execute(DefaultNodeExecutor.java:34)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5558723Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:355)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5561184Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:343)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5563819Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:339)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5566139Z 	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:84)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5569032Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:339)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5571952Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:328)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5574193Z 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5576050Z 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5578351Z 	at org.gradle.execution.plan.DefaultPlanExecutor.process(DefaultPlanExecutor.java:111)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5580547Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.executeWithServices(DefaultTaskExecutionGraph.java:146)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5584445Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph.execute(DefaultTaskExecutionGraph.java:131)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5586374Z 	at org.gradle.execution.SelectedTaskExecutionAction.execute(SelectedTaskExecutionAction.java:35)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5588852Z 	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:54)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5591370Z 	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor$ExecuteTasks.call(BuildOperationFiringBuildWorkerExecutor.java:43)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5593967Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5596623Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5599483Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5601988Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5604134Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5606268Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5608543Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5610830Z 	at org.gradle.execution.BuildOperationFiringBuildWorkerExecutor.execute(BuildOperationFiringBuildWorkerExecutor.java:40)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5613193Z 	at org.gradle.internal.build.DefaultBuildLifecycleController.lambda$executeTasks$11(DefaultBuildLifecycleController.java:323)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5615374Z 	at org.gradle.internal.model.StateTransitionController.doTransition(StateTransitionController.java:304)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5617456Z 	at org.gradle.internal.model.StateTransitionController.lambda$tryTransition$9(StateTransitionController.java:215)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5619606Z 	at org.gradle.internal.work.DefaultSynchronizer.withLock(DefaultSynchronizer.java:45)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5621505Z 	at org.gradle.internal.model.StateTransitionController.tryTransition(StateTransitionController.java:215)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5623732Z 	at org.gradle.internal.build.DefaultBuildLifecycleController.executeTasks(DefaultBuildLifecycleController.java:314)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5626190Z 	at org.gradle.internal.build.DefaultBuildWorkGraphController$DefaultBuildWorkGraph.runWork(DefaultBuildWorkGraphController.java:220)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5628719Z 	at org.gradle.internal.work.DefaultWorkerLeaseService.lambda$withLocksAcquired$0(DefaultWorkerLeaseService.java:275)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5630769Z 	at org.gradle.internal.work.ResourceLockStatistics$1.measure(ResourceLockStatistics.java:43)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5632709Z 	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocksAcquired(DefaultWorkerLeaseService.java:273)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5635668Z 	at org.gradle.internal.work.DefaultWorkerLeaseService.withLocks(DefaultWorkerLeaseService.java:265)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5637905Z 	at org.gradle.internal.work.DefaultWorkerLeaseService.runAsWorkerThread(DefaultWorkerLeaseService.java:128)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5639897Z 	at org.gradle.composite.internal.DefaultBuildController.doRun(DefaultBuildController.java:182)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5641793Z 	at org.gradle.composite.internal.DefaultBuildController.access$000(DefaultBuildController.java:50)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5643889Z 	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.lambda$run$0(DefaultBuildController.java:199)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5646203Z 	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:84)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5648692Z 	at org.gradle.composite.internal.DefaultBuildController$BuildOpRunnable.run(DefaultBuildController.java:199)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5650737Z 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5652677Z 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5655658Z Caused by: org.gradle.api.internal.exceptions.MarkedVerificationException: There were failing tests. See the report at: file:///home/runner/work/sunshine-music/sunshine-music/app/build/reports/tests/testDebugUnitTest/index.html
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5658583Z 	at org.gradle.api.tasks.testing.AbstractTestTask.executeTests(AbstractTestTask.java:615)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5660087Z 	at org.gradle.api.tasks.testing.Test.executeTests(Test.java:760)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5661756Z 	at com.android.build.gradle.tasks.factory.AndroidUnitTest.executeTests(AndroidUnitTest.java:203)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5663346Z 	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:125)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5665104Z 	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.doExecute(StandardTaskAction.java:58)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5667113Z 	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:51)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5669342Z 	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:29)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5671198Z 	at org.gradle.api.internal.tasks.execution.TaskExecution$3.run(TaskExecution.java:259)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5673237Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:30)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5675427Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:27)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5677508Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5679917Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5682138Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5684357Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5686499Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:48)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5688780Z 	at org.gradle.api.internal.tasks.execution.TaskExecution.executeAction(TaskExecution.java:244)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5690759Z 	at org.gradle.api.internal.tasks.execution.TaskExecution.executeActions(TaskExecution.java:227)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5692929Z 	at org.gradle.api.internal.tasks.execution.TaskExecution.executeWithPreviousOutputFiles(TaskExecution.java:210)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5694929Z 	at org.gradle.api.internal.tasks.execution.TaskExecution.execute(TaskExecution.java:176)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5696669Z 	at org.gradle.internal.execution.steps.ExecuteStep.executeInternal(ExecuteStep.java:167)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5698574Z 	at org.gradle.internal.execution.steps.ExecuteStep.access$000(ExecuteStep.java:47)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5700412Z 	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:137)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5702250Z 	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:134)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5704340Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5706880Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5709346Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5711580Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5713728Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5715875Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5718235Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5720100Z 	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:134)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5721783Z 	at org.gradle.internal.execution.steps.ExecuteStep$Mutable.execute(ExecuteStep.java:80)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5723603Z 	at org.gradle.internal.execution.steps.CancelExecutionStep.execute(CancelExecutionStep.java:42)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5725493Z 	at org.gradle.internal.execution.steps.TimeoutStep.executeWithoutTimeout(TimeoutStep.java:75)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5727238Z 	at org.gradle.internal.execution.steps.TimeoutStep.execute(TimeoutStep.java:55)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5729392Z 	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:51)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5731569Z 	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:29)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5733796Z 	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.executeMutable(RemovePreviousOutputsStep.java:67)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5736096Z 	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.executeMutable(RemovePreviousOutputsStep.java:39)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5738215Z 	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5740194Z 	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:42)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5742395Z 	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:24)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5744766Z 	at org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execute(CaptureOutputsAfterExecutionStep.java:69)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5747145Z 	at org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execute(CaptureOutputsAfterExecutionStep.java:46)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5749595Z 	at org.gradle.internal.execution.steps.ResolveInputChangesStep.executeMutable(ResolveInputChangesStep.java:39)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5751736Z 	at org.gradle.internal.execution.steps.ResolveInputChangesStep.executeMutable(ResolveInputChangesStep.java:28)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5753505Z 	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5755258Z 	at org.gradle.internal.execution.steps.BuildCacheStep.executeWithoutCache(BuildCacheStep.java:189)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5757225Z 	at org.gradle.internal.execution.steps.BuildCacheStep.executeAndStoreInCache(BuildCacheStep.java:145)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5759389Z 	at org.gradle.internal.execution.steps.BuildCacheStep.lambda$executeWithCache$4(BuildCacheStep.java:104)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5761386Z 	at org.gradle.internal.execution.steps.BuildCacheStep.lambda$executeWithCache$5(BuildCacheStep.java:104)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5763109Z 	at org.gradle.internal.Try$Success.map(Try.java:170)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5764638Z 	at org.gradle.internal.execution.steps.BuildCacheStep.executeWithCache(BuildCacheStep.java:88)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5766472Z 	at org.gradle.internal.execution.steps.BuildCacheStep.lambda$execute$0(BuildCacheStep.java:75)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5768109Z 	at org.gradle.internal.Either$Left.fold(Either.java:116)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5769502Z 	at org.gradle.internal.execution.caching.CachingState.fold(CachingState.java:62)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5771171Z 	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:74)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5772887Z 	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:49)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5775116Z 	at org.gradle.internal.execution.steps.StoreExecutionStateStep.executeMutable(StoreExecutionStateStep.java:46)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5777338Z 	at org.gradle.internal.execution.steps.StoreExecutionStateStep.executeMutable(StoreExecutionStateStep.java:35)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5779445Z 	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5781207Z 	at org.gradle.internal.execution.steps.SkipUpToDateStep.executeBecause(SkipUpToDateStep.java:75)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5783149Z 	at org.gradle.internal.execution.steps.SkipUpToDateStep.lambda$execute$2(SkipUpToDateStep.java:53)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5784985Z 	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:53)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5786873Z 	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:35)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5789504Z 	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:37)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5792132Z 	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:27)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5794722Z 	at org.gradle.internal.execution.steps.ResolveMutableCachingStateStep.executeDelegate(ResolveMutableCachingStateStep.java:70)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5797128Z 	at org.gradle.internal.execution.steps.ResolveMutableCachingStateStep.executeDelegate(ResolveMutableCachingStateStep.java:32)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5799605Z 	at org.gradle.internal.execution.steps.AbstractResolveCachingStateStep.execute(AbstractResolveCachingStateStep.java:69)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5802158Z 	at org.gradle.internal.execution.steps.AbstractResolveCachingStateStep.execute(AbstractResolveCachingStateStep.java:37)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5805848Z 	at org.gradle.internal.execution.steps.ResolveChangesStep.executeMutable(ResolveChangesStep.java:63)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5807981Z 	at org.gradle.internal.execution.steps.ResolveChangesStep.executeMutable(ResolveChangesStep.java:34)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5809777Z 	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5811491Z 	at org.gradle.internal.execution.steps.ValidateStep$Mutable.executeDelegate(ValidateStep.java:79)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5813311Z 	at org.gradle.internal.execution.steps.ValidateStep$Mutable.executeDelegate(ValidateStep.java:65)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5814989Z 	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:99)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5816700Z 	at org.gradle.internal.execution.steps.ValidateStep$Mutable.execute(ValidateStep.java:65)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5819177Z 	at org.gradle.internal.execution.steps.CaptureMutableStateBeforeExecutionStep.executeMutable(CaptureMutableStateBeforeExecutionStep.java:86)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5821847Z 	at org.gradle.internal.execution.steps.CaptureMutableStateBeforeExecutionStep.execute(CaptureMutableStateBeforeExecutionStep.java:65)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5824492Z 	at org.gradle.internal.execution.steps.CaptureMutableStateBeforeExecutionStep.execute(CaptureMutableStateBeforeExecutionStep.java:45)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5827031Z 	at org.gradle.internal.execution.steps.SkipEmptyMutableWorkStep.executeWithNonEmptySources(SkipEmptyMutableWorkStep.java:210)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5829898Z 	at org.gradle.internal.execution.steps.SkipEmptyMutableWorkStep.executeMutable(SkipEmptyMutableWorkStep.java:90)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5832173Z 	at org.gradle.internal.execution.steps.SkipEmptyMutableWorkStep.executeMutable(SkipEmptyMutableWorkStep.java:53)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5834054Z 	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5836172Z 	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsStartedStep.execute(MarkSnapshottingInputsStartedStep.java:38)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5838856Z 	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.executeMutable(LoadPreviousExecutionStateStep.java:36)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5841508Z 	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.executeMutable(LoadPreviousExecutionStateStep.java:23)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5843465Z 	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5845333Z 	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.executeMutable(HandleStaleOutputsStep.java:77)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5847468Z 	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.executeMutable(HandleStaleOutputsStep.java:43)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5849499Z 	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5851546Z 	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.lambda$executeMutable$0(AssignMutableWorkspaceStep.java:34)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5853570Z 	at org.gradle.api.internal.tasks.execution.TaskExecution$4.withWorkspace(TaskExecution.java:305)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5855586Z 	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.executeMutable(AssignMutableWorkspaceStep.java:30)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5857961Z 	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.executeMutable(AssignMutableWorkspaceStep.java:21)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5859816Z 	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5861489Z 	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:40)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5863289Z 	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:23)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5865540Z 	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.lambda$execute$2(ExecuteWorkBuildOperationFiringStep.java:67)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5868350Z 	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:67)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5870914Z 	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:39)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5873127Z 	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:46)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5874889Z 	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:34)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5876568Z 	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:56)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5878340Z 	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:38)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5880183Z 	at org.gradle.internal.execution.impl.DefaultExecutionEngine$1.execute(DefaultExecutionEngine.java:68)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5882391Z 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:132)
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5883864Z 	... 61 more
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5884435Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5884950Z 
-Build APK	Run Android unit tests	2026-10-02T21:43:35.5885381Z BUILD FAILED in 18s
-Build APK	Run Android unit tests	2026-10-02T21:43:35.6255368Z Configuration cache entry stored.
-Build APK	Run Android unit tests	2026-10-02T21:43:35.7561826Z ##[error]Process completed with exit code 1.
+Build APK	Run Android unit tests	﻿2026-10-02T21:52:59.1256458Z ##[group]Run ./gradlew :app:testDebugUnitTest --stacktrace --max-workers=2
+Build APK	Run Android unit tests	2026-10-02T21:52:59.1257464Z ^[[36;1m./gradlew :app:testDebugUnitTest --stacktrace --max-workers=2^[[0m
+Build APK	Run Android unit tests	2026-10-02T21:52:59.1311786Z shell: /usr/bin/bash -e {0}
+Build APK	Run Android unit tests	2026-10-02T21:52:59.1312154Z env:
+Build APK	Run Android unit tests	2026-10-02T21:52:59.1312532Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+Build APK	Run Android unit tests	2026-10-02T21:52:59.1313064Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+Build APK	Run Android unit tests	2026-10-02T21:52:59.1313516Z   GRADLE_ACTION_ID: gradle/actions/setup-gradle
+Build APK	Run Android unit tests	2026-10-02T21:52:59.1314047Z   GRADLE_USER_HOME: /home/runner/.gradle
+Build APK	Run Android unit tests	2026-10-02T21:52:59.1314391Z   GRADLE_BUILD_ACTION_SETUP_COMPLETED: true
+Build APK	Run Android unit tests	2026-10-02T21:52:59.1314892Z   DEVELOCITY_INJECTION_INIT_SCRIPT_NAME: gradle-actions.inject-develocity.init.gradle
+Build APK	Run Android unit tests	2026-10-02T21:52:59.1315414Z   DEVELOCITY_INJECTION_CUSTOM_VALUE: gradle-actions
+Build APK	Run Android unit tests	2026-10-02T21:52:59.1315784Z   GITHUB_DEPENDENCY_GRAPH_ENABLED: false
+Build APK	Run Android unit tests	2026-10-02T21:52:59.1316137Z   ANDROID_HOME: /usr/local/lib/android/sdk
+Build APK	Run Android unit tests	2026-10-02T21:52:59.1316544Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+Build APK	Run Android unit tests	2026-10-02T21:52:59.1316886Z ##[endgroup]
+Build APK	Run Android unit tests	2026-10-02T21:52:59.7219776Z Configuration on demand is an incubating feature.
+Build APK	Run Android unit tests	2026-10-02T21:52:59.7240482Z Calculating task graph as no cached configuration is available for tasks: :app:testDebugUnitTest
+Build APK	Run Android unit tests	2026-10-02T21:53:00.4219614Z > Task :media3:build-logic-settings:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Build APK	Run Android unit tests	2026-10-02T21:53:00.5201850Z > Task :media3:build-logic-settings:generateExternalPluginSpecBuilders UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:00.5220848Z > Task :media3:build-logic-settings:extractPrecompiledScriptPluginPlugins UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:00.5249015Z > Task :media3:build-logic-settings:compilePluginsBlocks UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:00.6209937Z > Task :media3:build-logic-settings:generatePrecompiledScriptPluginAccessors UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:00.6239574Z > Task :media3:build-logic-settings:generateScriptPluginAdapters UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:00.6240964Z > Task :media3:build-logic-settings:compileKotlin UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:00.6282980Z > Task :media3:build-logic-settings:compileJava NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:00.6291445Z > Task :media3:build-logic-settings:pluginDescriptors UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:00.6315986Z > Task :media3:build-logic-settings:processResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:00.6319423Z > Task :media3:build-logic-settings:classes UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:00.6333899Z > Task :media3:build-logic-settings:jar UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:01.5201951Z 
+Build APK	Run Android unit tests	2026-10-02T21:53:01.5210816Z > Configure project :app
+Build APK	Run Android unit tests	2026-10-02T21:53:01.5239228Z WARNING: The option setting 'android.builtInKotlin=false' is deprecated.
+Build APK	Run Android unit tests	2026-10-02T21:53:01.5263407Z The current default is 'true'.
+Build APK	Run Android unit tests	2026-10-02T21:53:01.5289106Z It will be removed in version 10.0 of the Android Gradle plugin.
+Build APK	Run Android unit tests	2026-10-02T21:53:01.5318948Z WARNING: The option setting 'android.newDsl=false' is deprecated.
+Build APK	Run Android unit tests	2026-10-02T21:53:01.5331953Z The current default is 'true'.
+Build APK	Run Android unit tests	2026-10-02T21:53:01.5333017Z It will be removed in version 10.0 of the Android Gradle plugin.
+Build APK	Run Android unit tests	2026-10-02T21:53:02.0198473Z 
+Build APK	Run Android unit tests	2026-10-02T21:53:02.0217078Z > Task :media3:buildSrc:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Build APK	Run Android unit tests	2026-10-02T21:53:02.0218430Z > Task :media3:buildSrc:compileKotlin NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:02.0225872Z > Task :media3:buildSrc:compileJava NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:02.0230216Z > Task :media3:buildSrc:compileGroovy NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:02.0231194Z > Task :media3:buildSrc:pluginDescriptors UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:02.0299005Z > Task :media3:buildSrc:processResources NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:02.0315992Z > Task :media3:buildSrc:classes UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:02.0358761Z > Task :media3:buildSrc:jar UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:02.1206023Z > Task :media3:build-logic:checkKotlinGradlePluginConfigurationErrors SKIPPED
+Build APK	Run Android unit tests	2026-10-02T21:53:02.2235218Z > Task :media3:build-logic:generateExternalPluginSpecBuilders UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:02.2251429Z > Task :media3:build-logic:extractPrecompiledScriptPluginPlugins UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:02.2263705Z > Task :media3:build-logic:compilePluginsBlocks UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:02.2281164Z > Task :media3:build-logic:generatePrecompiledScriptPluginAccessors UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:02.2288732Z > Task :media3:build-logic:generateScriptPluginAdapters UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:02.2318880Z > Task :media3:build-logic:compileKotlin UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:02.2336144Z > Task :media3:build-logic:compileJava NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:02.2340666Z > Task :media3:build-logic:pluginDescriptors UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:02.2342671Z > Task :media3:build-logic:processResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:02.2343633Z > Task :media3:build-logic:classes UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:02.2365836Z > Task :media3:build-logic:jar UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7220260Z > Task :media3:lib-exoplayer:preBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7279297Z > Task :media3:lib-exoplayer:preDebugBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7297513Z > Task :media3:lib-exoplayer:extractDebugSupportedLocales UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7298942Z > Task :misc:audiofxstub:compileJava UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7300136Z > Task :media3:lib-decoder-midi:preBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7301125Z > Task :media3:lib-decoder-midi:preDebugBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7302351Z > Task :media3:lib-decoder-midi:extractDebugSupportedLocales UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7311422Z > Task :misc:audiofxfwd:compileJava UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7312405Z > Task :media3:lib-extractor:preBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7313266Z > Task :misc:audiofxfwd:processResources NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7314061Z > Task :misc:audiofxfwd:classes UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7314863Z > Task :media3:lib-extractor:preDebugBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7315652Z > Task :misc:audiofxfwd:jar UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7316556Z > Task :media3:lib-extractor:extractDebugSupportedLocales UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7317399Z > Task :app:preBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7318213Z > Task :app:preDebugBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7332046Z > Task :media3:lib-common:preBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7332850Z > Task :app:generateDebugBuildConfig UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7333791Z > Task :media3:lib-common:preDebugBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7334590Z > Task :app:prepareLibraryDefinitionsDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7335392Z > Task :app:resourcePlaceholdersForDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7336221Z > Task :media3:lib-common:extractDebugSupportedLocales UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7353038Z > Task :app:extractDebugSupportedLocales UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7354117Z > Task :app:mapDebugSourceSetPaths UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7354890Z > Task :hificore:preBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7355658Z > Task :media3:lib-database:preBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7356421Z > Task :hificore:preDebugBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7357130Z > Task :media3:lib-database:preDebugBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7377627Z > Task :hificore:extractDebugSupportedLocales UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7378965Z > Task :media3:lib-database:extractDebugSupportedLocales UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7379950Z > Task :misc:alacdecoder:preBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7380737Z > Task :misc:alacdecoder:preDebugBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7381615Z > Task :misc:alacdecoder:extractDebugSupportedLocales UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7382394Z > Task :media3:lib-decoder:preBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7383190Z > Task :media3:lib-decoder:preDebugBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7383967Z > Task :app:generateDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7384833Z > Task :hificore:processDebugNavigationResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7385811Z > Task :media3:lib-decoder:extractDebugSupportedLocales UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7386767Z > Task :misc:alacdecoder:processDebugNavigationResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7387586Z > Task :hificore:generateDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7396462Z > Task :media3:lib-container:preBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7419454Z > Task :media3:lib-container:preDebugBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7448826Z > Task :hificore:packageDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7467461Z > Task :media3:lib-container:extractDebugSupportedLocales UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7498726Z > Task :media3:lib-session:preBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7514732Z > Task :hificore:parseDebugLocalResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7528954Z > Task :media3:lib-session:preDebugBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7578808Z > Task :media3:lib-session:extractDebugSupportedLocales UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7588773Z > Task :hificore:generateDebugRFile UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7603889Z > Task :media3:lib-datasource:preBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7621383Z > Task :media3:lib-datasource:preDebugBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7632274Z > Task :misc:audiofxstub2:preBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7638992Z > Task :misc:audiofxstub2:preDebugBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7640069Z > Task :misc:audiofxstub2:generateDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7641185Z > Task :media3:lib-datasource:extractDebugSupportedLocales UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7642183Z > Task :media3:lib-common-ktx:preBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7643044Z > Task :media3:lib-common-ktx:preDebugBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7644025Z > Task :media3:lib-common-ktx:extractDebugSupportedLocales UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7645016Z > Task :misc:audiofxstub2:packageDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7646049Z > Task :media3:lib-extractor:processDebugNavigationResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7647145Z > Task :media3:lib-container:processDebugNavigationResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7648376Z > Task :media3:lib-decoder-midi:processDebugNavigationResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7649522Z > Task :media3:lib-database:processDebugNavigationResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7650612Z > Task :media3:lib-datasource:processDebugNavigationResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7651704Z > Task :media3:lib-exoplayer:processDebugNavigationResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7652759Z > Task :media3:lib-session:processDebugNavigationResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7653790Z > Task :media3:lib-common:processDebugNavigationResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7654846Z > Task :media3:lib-common-ktx:processDebugNavigationResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7655919Z > Task :media3:lib-decoder:processDebugNavigationResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7656817Z > Task :app:generateDebugLocaleConfig UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7657647Z > Task :media3:lib-common:generateDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7658593Z > Task :app:packageDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7689126Z > Task :media3:lib-common:packageDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7698504Z > Task :media3:lib-common:parseDebugLocalResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7729063Z > Task :media3:lib-common:generateDebugRFile UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7737523Z > Task :media3:lib-common:compileDebugKotlin NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7738689Z > Task :app:processDebugNavigationResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7739559Z > Task :app:parseDebugLocalResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7740461Z > Task :media3:lib-common:javaPreCompileDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7741277Z > Task :app:generateDebugRFile UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7742115Z > Task :misc:audiofxstub2:processDebugNavigationResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7743121Z > Task :misc:audiofxstub2:parseDebugLocalResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7744056Z > Task :misc:audiofxstub2:generateDebugRFile UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7744987Z > Task :media3:lib-common:compileDebugJavaWithJavac UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7745933Z > Task :misc:audiofxstub2:javaPreCompileDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7746904Z > Task :media3:lib-common:bundleLibCompileToJarDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7748063Z > Task :media3:lib-database:generateDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7749365Z > Task :misc:audiofxstub2:compileDebugJavaWithJavac UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7750765Z > Task :media3:lib-database:packageDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7751727Z > Task :misc:audiofxstub2:bundleLibCompileToJarDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7752538Z > Task :hificore:javaPreCompileDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7753682Z > Task :media3:lib-database:parseDebugLocalResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7754568Z > Task :misc:alacdecoder:generateDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7755687Z > Task :media3:lib-database:generateDebugRFile UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7756546Z > Task :media3:lib-database:compileDebugKotlin NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7757359Z > Task :media3:lib-database:javaPreCompileDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7758377Z > Task :misc:alacdecoder:packageDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7759290Z > Task :misc:alacdecoder:parseDebugLocalResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7760101Z > Task :misc:alacdecoder:generateDebugRFile UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7760957Z > Task :media3:lib-database:compileDebugJavaWithJavac UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7761925Z > Task :misc:alacdecoder:javaPreCompileDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7762881Z > Task :media3:lib-database:bundleLibCompileToJarDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7763847Z > Task :media3:lib-decoder:generateDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7764677Z > Task :app:javaPreCompileDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7765458Z > Task :hificore:writeDebugAarMetadata UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7766335Z > Task :media3:lib-decoder:packageDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7767178Z > Task :misc:alacdecoder:writeDebugAarMetadata UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7768165Z > Task :media3:lib-decoder:parseDebugLocalResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7769088Z > Task :app:compileDebugNavigationResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7769901Z > Task :app:createDebugCompatibleScreenManifests UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7770732Z > Task :media3:lib-decoder:generateDebugRFile UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7771539Z > Task :app:extractDeepLinksDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7772375Z > Task :hificore:extractDeepLinksDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7773163Z > Task :hificore:processDebugManifest UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7774014Z > Task :media3:lib-decoder:compileDebugKotlin NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7774876Z > Task :misc:alacdecoder:extractDeepLinksDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7775711Z > Task :media3:lib-decoder:javaPreCompileDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7776643Z > Task :misc:alacdecoder:processDebugManifest UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7777501Z > Task :hificore:mapDebugSourceSetPaths UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7778748Z > Task :media3:lib-decoder:compileDebugJavaWithJavac UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7779643Z > Task :hificore:compileDebugLibraryResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7780512Z > Task :media3:lib-decoder:bundleLibCompileToJarDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7781379Z > Task :misc:alacdecoder:mapDebugSourceSetPaths UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.7782233Z > Task :media3:lib-container:generateDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8222076Z > Task :misc:alacdecoder:compileDebugLibraryResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8235339Z > Task :app:preDebugUnitTestBuild UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8252333Z > Task :media3:lib-container:packageDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8277251Z > Task :media3:lib-container:parseDebugLocalResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8296784Z > Task :media3:lib-container:generateDebugRFile UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8325781Z > Task :app:javaPreCompileDebugUnitTest FROM-CACHE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8345593Z > Task :media3:lib-container:compileDebugKotlin NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8373798Z > Task :app:generateDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8399292Z > Task :hificore:generateDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8419131Z > Task :media3:lib-container:javaPreCompileDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8445407Z > Task :hificore:mergeDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8477585Z > Task :misc:alacdecoder:generateDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8497787Z > Task :misc:alacdecoder:mergeDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8515555Z > Task :media3:lib-container:compileDebugJavaWithJavac UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8543506Z > Task :misc:alacdecoder:processDebugJavaRes NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8569072Z > Task :media3:lib-container:bundleLibCompileToJarDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8570127Z > Task :media3:lib-datasource:generateDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8608871Z > Task :media3:lib-datasource:javaPreCompileDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8638864Z > Task :media3:lib-datasource:packageDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8658739Z > Task :media3:lib-exoplayer:generateDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8688780Z > Task :media3:lib-datasource:parseDebugLocalResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8709339Z > Task :media3:lib-datasource:generateDebugRFile UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8719206Z > Task :media3:lib-datasource:compileDebugKotlin NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8720316Z > Task :media3:lib-exoplayer:packageDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8721284Z > Task :media3:lib-datasource:compileDebugJavaWithJavac UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8722222Z > Task :media3:lib-datasource:bundleLibCompileToJarDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8723152Z > Task :media3:lib-exoplayer:parseDebugLocalResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8723979Z > Task :media3:lib-extractor:generateDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8724974Z > Task :media3:lib-exoplayer:generateDebugRFile UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8725804Z > Task :media3:lib-extractor:packageDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8726682Z > Task :media3:lib-extractor:javaPreCompileDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8727563Z > Task :media3:lib-extractor:parseDebugLocalResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8728629Z > Task :media3:lib-exoplayer:javaPreCompileDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8729448Z > Task :media3:lib-extractor:generateDebugRFile UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8730369Z > Task :media3:lib-decoder-midi:generateDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8731611Z > Task :media3:lib-decoder-midi:packageDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8732536Z > Task :media3:lib-decoder-midi:parseDebugLocalResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8733312Z > Task :media3:lib-decoder-midi:generateDebugRFile UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8734152Z > Task :media3:lib-decoder-midi:javaPreCompileDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8735057Z > Task :media3:lib-extractor:compileDebugKotlin NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8735948Z > Task :media3:lib-extractor:compileDebugJavaWithJavac UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8736915Z > Task :media3:lib-extractor:bundleLibCompileToJarDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8737698Z > Task :media3:lib-session:compileDebugAidl UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8738749Z > Task :media3:lib-session:generateDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8739656Z > Task :media3:lib-session:packageDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8740548Z > Task :media3:lib-exoplayer:compileDebugKotlin NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8741465Z > Task :media3:lib-session:parseDebugLocalResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8742365Z > Task :media3:lib-session:generateDebugRFile UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8743294Z > Task :media3:lib-exoplayer:compileDebugJavaWithJavac UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8744282Z > Task :media3:lib-exoplayer:bundleLibCompileToJarDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8745219Z > Task :media3:lib-session:compileDebugKotlin NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8746105Z > Task :media3:lib-decoder-midi:compileDebugKotlin NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8747098Z > Task :media3:lib-decoder-midi:compileDebugJavaWithJavac UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8748229Z > Task :media3:lib-decoder-midi:bundleLibCompileToJarDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8749124Z > Task :media3:lib-session:javaPreCompileDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8749973Z > Task :media3:lib-session:compileDebugJavaWithJavac UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8751092Z > Task :hificore:compileDebugKotlin UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8751912Z > Task :media3:lib-session:bundleLibCompileToJarDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8752746Z > Task :media3:lib-common-ktx:generateDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8753615Z > Task :media3:lib-common-ktx:packageDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8754416Z > Task :hificore:compileDebugJavaWithJavac UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8755205Z > Task :hificore:bundleLibCompileToJarDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8756266Z > Task :media3:lib-common-ktx:parseDebugLocalResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8757090Z > Task :media3:lib-common-ktx:generateDebugRFile UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8758117Z > Task :misc:alacdecoder:compileDebugJavaWithJavac UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8759032Z > Task :misc:alacdecoder:bundleLibCompileToJarDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8759896Z > Task :media3:lib-common-ktx:compileDebugKotlin UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8760751Z > Task :media3:lib-common-ktx:javaPreCompileDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8761610Z > Task :media3:lib-common-ktx:compileDebugJavaWithJavac NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8762543Z > Task :media3:lib-common-ktx:bundleLibCompileToJarDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8763442Z > Task :media3:lib-exoplayer:writeDebugAarMetadata UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8764280Z > Task :media3:lib-common:writeDebugAarMetadata UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8765092Z > Task :media3:lib-database:writeDebugAarMetadata UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8765929Z > Task :media3:lib-decoder:writeDebugAarMetadata UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8766735Z > Task :media3:lib-datasource:writeDebugAarMetadata UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8767605Z > Task :media3:lib-container:writeDebugAarMetadata UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8768619Z > Task :media3:lib-extractor:writeDebugAarMetadata UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8769473Z > Task :media3:lib-common-ktx:writeDebugAarMetadata UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8770366Z > Task :media3:lib-session:writeDebugAarMetadata UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8771084Z > Task :app:mergeDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8771900Z > Task :media3:lib-decoder-midi:writeDebugAarMetadata UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8772733Z > Task :media3:lib-decoder:extractDeepLinksDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8773531Z > Task :media3:lib-session:processDebugManifest UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8774330Z > Task :media3:lib-extractor:processDebugManifest UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8775119Z > Task :media3:lib-decoder:processDebugManifest UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8775948Z > Task :media3:lib-extractor:extractDeepLinksDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8776800Z > Task :media3:lib-datasource:extractDeepLinksDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8777659Z > Task :media3:lib-exoplayer:extractDeepLinksDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8778770Z > Task :media3:lib-database:extractDeepLinksDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8779649Z > Task :media3:lib-session:extractDeepLinksDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8780562Z > Task :media3:lib-datasource:processDebugManifest UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8781460Z > Task :media3:lib-common:processDebugManifest UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8782388Z > Task :media3:lib-decoder-midi:processDebugManifest UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8783307Z > Task :media3:lib-common:extractDeepLinksDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8784155Z > Task :media3:lib-container:processDebugManifest UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8785124Z > Task :media3:lib-exoplayer:processDebugManifest UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8786054Z > Task :media3:lib-decoder-midi:extractDeepLinksDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8786978Z > Task :media3:lib-container:extractDeepLinksDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8787844Z > Task :media3:lib-database:processDebugManifest UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8788911Z > Task :media3:lib-common-ktx:extractDeepLinksDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8789839Z > Task :media3:lib-common-ktx:processDebugManifest UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.8791006Z > Task :media3:lib-database:mapDebugSourceSetPaths UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9229560Z > Task :media3:lib-decoder-midi:mapDebugSourceSetPaths UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9259376Z > Task :media3:lib-decoder-midi:compileDebugLibraryResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9289138Z > Task :media3:lib-database:compileDebugLibraryResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9318923Z > Task :media3:lib-common-ktx:mapDebugSourceSetPaths UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9348996Z > Task :media3:lib-common-ktx:compileDebugLibraryResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9379017Z > Task :media3:lib-datasource:mapDebugSourceSetPaths UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9408860Z > Task :media3:lib-datasource:compileDebugLibraryResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9424796Z > Task :media3:lib-container:mapDebugSourceSetPaths UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9443537Z > Task :media3:lib-decoder:mapDebugSourceSetPaths UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9478842Z > Task :media3:lib-extractor:mapDebugSourceSetPaths UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9480084Z > Task :media3:lib-session:mapDebugSourceSetPaths UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9508997Z > Task :media3:lib-session:compileDebugLibraryResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9538999Z > Task :media3:lib-exoplayer:mapDebugSourceSetPaths UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9568979Z > Task :media3:lib-exoplayer:compileDebugLibraryResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9570283Z > Task :media3:lib-decoder:compileDebugLibraryResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9599189Z > Task :media3:lib-container:compileDebugLibraryResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9628967Z > Task :media3:lib-common:mapDebugSourceSetPaths UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9655034Z > Task :media3:lib-common:compileDebugLibraryResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9678967Z > Task :media3:lib-extractor:compileDebugLibraryResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9708791Z > Task :media3:lib-common:generateDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9709931Z > Task :media3:lib-common:mergeDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9739029Z > Task :media3:lib-common-ktx:generateDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9768773Z > Task :media3:lib-common-ktx:mergeDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9798781Z > Task :media3:lib-container:generateDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9799918Z > Task :media3:lib-container:mergeDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9834651Z > Task :media3:lib-decoder-midi:generateDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9836170Z > Task :media3:lib-decoder-midi:mergeDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9844967Z > Task :media3:lib-database:generateDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9898739Z > Task :media3:lib-database:mergeDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9899789Z > Task :media3:lib-session:generateDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9928847Z > Task :media3:lib-session:mergeDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9958975Z > Task :media3:lib-exoplayer:generateDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9988852Z > Task :media3:lib-exoplayer:mergeDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:06.9990033Z > Task :media3:lib-decoder:generateDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0018830Z > Task :media3:lib-decoder:mergeDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0049092Z > Task :media3:lib-datasource:generateDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0078855Z > Task :media3:lib-datasource:mergeDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0080134Z > Task :media3:lib-extractor:generateDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0108643Z > Task :app:compileDebugKotlin UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0138824Z > Task :media3:lib-extractor:mergeDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0168770Z > Task :media3:lib-session:processDebugJavaRes NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0198881Z > Task :media3:lib-decoder-midi:bundleLibRuntimeToJarDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0258801Z > Task :media3:lib-extractor:processDebugJavaRes NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0288880Z > Task :media3:lib-container:bundleLibRuntimeToJarDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0318972Z > Task :media3:lib-common:bundleLibRuntimeToJarDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0348798Z > Task :media3:lib-database:processDebugJavaRes NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0378842Z > Task :app:compileDebugJavaWithJavac UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0439082Z > Task :media3:lib-extractor:bundleLibRuntimeToJarDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0440268Z > Task :media3:lib-session:bundleLibRuntimeToJarDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0441295Z > Task :media3:lib-exoplayer:bundleLibRuntimeToJarDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0442578Z > Task :media3:lib-database:bundleLibRuntimeToJarDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0443538Z > Task :media3:lib-exoplayer:processDebugJavaRes NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0444472Z > Task :media3:lib-decoder-midi:processDebugJavaRes NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0445328Z > Task :media3:lib-common:processDebugJavaRes NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0446183Z > Task :media3:lib-decoder:bundleLibRuntimeToJarDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0447037Z > Task :media3:lib-container:processDebugJavaRes NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0447884Z > Task :media3:lib-decoder:processDebugJavaRes NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0448997Z > Task :media3:lib-common-ktx:bundleLibRuntimeToJarDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0449928Z > Task :media3:lib-datasource:bundleLibRuntimeToJarDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0450805Z > Task :media3:lib-common-ktx:processDebugJavaRes UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0451627Z > Task :media3:lib-datasource:processDebugJavaRes NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0452368Z > Task :app:checkDebugAarMetadata UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0453040Z > Task :app:mergeDebugAssets UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0453671Z > Task :app:processDebugJavaRes UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0454387Z > Task :hificore:bundleLibRuntimeToJarDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0455119Z > Task :hificore:processDebugJavaRes UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0455924Z > Task :misc:alacdecoder:bundleLibRuntimeToJarDebug UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0456694Z > Task :app:processDebugMainManifest UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0457420Z > Task :app:processDebugManifest UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0458364Z > Task :app:processDebugManifestForPackage UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0459199Z > Task :app:processDebugResources UP-TO-DATE
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0459878Z > Task :app:bundleDebugClassesToRuntimeJar
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0460265Z 
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0460579Z > Task :app:processDebugUnitTestManifest
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0462029Z package="org.akanework.gramophone" found in source AndroidManifest.xml: /home/runner/work/sunshine-music/sunshine-music/app/src/main/AndroidManifest.xml.
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0463827Z Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0465814Z Recommendation: remove package="org.akanework.gramophone" from the source AndroidManifest.xml: /home/runner/work/sunshine-music/sunshine-music/app/src/main/AndroidManifest.xml.
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0467521Z /home/runner/work/sunshine-music/sunshine-music/app/src/debug/AndroidManifest.xml Warning:
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0500175Z 	uses-permission#android.permission.ACCESS_NETWORK_STATE was tagged at AndroidManifest.xml:0 to remove other declarations but no other declaration present
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0502559Z /home/runner/work/sunshine-music/sunshine-music/app/build/intermediates/tmp/manifest/test/debug/tempFile2ProcessTestManifest3373401251575916813.xml:82:5-382:19 Warning:
+Build APK	Run Android unit tests	2026-10-02T21:53:07.0504854Z 	application@android:icon was tagged at tempFile2ProcessTestManifest3373401251575916813.xml:82 to replace other declarations but no other declaration present
+Build APK	Run Android unit tests	2026-10-02T21:53:07.1190640Z 
+Build APK	Run Android unit tests	2026-10-02T21:53:07.1191738Z > Task :app:packageDebugUnitTestForUnitTest
+Build APK	Run Android unit tests	2026-10-02T21:53:07.1203034Z > Task :app:bundleDebugClassesToCompileJar
+Build APK	Run Android unit tests	2026-10-02T21:53:07.1206778Z > Task :app:generateDebugUnitTestConfig
+Build APK	Run Android unit tests	2026-10-02T21:53:13.1221740Z > Task :app:compileDebugUnitTestKotlin
+Build APK	Run Android unit tests	2026-10-02T21:53:13.1227043Z > Task :app:compileDebugUnitTestJavaWithJavac NO-SOURCE
+Build APK	Run Android unit tests	2026-10-02T21:53:13.1228690Z > Task :app:processDebugUnitTestJavaRes
+Build APK	Run Android unit tests	2026-10-02T21:53:15.1190053Z 
+Build APK	Run Android unit tests	2026-10-02T21:53:15.1190759Z > Task :app:testDebugUnitTest
+Build APK	Run Android unit tests	2026-10-02T21:53:15.1191078Z 
+Build APK	Run Android unit tests	2026-10-02T21:53:15.1191379Z LrcUtilsTest > testTemplateLrcTranslationType1 FAILED
+Build APK	Run Android unit tests	2026-10-02T21:53:15.1191982Z     java.lang.AssertionError at LrcUtilsTest.kt:393
+Build APK	Run Android unit tests	2026-10-02T21:53:15.6199029Z 
+Build APK	Run Android unit tests	2026-10-02T21:53:15.6199153Z 
+Build APK	Run Android unit tests	2026-10-02T21:53:15.6199825Z > Task :app:testDebugUnitTest FAILED
+Build APK	Run Android unit tests	2026-10-02T21:53:15.6201056Z 36 tests completed, 1 failed
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7189292Z 
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7227440Z FAILURE: Build failed with an exception.
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7250048Z gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_5-1790977980174.json
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7253779Z 
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7254652Z 261 actionable tasks: 8 executed, 1 from cache, 252 up-to-date
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7255621Z * What went wrong:
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7256456Z Execution failed for task ':app:testDebugUnitTest'.
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7258308Z > There were failing tests. See the report at: file:///home/runner/work/sunshine-music/sunshine-music/app/build/reports/tests/testDebugUnitTest/index.html
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7259426Z 
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7279066Z Configuration cache entry stored.
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7288793Z * Try:
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7318964Z > Run with --scan to get full insights from a Build Scan (powered by Develocity).
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7348392Z 
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7349320Z * Exception is:
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7350769Z org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':app:testDebugUnitTest'.
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7352866Z 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.lambda$executeIfValid$1(ExecuteActionsTaskExecuter.java:135)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7354922Z 	at org.gradle.internal.Try$Failure.ifSuccessfulOrElse(Try.java:288)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7356828Z 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:133)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7359120Z 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:121)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7361225Z 	at org.gradle.api.internal.tasks.execution.ProblemsTaskPathTrackingTaskExecuter.execute(ProblemsTaskPathTrackingTaskExecuter.java:41)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7363359Z 	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7365411Z 	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7367378Z 	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7369402Z 	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7371063Z 	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7372942Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7374595Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7376216Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7378157Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7380269Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7382128Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7383819Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7385954Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7387672Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7389584Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7391293Z 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7392999Z 	at org.gradle.execution.plan.DefaultNodeExecutor.executeLocalTaskNode(DefaultNodeExecutor.java:55)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7394412Z 	at org.gradle.execution.plan.DefaultNodeExecutor.execute(DefaultNodeExecutor.java:34)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7396069Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:355)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7398357Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:343)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7400460Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:339)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7402336Z 	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:84)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7404218Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:339)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7406369Z 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:328)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7408290Z 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7409830Z 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7411735Z 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7413160Z 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:47)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7433224Z Caused by: org.gradle.api.internal.exceptions.MarkedVerificationException: There were failing tests. See the report at: file:///home/runner/work/sunshine-music/sunshine-music/app/build/reports/tests/testDebugUnitTest/index.html
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7442686Z 	at org.gradle.api.tasks.testing.AbstractTestTask.executeTests(AbstractTestTask.java:615)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7444463Z 	at org.gradle.api.tasks.testing.Test.executeTests(Test.java:760)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7445804Z 	at com.android.build.gradle.tasks.factory.AndroidUnitTest.executeTests(AndroidUnitTest.java:203)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7453236Z 	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:125)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7454864Z 	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.doExecute(StandardTaskAction.java:58)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7456621Z 	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:51)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7458482Z 	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:29)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7460078Z 	at org.gradle.api.internal.tasks.execution.TaskExecution$3.run(TaskExecution.java:259)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7461686Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:30)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7463757Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:27)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7465636Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7466995Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7469116Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7472903Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7474736Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:48)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7476372Z 	at org.gradle.api.internal.tasks.execution.TaskExecution.executeAction(TaskExecution.java:244)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7478492Z 	at org.gradle.api.internal.tasks.execution.TaskExecution.executeActions(TaskExecution.java:227)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7480132Z 	at org.gradle.api.internal.tasks.execution.TaskExecution.executeWithPreviousOutputFiles(TaskExecution.java:210)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7481746Z 	at org.gradle.api.internal.tasks.execution.TaskExecution.execute(TaskExecution.java:176)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7483162Z 	at org.gradle.internal.execution.steps.ExecuteStep.executeInternal(ExecuteStep.java:167)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7484526Z 	at org.gradle.internal.execution.steps.ExecuteStep.access$000(ExecuteStep.java:47)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7485843Z 	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:137)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7487125Z 	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:134)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7488972Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:210)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7491137Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:205)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7495719Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:67)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7497449Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:60)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7499240Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:167)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7501205Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:60)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7502962Z 	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:54)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7504945Z 	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:134)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7506275Z 	at org.gradle.internal.execution.steps.ExecuteStep$Mutable.execute(ExecuteStep.java:80)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7507719Z 	at org.gradle.internal.execution.steps.CancelExecutionStep.execute(CancelExecutionStep.java:42)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7509497Z 	at org.gradle.internal.execution.steps.TimeoutStep.executeWithoutTimeout(TimeoutStep.java:75)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7510961Z 	at org.gradle.internal.execution.steps.TimeoutStep.execute(TimeoutStep.java:55)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7512572Z 	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:51)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7514540Z 	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:29)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7516573Z 	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.executeMutable(RemovePreviousOutputsStep.java:67)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7520242Z 	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.executeMutable(RemovePreviousOutputsStep.java:39)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7549922Z 	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7569794Z 	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:42)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7571817Z 	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:24)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7573896Z 	at org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execute(CaptureOutputsAfterExecutionStep.java:69)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7576160Z 	at org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execute(CaptureOutputsAfterExecutionStep.java:46)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7578496Z 	at org.gradle.internal.execution.steps.ResolveInputChangesStep.executeMutable(ResolveInputChangesStep.java:39)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7580322Z 	at org.gradle.internal.execution.steps.ResolveInputChangesStep.executeMutable(ResolveInputChangesStep.java:28)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7581848Z 	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7583465Z 	at org.gradle.internal.execution.steps.BuildCacheStep.executeWithoutCache(BuildCacheStep.java:189)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7585101Z 	at org.gradle.internal.execution.steps.BuildCacheStep.executeAndStoreInCache(BuildCacheStep.java:145)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7586717Z 	at org.gradle.internal.execution.steps.BuildCacheStep.lambda$executeWithCache$4(BuildCacheStep.java:104)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7588426Z 	at org.gradle.internal.execution.steps.BuildCacheStep.lambda$executeWithCache$5(BuildCacheStep.java:104)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7589704Z 	at org.gradle.internal.Try$Success.map(Try.java:170)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7590944Z 	at org.gradle.internal.execution.steps.BuildCacheStep.executeWithCache(BuildCacheStep.java:88)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7592446Z 	at org.gradle.internal.execution.steps.BuildCacheStep.lambda$execute$0(BuildCacheStep.java:75)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7593625Z 	at org.gradle.internal.Either$Left.fold(Either.java:116)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7594768Z 	at org.gradle.internal.execution.caching.CachingState.fold(CachingState.java:62)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7596114Z 	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:74)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7597478Z 	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:49)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7599309Z 	at org.gradle.internal.execution.steps.StoreExecutionStateStep.executeMutable(StoreExecutionStateStep.java:46)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7601116Z 	at org.gradle.internal.execution.steps.StoreExecutionStateStep.executeMutable(StoreExecutionStateStep.java:35)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7602645Z 	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7604082Z 	at org.gradle.internal.execution.steps.SkipUpToDateStep.executeBecause(SkipUpToDateStep.java:75)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7605546Z 	at org.gradle.internal.execution.steps.SkipUpToDateStep.lambda$execute$2(SkipUpToDateStep.java:53)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7606883Z 	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:53)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7608430Z 	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:35)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7610039Z 	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:37)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7612158Z 	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:27)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7614625Z 	at org.gradle.internal.execution.steps.ResolveMutableCachingStateStep.executeDelegate(ResolveMutableCachingStateStep.java:70)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7617742Z 	at org.gradle.internal.execution.steps.ResolveMutableCachingStateStep.executeDelegate(ResolveMutableCachingStateStep.java:32)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7621210Z 	at org.gradle.internal.execution.steps.AbstractResolveCachingStateStep.execute(AbstractResolveCachingStateStep.java:69)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7623130Z 	at org.gradle.internal.execution.steps.AbstractResolveCachingStateStep.execute(AbstractResolveCachingStateStep.java:37)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7624858Z 	at org.gradle.internal.execution.steps.ResolveChangesStep.executeMutable(ResolveChangesStep.java:63)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7626451Z 	at org.gradle.internal.execution.steps.ResolveChangesStep.executeMutable(ResolveChangesStep.java:34)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7627876Z 	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7629410Z 	at org.gradle.internal.execution.steps.ValidateStep$Mutable.executeDelegate(ValidateStep.java:79)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7631114Z 	at org.gradle.internal.execution.steps.ValidateStep$Mutable.executeDelegate(ValidateStep.java:65)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7632558Z 	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:99)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7633896Z 	at org.gradle.internal.execution.steps.ValidateStep$Mutable.execute(ValidateStep.java:65)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7635754Z 	at org.gradle.internal.execution.steps.CaptureMutableStateBeforeExecutionStep.executeMutable(CaptureMutableStateBeforeExecutionStep.java:86)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7638282Z 	at org.gradle.internal.execution.steps.CaptureMutableStateBeforeExecutionStep.execute(CaptureMutableStateBeforeExecutionStep.java:65)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7640415Z 	at org.gradle.internal.execution.steps.CaptureMutableStateBeforeExecutionStep.execute(CaptureMutableStateBeforeExecutionStep.java:45)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7642495Z 	at org.gradle.internal.execution.steps.SkipEmptyMutableWorkStep.executeWithNonEmptySources(SkipEmptyMutableWorkStep.java:210)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7644407Z 	at org.gradle.internal.execution.steps.SkipEmptyMutableWorkStep.executeMutable(SkipEmptyMutableWorkStep.java:90)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7646201Z 	at org.gradle.internal.execution.steps.SkipEmptyMutableWorkStep.executeMutable(SkipEmptyMutableWorkStep.java:53)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7647689Z 	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7649561Z 	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsStartedStep.execute(MarkSnapshottingInputsStartedStep.java:38)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7651664Z 	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.executeMutable(LoadPreviousExecutionStateStep.java:36)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7653736Z 	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.executeMutable(LoadPreviousExecutionStateStep.java:23)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7655437Z 	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7657048Z 	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.executeMutable(HandleStaleOutputsStep.java:77)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7658890Z 	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.executeMutable(HandleStaleOutputsStep.java:43)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7660542Z 	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7662302Z 	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.lambda$executeMutable$0(AssignMutableWorkspaceStep.java:34)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7664066Z 	at org.gradle.api.internal.tasks.execution.TaskExecution$4.withWorkspace(TaskExecution.java:305)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7665849Z 	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.executeMutable(AssignMutableWorkspaceStep.java:30)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7667776Z 	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.executeMutable(AssignMutableWorkspaceStep.java:21)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7669576Z 	at org.gradle.internal.execution.steps.MutableStep.execute(MutableStep.java:26)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7671018Z 	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:40)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7672555Z 	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:23)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7674444Z 	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.lambda$execute$2(ExecuteWorkBuildOperationFiringStep.java:67)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7676575Z 	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:67)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7678813Z 	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:39)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7680664Z 	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:46)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7682148Z 	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:34)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7683796Z 	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:56)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7685148Z 	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:38)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7686634Z 	at org.gradle.internal.execution.impl.DefaultExecutionEngine$1.execute(DefaultExecutionEngine.java:68)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7688544Z 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:132)
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7689866Z 	... 30 more
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7690285Z 
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7690329Z 
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7690772Z BUILD FAILED in 16s
+Build APK	Run Android unit tests	2026-10-02T21:53:15.7696241Z ##[error]Process completed with exit code 1.
