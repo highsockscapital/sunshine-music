@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Day.Theme.Splash" parent="Impl.Day.Theme.Splash" />
+
+    <style name="Night.Theme.Splash" parent="Impl.Night.Theme.Splash" />
+
+    <!-- Sunshine Music: inherit the pinned Sunshine palette, NOT Material You dynamic colour.
+         Upstream used Base.Theme.Gramophone here, which on API 31+ resolves to
+         Theme.Material3.DynamicColors and takes its colours from the user's wallpaper. -->
+    <style name="Theme.Gramophone" parent="PreV31.Theme.Gramophone">
+        <item name="system_app_widget_background_radius">
+            @android:dimen/system_app_widget_background_radius
+        </item>
+        <item name="system_app_widget_inner_radius">@android:dimen/system_app_widget_inner_radius
+        </item>
+    </style>
+</resources>
