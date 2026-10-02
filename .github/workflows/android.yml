@@ -74,9 +74,6 @@ jobs:
       - name: Set release type
         run: echo releaseType=CI > package.properties
 
-      - name: Run Android unit tests
-        run: ./gradlew :app:testDebugUnitTest --stacktrace --max-workers=2
-
       - name: Build APK (clean) — debug
         run: ./gradlew clean :app:assembleDebug --stacktrace --max-workers=2
 
@@ -92,3 +89,6 @@ jobs:
         with:
           name: sunshine-music
           path: dist/*.apk
+
+      - name: Run Android unit tests
+        run: ./gradlew :app:testDebugUnitTest --stacktrace --max-workers=2
