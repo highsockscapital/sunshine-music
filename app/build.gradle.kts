@@ -36,7 +36,7 @@ android {
     }
 
     namespace = "org.akanework.gramophone"
-    compileSdk = 37
+    compileSdk = 36
 
     signingConfigs {
         create("release") {
@@ -103,7 +103,7 @@ android {
     defaultConfig {
         applicationId = appIdOverride ?: "org.akanework.gramophone"
         minSdk = 23
-        targetSdk = 37
+        targetSdk = 36
         versionCode = 24
         versionName = "1.1.2"
         if (releaseType != "Release" || vnos != null) {

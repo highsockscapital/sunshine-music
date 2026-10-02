@@ -54,9 +54,10 @@ jobs:
       - name: Set up Android SDK
         uses: android-actions/setup-android@v4
         with:
-          # Override the default list, which includes the obsolete "tools" package.
-          # build-tools is deliberately omitted so AGP picks its own default for compileSdk 37.
-          packages: 'platform-tools platforms;android-37'
+          # Overrides the default list, which includes the obsolete "tools" package.
+          # android-37 does not exist in any published SDK channel (highest is 36, plus a
+          # codename CANARY in channel 3), so this targets 36, same as Sunshinussy.
+          packages: 'platform-tools platforms;android-36 build-tools;36.0.0'
 
       - name: Make Gradle executable
         run: chmod +x ./gradlew
