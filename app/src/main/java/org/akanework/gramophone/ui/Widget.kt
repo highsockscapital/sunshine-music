@@ -44,7 +44,7 @@ import org.akanework.gramophone.R
 import org.akanework.gramophone.logic.GramophonePlaybackService
 
 private inline val service
-    get() = GramophonePlaybackService.instanceForWidgetAndLyricsOnly
+    get() = GramophonePlaybackService.instanceForWidgetAndLyricsOnly?.get()
 
 class LyricWidgetProvider : AppWidgetProvider() {
     override fun onUpdate(

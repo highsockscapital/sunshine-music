@@ -150,6 +150,7 @@ import uk.akane.libphonograph.items.albumId
 import uk.akane.libphonograph.manipulator.ItemManipulator
 import uk.akane.libphonograph.manipulator.PlaylistSerializer
 import uk.akane.libphonograph.manipulator.PlaylistSerializer.Entry
+import java.lang.ref.WeakReference
 import java.util.concurrent.Executor
 import kotlin.collections.emptyList
 import kotlin.collections.map
@@ -194,7 +195,7 @@ class GramophonePlaybackService : MediaLibraryService(), MediaSessionService.Lis
 
         const val SERVICE_QB_AGE = "qb_age"
 
-        var instanceForWidgetAndLyricsOnly: GramophonePlaybackService? = null
+        var instanceForWidgetAndLyricsOnly: WeakReference<GramophonePlaybackService>? = null
     }
 
     private var lastSessionId = 0
@@ -319,7 +320,7 @@ class GramophonePlaybackService : MediaLibraryService(), MediaSessionService.Lis
     override fun onCreate() {
         Log.i(TAG, "+onCreate()")
         super.onCreate()
-        instanceForWidgetAndLyricsOnly = this
+        instanceForWidgetAndLyricsOnly = WeakReference(this)
         internalPlaybackThread.start()
         playbackHandler = Handler(internalPlaybackThread.looper)
         handler = Handler(Looper.getMainLooper())

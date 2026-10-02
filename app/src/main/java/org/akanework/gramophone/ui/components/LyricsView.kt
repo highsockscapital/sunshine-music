@@ -105,7 +105,7 @@ class LyricsView(context: Context, attrs: AttributeSet?) : FrameLayout(context, 
             // TODO https://github.com/androidx/media/issues/1578
             override fun getCurrentPosition(): ULong =
                 if (waitingForSeek > 0) waitingForSeekPos else
-                GramophonePlaybackService.instanceForWidgetAndLyricsOnly
+                GramophonePlaybackService.instanceForWidgetAndLyricsOnly?.get()
                     ?.endedWorkaroundPlayer?.currentPosition?.toULong()
                     ?: (context as MainActivity).getPlayer()?.currentPosition?.toULong() ?: 0uL
 
@@ -119,7 +119,7 @@ class LyricsView(context: Context, attrs: AttributeSet?) : FrameLayout(context, 
                 newView?.handleSeek(getCurrentPosition(), position)
                 waitingForSeek = max(0, waitingForSeek) + 1
                 waitingForSeekPos = position
-                (GramophonePlaybackService.instanceForWidgetAndLyricsOnly?.endedWorkaroundPlayer
+                (GramophonePlaybackService.instanceForWidgetAndLyricsOnly?.get()?.endedWorkaroundPlayer
                     ?: (context as MainActivity).getPlayer())?.seekTo(position.toLong())
             }
 
