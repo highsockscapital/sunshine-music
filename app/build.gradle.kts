@@ -255,18 +255,9 @@ android {
         includeInBundle = false
     }
     testOptions.unitTests.isIncludeAndroidResources = true
-    testOptions.unitTests.all {
-        it.jvmArgs(
-            "--add-opens=java.base/java.lang=ALL-UNNAMED",
-            "--add-opens=java.base/java.lang.reflect=ALL-UNNAMED",
-            "--add-opens=java.base/java.lang.invoke=ALL-UNNAMED",
-            "--add-opens=java.base/java.util=ALL-UNNAMED",
-            "--add-opens=java.base/java.io=ALL-UNNAMED",
-            "--add-opens=java.base/java.net=ALL-UNNAMED",
-            "--add-opens=java.base/java.text=ALL-UNNAMED",
-            "--add-opens=java.base/java.security=ALL-UNNAMED",
-        )
-    }
+    // The LRC parsing paths reach android.util.Log only through media3, so letting the stubbed
+    // android.jar return defaults is enough to run them without a simulated Android runtime.
+    testOptions.unitTests.isReturnDefaultValues = true
 }
 
 resourcePlaceholders {
@@ -363,7 +354,6 @@ dependencies {
     // --- below does not apply to release builds ---
     debugImplementation("com.squareup.leakcanary:leakcanary-android:2.14")
     testImplementation("junit:junit:4.13.2")
-    testImplementation("org.robolectric:robolectric:4.17-beta-2")
     "userdebugImplementation"(kotlin("reflect", kotlinVersion)) // who thought String.invoke() is a good idea?????
     debugImplementation(kotlin("reflect", kotlinVersion))
 }

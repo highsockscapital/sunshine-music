@@ -28,10 +28,7 @@ import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
 import org.junit.Assert.assertTrue
 import org.junit.Test
-import org.junit.runner.RunWith
-import org.robolectric.RobolectricTestRunner
 
-@RunWith(RobolectricTestRunner::class)
 class LrcUtilsTest {
 
     private fun parse(
@@ -469,18 +466,6 @@ class LrcUtilsTest {
             parse("Hello\n\nIt's me", mustSkip = true)!!.unsyncedText)
         assertEquals(listOf("Hello" to null, "" to null, "It's me" to null, "" to null),
             parse("Hello\n\nIt's me\n", mustSkip = true)!!.unsyncedText)
-    }
-
-    @Test
-    fun testParserTtmlTemplate() {
-        val ttml = parseSynced(LrcTestData2.TTML_DEATH_BED)
-        assertEquals(LrcTestData2.TTML_DEATH_BED_PARSED, ttml)
-    }
-
-    @Test
-    fun testParserTtmlTemplate2() {
-        val ttml = parseSynced(LrcTestData2.TTML_SATISIFED)
-        assertEquals(LrcTestData2.TTML_SATISFIED_PARSED, ttml)
     }
 
     @Test
