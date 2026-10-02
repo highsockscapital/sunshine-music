@@ -83,7 +83,7 @@ class LrcUtilsTest {
             lrcContent,
             MimeTypes.AUDIO_FLAC,
             LrcUtils.LrcParserOptions(trim, multiline, null),
-            null
+            LrcUtils.LyricFormat.LRC
         )
         if (mustSkip != null) {
             if (mustSkip) {
