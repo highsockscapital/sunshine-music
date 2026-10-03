@@ -9,4 +9,17 @@
 	<issue id="UnsafeOptInUsageError">
 		<option name="opt-in" value="androidx.media3.common.util.UnstableApi" />
 	</issue>
+	<!--
+	ExtraTranslation is meaningless here and it fails lintVitalRelease, i.e. it fails the
+	release build, not just a lint report.
+
+	Removing a string from values/strings.xml leaves its translations behind in every
+	values-*/strings.xml until Weblate prunes them, and the inbound Weblate sync workflow
+	pulls those files down from the weblate branch, so hand-deleting the key from twenty
+	locales by hand just gets it re-added on the next sync. That churn is worse than the
+	check. Base locale stays the source of truth; Weblate decides when a translation dies.
+	-->
+	<issue id="ExtraTranslation">
+		<ignore path="src/main/res/values-*/strings.xml" />
+	</issue>
 </lint>
