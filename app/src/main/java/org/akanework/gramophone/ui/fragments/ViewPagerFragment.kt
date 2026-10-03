@@ -87,13 +87,13 @@ class ViewPagerFragment : BaseFragment(true) {
 
         appBarLayout = rootView.findViewById(R.id.appbarlayout)
         appBarLayout.enableEdgeToEdgePaddingListener()
-        // Sunshine Music: the three-dot overflow button is gone from the home header. Search
-        // stays as a plain toolbar action, and the avatar now opens the options popup that the
-        // three dots used to show. Both routes go through this one handler so the two entry
-        // points cannot drift apart as the menu grows.
+        // Sunshine Music: the three-dot overflow button is gone from the home header, and so is the
+        // magnifier icon. Search is the long pill beside the avatar now. The avatar opens the
+        // options popup the three dots used to show, and both that popup and the toolbar route
+        // through this one handler so the two entry points cannot drift apart as the menu grows.
         fun handleHomeMenuItem(item: MenuItem): Boolean {
             val activity = requireActivity() as MainActivity
-            when (it.itemId) {
+            when (item.itemId) {
                 R.id.equalizer -> {
                     val intent =
                         Intent(AudioEffect.ACTION_DISPLAY_AUDIO_EFFECT_CONTROL_PANEL).apply {
