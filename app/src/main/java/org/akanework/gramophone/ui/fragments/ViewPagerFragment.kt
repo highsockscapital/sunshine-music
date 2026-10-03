@@ -23,11 +23,12 @@ import android.media.audiofx.AudioEffect
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
+import android.view.MenuItem
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.content.res.AppCompatResources
+import androidx.appcompat.widget.PopupMenu
 import androidx.core.content.pm.ShortcutManagerCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -86,16 +87,13 @@ class ViewPagerFragment : BaseFragment(true) {
 
         appBarLayout = rootView.findViewById(R.id.appbarlayout)
         appBarLayout.enableEdgeToEdgePaddingListener()
-        topAppBar.overflowIcon =
-            AppCompatResources.getDrawable(requireContext(), R.drawable.ic_more_vert_alt_topappbar)
-
-        topAppBar.setOnMenuItemClickListener { it ->
+        // Sunshine Music: the three-dot overflow button is gone from the home header. Search
+        // stays as a plain toolbar action, and the avatar now opens the options popup that the
+        // three dots used to show. Both routes go through this one handler so the two entry
+        // points cannot drift apart as the menu grows.
+        fun handleHomeMenuItem(item: MenuItem): Boolean {
             val activity = requireActivity() as MainActivity
             when (it.itemId) {
-                R.id.search -> {
-                    activity.startFragment(SearchFragment())
-                }
-
                 R.id.equalizer -> {
                     val intent =
                         Intent(AudioEffect.ACTION_DISPLAY_AUDIO_EFFECT_CONTROL_PANEL).apply {
@@ -208,7 +206,23 @@ class ViewPagerFragment : BaseFragment(true) {
 
                 else -> throw IllegalStateException()
             }
-            true
+            return true
+        }
+
+        topAppBar.setOnMenuItemClickListener(::handleHomeMenuItem)
+
+        // Sunshine Music: the magnifier icon is gone from the header. Search is the long pill
+        // beside the avatar now, and it opens the same SearchFragment the icon used to.
+        rootView.findViewById<View>(R.id.searchPill).setOnClickListener {
+            (requireActivity() as MainActivity).startFragment(SearchFragment())
+        }
+
+        val headerAvatar = rootView.findViewById<View>(R.id.headerAvatar)
+        headerAvatar.setOnClickListener { anchor ->
+            PopupMenu(requireContext(), anchor).apply {
+                inflate(R.menu.home_popup_menu)
+                setOnMenuItemClickListener { item -> handleHomeMenuItem(item) }
+            }.show()
         }
 
         // Connect ViewPager2.

@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    Sunshine Music home options popup, opened by tapping the avatar in the home header.
+
+    These are the exact five entries the three-dot overflow used to hold, in the same order, with
+    the same ids, icons and translated titles. They used to share a menu with the search action on
+    the toolbar; that shared menu is gone entirely, because the "never" items in it were what made
+    Android draw the three-dot button. Search became a pill in the header instead, so this popup is
+    now the only menu on the home screen and it opens from the avatar.
+
+    Ids must stay in sync with the when block in ViewPagerFragment.handleHomeMenuItem: that
+    handler ends in "else -> throw IllegalStateException()", so a new item here with no matching
+    branch will crash on tap rather than silently do nothing.
+-->
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item
-        android:id="@+id/search"
-        android:icon="@drawable/ic_search"
-        android:title="@string/home_menu_search"
-        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/shuffle"
         android:icon="@drawable/ic_shuffle"

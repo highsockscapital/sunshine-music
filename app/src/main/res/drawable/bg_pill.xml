@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Sunshine Music pill: white paper, ink border, fully rounded ends.
+
+    Deliberately NOT theme-qualified. Nihal asked for a white pill with #161610 border and
+    #161610 text, and the ink-on-white pairing is the point, so it reads the same in light and
+    dark. The rows it sits on are also given an explicit margin, because the RecyclerView list
+    has no vertical item decoration and pills would otherwise touch.
+
+    The ripple is kept so the rows do not lose their touch feedback when they gain a background.
+-->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="?attr/colorPrimary">
+
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/pill_surface" />
+            <stroke
+                android:width="1dp"
+                android:color="@color/pill_stroke" />
+            <corners android:radius="100dp" />
+        </shape>
+    </item>
+
+</ripple>

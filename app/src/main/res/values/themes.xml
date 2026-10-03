@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Gramophone" parent="Theme.Material3.DynamicColors.DayNight.NoActionBar">
+    <style name="Base.Theme.Gramophone" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="viewInflaterClass">org.akanework.gramophone.logic.ui.ViewCompatInflater</item>
         <item name="bottomSheetDialogTheme">@style/ThemeOverlay.App.BottomSheetDialog</item>
         <item name="textAppearanceLargePopupMenu">@style/TextAppearance.App.BodyLarge</item>
@@ -112,6 +112,13 @@
         <item name="colorSurfaceContainer">@color/md_theme_surfaceContainer</item>
         <item name="colorSurfaceContainerHigh">@color/md_theme_surfaceContainerHigh</item>
         <item name="colorSurfaceContainerHighest">@color/md_theme_surfaceContainerHighest</item>
+        <item name="colorSurfaceTint">@color/md_theme_surfaceTint</item>
+        <item name="colorContainer">@color/md_theme_container</item>
+        <item name="colorOnContainer">@color/md_theme_onContainer</item>
+        <item name="colorContainerChecked">@color/md_theme_containerChecked</item>
+        <item name="colorContainerUnchecked">@color/md_theme_containerUnchecked</item>
+        <item name="colorOnContainerChecked">@color/md_theme_onContainerChecked</item>
+        <item name="colorOnContainerUnchecked">@color/md_theme_onContainerUnchecked</item>
     </style>
 
     <style name="Theme.Gramophone" parent="PreV31.Theme.Gramophone" />
@@ -125,6 +132,13 @@
         <item name="colorSurfaceContainer">@android:color/black</item>
         <item name="colorSurfaceContainerHigh">@android:color/black</item>
         <item name="colorSurfaceContainerHighest">@android:color/black</item>
+        <item name="colorSurfaceTint">@android:color/black</item>
+        <item name="colorContainer">@android:color/black</item>
+        <item name="colorOnContainer">@color/md_theme_onSurface</item>
+        <item name="colorContainerChecked">@android:color/black</item>
+        <item name="colorContainerUnchecked">@android:color/black</item>
+        <item name="colorOnContainerChecked">@color/md_theme_onSurface</item>
+        <item name="colorOnContainerUnchecked">@color/md_theme_onSurfaceVariant</item>
         <item name="previewPlayerElevation">0dp</item>
     </style>
 
@@ -137,6 +151,13 @@
         <item name="colorSurfaceContainer">@android:color/black</item>
         <item name="colorSurfaceContainerHigh">@android:color/black</item>
         <item name="colorSurfaceContainerHighest">@android:color/black</item>
+        <item name="colorSurfaceTint">@android:color/black</item>
+        <item name="colorContainer">@android:color/black</item>
+        <item name="colorOnContainer">@color/md_theme_onSurface</item>
+        <item name="colorContainerChecked">@android:color/black</item>
+        <item name="colorContainerUnchecked">@android:color/black</item>
+        <item name="colorOnContainerChecked">@color/md_theme_onSurface</item>
+        <item name="colorOnContainerUnchecked">@color/md_theme_onSurfaceVariant</item>
         <item name="previewPlayerElevation">0dp</item>
     </style>
 
@@ -147,6 +168,18 @@
     <style name="ThemeOverlay.App.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/ModalBottomSheetDialog</item>
         <item name="enableEdgeToEdge">true</item>
+        <!--
+            ThemeOverlay.Material3.BottomSheetDialog injects all six container roles from
+            Material's own component macros. Re-assert ours, or the media player, which is a
+            bottom sheet dialog, goes back to Material defaults for its own surfaces.
+        -->
+        <item name="colorContainer">@color/md_theme_container</item>
+        <item name="colorOnContainer">@color/md_theme_onContainer</item>
+        <item name="colorContainerChecked">@color/md_theme_containerChecked</item>
+        <item name="colorContainerUnchecked">@color/md_theme_containerUnchecked</item>
+        <item name="colorOnContainerChecked">@color/md_theme_onContainerChecked</item>
+        <item name="colorOnContainerUnchecked">@color/md_theme_onContainerUnchecked</item>
+        <item name="colorSurfaceTint">@color/md_theme_surfaceTint</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
     </style>

@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/list_height"
+    android:background="@drawable/bg_pill"
+    android:layout_marginTop="3dp"
+    android:layout_marginBottom="3dp"
     android:clickable="true"
     android:focusable="true"
     android:paddingStart="6dp"
@@ -41,7 +44,7 @@
         android:layout_marginStart="18dp"
         android:fontFamily="sans-serif"
         android:singleLine="true"
-        android:textColor="?attr/colorOnSurface"
+        android:textColor="@color/pill_on"
         android:textSize="17sp"
         app:layout_constrainedHeight="true"
         app:layout_constraintBottom_toTopOf="@id/artist"
@@ -59,7 +62,7 @@
         android:layout_marginStart="18dp"
         android:fontFamily="sans-serif"
         android:singleLine="true"
-        android:textColor="?attr/colorOnSurfaceVariant"
+        android:textColor="@color/pill_on"
         android:textSize="14sp"
         app:layout_constrainedHeight="true"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -80,7 +83,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/more"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="?attr/colorOnSurface" />
+        app:tint="@color/pill_on" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/more"
@@ -97,7 +100,7 @@
         app:iconGravity="textStart"
         app:iconPadding="0dp"
         app:iconSize="24dp"
-        app:iconTint="?attr/colorOnSurface"
+        app:iconTint="@color/pill_on"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"

@@ -24,8 +24,9 @@ import androidx.compose.material3.lightColorScheme
 /**
  * Material3 [ColorScheme] built from a [SunshinePalette].
  *
- * Material You dynamic colour is deliberately NOT used. The Sunshine palette is the brand, and a
- * wallpaper-derived scheme would replace it entirely on Android 12+.
+ * Every role below is set explicitly. Material3's default light and dark schemes fill any role
+ * left unset with the Material baseline, which is cold and lavender, so an unset role is a hole
+ * through which default Material theming shows.
  */
 fun SunshinePalette.toColorScheme(dark: Boolean): ColorScheme {
     val scheme = if (dark) darkColorScheme() else lightColorScheme()
@@ -44,6 +45,13 @@ fun SunshinePalette.toColorScheme(dark: Boolean): ColorScheme {
         surface = surface,
         surfaceVariant = surfaceVariant,
         surfaceContainerHighest = surfaceVariant,
+        surfaceBright = surfaceBright,
+        surfaceDim = surfaceDim,
+        surfaceContainerLowest = surfaceContainerLowest,
+        surfaceContainerLow = surfaceContainerLow,
+        surfaceContainer = surfaceContainer,
+        surfaceContainerHigh = surfaceContainerHigh,
+        surfaceTint = surfaceTint,
         onSurface = onSurface,
         onSurfaceVariant = onSurfaceVariant,
         outline = outline,

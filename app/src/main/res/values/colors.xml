@@ -45,5 +45,17 @@
     <color name="md_theme_surfaceContainer">#FBF9F0</color>
     <color name="md_theme_surfaceContainerHigh">#F3F0E4</color>
     <color name="md_theme_surfaceContainerHighest">#E4DFCD</color>
+    <color name="md_theme_container">#EDE8D8</color>
+    <color name="md_theme_onContainer">#161610</color>
+    <color name="md_theme_containerChecked">#E4DFCD</color>
+    <color name="md_theme_containerUnchecked">#F3F0E4</color>
+    <color name="md_theme_onContainerChecked">#161610</color>
+    <color name="md_theme_onContainerUnchecked">#5F5B4E</color>
+    <color name="md_theme_surfaceTint">#F6F3E7</color>
+
+    <!-- Sunshine Music pills. Fixed, not theme-qualified: white paper with ink border and ink text. -->
+    <color name="pill_surface">#FFFFFF</color>
+    <color name="pill_stroke">#161610</color>
+    <color name="pill_on">#161610</color>
     <color name="splash_foreground_color">#363644</color>
 </resources>

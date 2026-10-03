@@ -26,9 +26,16 @@ import androidx.compose.ui.graphics.Color
  * Cream paper, warm ink, amber, sage. These are fixed values on purpose: Sunshine Music does not
  * use Material You dynamic colour, so the app looks identical on every device.
  *
+ * The whole Material3 surface ramp is defined here, including `surfaceContainerLowest` through
+ * `surfaceContainerHighest` and `surfaceTint`. Leaving any of those unset makes Compose fall back
+ * to the Material baseline, which is a cold lavender, and that is how default Material theming
+ * leaks back in.
+ *
  * Note that several roles here have no direct Material3 `ColorScheme` slot (backgroundGradientTop,
  * sidebarControl, messageBubble, scrim, ...). They are kept so that XML-side themes and any custom
- * surfaces can be tinted from the same single source.
+ * surfaces can be tinted from the same single source. The six `*Container*` roles and
+ * `surfaceTint` exist only on the XML side, in res/values/colors.xml, because Compose's
+ * ColorScheme has no such roles.
  */
 data class SunshinePalette(
     val background: Color,
@@ -41,6 +48,13 @@ data class SunshinePalette(
     val surfaceHigh: Color,
     val surfaceHigher: Color,
     val surfaceVariant: Color,
+    val surfaceBright: Color,
+    val surfaceDim: Color,
+    val surfaceContainerLowest: Color,
+    val surfaceContainerLow: Color,
+    val surfaceContainer: Color,
+    val surfaceContainerHigh: Color,
+    val surfaceTint: Color,
     val outline: Color,
     val outlineSoft: Color,
     val onSurface: Color,
@@ -70,6 +84,13 @@ val LightSunshinePalette = SunshinePalette(
     surfaceHigh = Color(0xFFF3F0E4),
     surfaceHigher = Color(0xFFEDE8D8),
     surfaceVariant = Color(0xFFE4DFCD),
+    surfaceBright = Color(0xFFFFFFFF),
+    surfaceDim = Color(0xFFEDE9DA),
+    surfaceContainerLowest = Color(0xFFFFFFFF),
+    surfaceContainerLow = Color(0xFFF6F3E7),
+    surfaceContainer = Color(0xFFFBF9F0),
+    surfaceContainerHigh = Color(0xFFF3F0E4),
+    surfaceTint = Color(0xFFF6F3E7),
     outline = Color(0xFF161610),
     outlineSoft = Color(0xFFE3DFD0),
     onSurface = Color(0xFF161610),
@@ -99,6 +120,13 @@ val DarkSunshinePalette = SunshinePalette(
     surfaceHigh = Color(0xFF26251F),
     surfaceHigher = Color(0xFF2C2B24),
     surfaceVariant = Color(0xFF343229),
+    surfaceBright = Color(0xFF2C2B24),
+    surfaceDim = Color(0xFF161610),
+    surfaceContainerLowest = Color(0xFF161610),
+    surfaceContainerLow = Color(0xFF1E1D18),
+    surfaceContainer = Color(0xFF26241E),
+    surfaceContainerHigh = Color(0xFF2C2B24),
+    surfaceTint = Color(0xFF161610),
     outline = Color(0xFF4A483E),
     outlineSoft = Color(0xFF2E2C25),
     onSurface = Color(0xFFE8E6DE),

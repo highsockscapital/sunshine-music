@@ -1,90 +1,131 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?android:attr/colorBackground"
+    android:orientation="vertical"
     tools:context=".ui.fragments.ViewPagerFragment">
 
+    <!--
+        Sunshine Music: the home screen is ONE layout on the cream paper.
+
+        It used to be a CoordinatorLayout holding an AppBarLayout with a CollapsingToolbarLayout,
+        which made the header a separate section above the tabs that collapsed on its own. That is
+        gone. The header is now a plain static block on the same cream surface as the lists below
+        it, with no collapse, no scrim and no lift.
+
+        Only the media control stays its own layer; that is the PlayerBottomSheet in
+        activity_main.xml and it is deliberately untouched.
+
+        The ids appbarlayout, topAppBar, tab_layout and headerAvatar are kept even though the
+        collapsing toolbar is gone, because ViewPagerFragment still resolves all four.
+
+        The three-dot overflow button has been removed from this header, and the toolbar carries no
+        app:menu at all. That matters: the three dots were never a widget, they were Android
+        drawing an overflow affordance because the old home menu held "never" items, so any menu on
+        this toolbar risks bringing them back. The five options that used to sit behind them moved
+        to home_popup_menu.xml and now open when the avatar is tapped. Search left the toolbar too
+        and became the pill below.
+    -->
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbarlayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:stateListAnimator="@null"
-        app:liftOnScroll="false">
+        android:background="@android:color/transparent"
+        android:stateListAnimator="@null">
 
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/collapsingtoolbar"
-            style="?attr/collapsingToolbarLayoutMediumStyle"
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
             android:layout_width="match_parent"
-            android:layout_height="?attr/collapsingToolbarLayoutMediumSize"
-            app:collapsedTitleTextAppearance="?textAppearanceTitleLarge"
-            app:collapsedTitleTextColor="?attr/colorOnSurface"
-            app:contentScrim="@android:color/transparent"
-            app:expandedTitleMarginStart="24dp"
-            app:expandedTitleTextAppearance="?textAppearanceHeadlineLarge"
-            app:expandedTitleTextColor="?attr/colorOnSurface"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap"
-            app:titleCollapseMode="scale">
+            android:layout_height="?attr/actionBarSize"
+            android:elevation="0dp"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp">
 
-            <com.google.android.material.appbar.MaterialToolbar
-                android:id="@+id/topAppBar"
+            <!--
+                Sunshine Music header row: avatar, then search as a long pill.
+
+                The two live in one horizontal LinearLayout rather than as separate toolbar children,
+                because Toolbar lays custom views out by gravity and does not hand a leftover width
+                to anything. A LinearLayout with layout_weight is the only way to say "fill
+                whatever is left between the avatar and the right edge" and have it actually work.
+
+                16dp on each side of the pill is deliberate: it keeps the pill clear of the avatar
+                on the left and clear of the screen edge on the right, which is what Nihal asked
+                for. The avatar keeps its own 24dp inset from the toolbar paddingStart.
+            -->
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:elevation="0dp"
-                android:paddingStart="24dp"
-                android:paddingEnd="8dp"
-                app:layout_collapseMode="pin"
-                app:menu="@menu/home_menu">
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-                <!--
-                    Sunshine Music header: Sunshine's own cutout, pinned in the toolbar so it stays
-                    put when the header collapses. Derived from Sunshinussy's
-                    drawable-nodpi/sunshine_avatar.png (858x1023 RGBA), downscaled to these
-                    density buckets as lossless WebP with alpha. The JPEG sent over has no alpha
-                    channel at all and would show a white square against the cream background.
-                    Sunshinussy's own master is deliberately left at full resolution.
-                -->
-                <ImageView
-                    android:id="@+id/headerAvatar"
-                    android:layout_width="44dp"
-                    android:layout_height="44dp"
-                    android:layout_gravity="start|center_vertical"
-                    android:contentDescription="@string/app_name"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/sunshine_avatar" />
+            <!--
+                Sunshine Music header: Sunshine's own cutout. Derived from Sunshinussy's
+                drawable-nodpi/sunshine_avatar.png (858x1023 RGBA), downscaled to these
+                density buckets as lossless WebP with alpha. The JPEG sent over has no alpha
+                channel at all and would show a white square against the cream background.
+                Sunshinussy's own master is deliberately left at full resolution.
+            -->
+            <ImageView
+                android:id="@+id/headerAvatar"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="start|center_vertical"
+                android:clickable="true"
+                android:contentDescription="@string/more"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:scaleType="fitCenter"
+                android:src="@drawable/sunshine_avatar" />
 
-            </com.google.android.material.appbar.MaterialToolbar>
+                <TextView
+                    android:id="@+id/searchPill"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_pill"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:minHeight="40dp"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="20dp"
+                    android:text="@string/search"
+                    android:textColor="@color/pill_on"
+                    android:textSize="15sp" />
 
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
+            </LinearLayout>
+
+        </com.google.android.material.appbar.MaterialToolbar>
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"
-            app:tabBackground="@android:color/transparent"
+            app:tabBackground="@drawable/tab_pill"
             app:tabGravity="start"
-            app:tabIndicator="@drawable/selected_chip_background"
-            app:tabIndicatorColor="?colorSecondaryContainer"
-            app:tabIndicatorFullWidth="true"
-            app:tabIndicatorGravity="stretch"
+            app:tabIndicator="@android:color/transparent"
             app:tabMinWidth="0dp"
             app:tabMode="scrollable"
-            app:tabPaddingEnd="12dp"
-            app:tabPaddingStart="12dp"
+            app:tabPaddingEnd="14dp"
+            app:tabPaddingStart="14dp"
             app:tabRippleColor="@android:color/transparent"
-            app:tabSelectedTextColor="?colorOnSecondaryContainer"
             app:tabTextAppearance="@style/TabTextAppearance"
-            app:tabTextColor="?attr/colorOnSurfaceVariant" />
+            app:tabTextColor="@color/tab_text" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/fragment_viewpager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:clipToPadding="false"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</LinearLayout>

@@ -21,7 +21,6 @@ import android.os.Bundle
 import androidx.preference.Preference
 import androidx.preference.SeekBarPreference
 import androidx.preference.SwitchPreferenceCompat
-import com.google.android.material.color.DynamicColors
 import org.akanework.gramophone.R
 import org.akanework.gramophone.ui.fragments.BasePreferenceFragment
 import org.akanework.gramophone.ui.fragments.BaseSettingsActivity
@@ -33,9 +32,6 @@ class PlayerSettingsActivity : BaseSettingsActivity(
 class PlayerSettingsFragment : BasePreferenceFragment() {
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.settings_player, rootKey)
-        findPreference<Preference>("content_based_color")!!
-            .isVisible = DynamicColors.isDynamicColorAvailable()
-
         val cookieCoverPref = findPreference<SwitchPreferenceCompat>("cookie_cover")
         val roundCornerPref = findPreference<SeekBarPreference>("album_round_corner")
 
