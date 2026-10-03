@@ -10,3 +10,6 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# Sunshine scratch files: build logs and pre-edit backups, never source
+.scratch*
