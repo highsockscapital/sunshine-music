@@ -74,8 +74,10 @@ jobs:
       - name: Set release type
         run: echo releaseType=CI > package.properties
 
-      - name: Build APK (clean) — debug
-        run: ./gradlew clean :app:assembleDebug --stacktrace --max-workers=2
+      # assembleDebug ships no R8 pass and no resource shrinking, which split the app into
+      # 19 dex files totalling 81 MiB and produced a 93.8 MB APK. Upstream builds release.
+      - name: Build APK (clean) — release
+        run: ./gradlew clean :app:assembleRelease --stacktrace --max-workers=2
 
       - name: Rename APK to sunshine-music
         shell: bash

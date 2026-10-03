@@ -144,7 +144,15 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro",
             )
-            signingConfig = signingConfigs.getByName("release")
+            // No AKANE_RELEASE_* credentials exist in CI, and the release signingConfig
+            // would then have no storeFile at all, so assembleRelease could not run there.
+            // Fall back to the debug keystore so CI still produces an installable, R8-shrunk
+            // APK. A real release always sets those properties and keeps its own key.
+            signingConfig = if (resolveProperties("AKANE_RELEASE_KEY_ALIAS") != null) {
+                signingConfigs.getByName("release")
+            } else {
+                signingConfigs.getByName("debug")
+            }
         }
         create("googlePlayRelease") {
             isMinifyEnabled = true
