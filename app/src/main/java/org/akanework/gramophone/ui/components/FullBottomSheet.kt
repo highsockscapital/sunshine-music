@@ -567,7 +567,7 @@ class FullBottomSheet
         )
         val backgroundProcessedColor = ColorUtils.getColor(
             colorSurface,
-            ColorUtils.ColorType.COLOR_BACKGROUND_ELEVATED,
+            ColorUtils.ColorType.COLOR_BACKGROUND,
             context
         )
         val colorContrastFainted = ColorUtils.getColor(
@@ -608,7 +608,7 @@ class FullBottomSheet
         )
         val backgroundProcessedColor = ColorUtils.getColor(
             colorSurface,
-            ColorUtils.ColorType.COLOR_BACKGROUND_ELEVATED,
+            ColorUtils.ColorType.COLOR_BACKGROUND,
             context
         )
         bottomSheetFullLyricView.updateTextColor(
@@ -1106,7 +1106,7 @@ class FullBottomSheet
 
         val backgroundProcessedColor = ColorUtils.getColor(
             colorSurface,
-            ColorUtils.ColorType.COLOR_BACKGROUND_ELEVATED,
+            ColorUtils.ColorType.COLOR_BACKGROUND,
             ctx
         )
 
