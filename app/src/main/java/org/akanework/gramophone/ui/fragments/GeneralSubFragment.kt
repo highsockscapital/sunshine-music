@@ -150,7 +150,15 @@ class GeneralSubFragment : BaseFragment(true) {
                 rawOrderExposed = Sorter.Type.NaturalOrder
                 // Sunshine Music: batch add lives on the playlist screen only, and is wired up
                 // after the adapter exists. See setUpPlaylistBatchAdd.
-                isPlainPlaylist = clazz == Playlist::class.java.name
+                //
+                // An exclusion list, not `clazz == Playlist::class.java.name`. An exact
+                // class-name match silently switched the whole feature off on the ACTION_VIEW
+                // deep-link path, which opens this screen without a Class argument at all, and
+                // it would break again for any future Playlist subclass. Only the two synthetic
+                // playlists are excluded, and batch-adding out of Favourites is meaningful
+                // anyway, so nothing is lost by allowing it.
+                isPlainPlaylist = clazz != Favorite::class.java.name &&
+                    clazz != RecentlyAdded::class.java.name
             }
 
             else -> throw IllegalArgumentException()

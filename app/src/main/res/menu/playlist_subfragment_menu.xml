@@ -3,12 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <!-- Sunshine Music: the batch "add these songs to a playlist" entry point for this playlist.
          Shown once selecting starts, which is why it is the action that toggles selection on the
-         first tap and confirms the batch on the second. -->
+         first tap and confirms the batch on the second.
+
+         Deliberately an overflow item rather than an icon in the toolbar. As a bare always-shown
+         icon it was invisible in practice: there was no label, so on a playlist screen there was
+         nothing telling you that tapping it started a selection. With a title it reads as what it
+         is, which is the whole point of the entry point. -->
     <item
         android:id="@+id/add_to_playlist"
         android:icon="@drawable/ic_playlist_play"
         android:title="@string/add_to_playlist"
-        app:showAsAction="always" />
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/cancel_selection"
