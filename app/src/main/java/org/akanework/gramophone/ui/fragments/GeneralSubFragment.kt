@@ -31,6 +31,7 @@ import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.google.android.material.appbar.MaterialToolbar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.SharingStarted.Companion.WhileSubscribed
 import kotlinx.coroutines.flow.map
@@ -61,6 +62,8 @@ class GeneralSubFragment : BaseFragment(true) {
     companion object {
         private const val TAG = "GeneralSubFragment"
     }
+
+    private var songListJob: Job? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -181,7 +184,9 @@ class GeneralSubFragment : BaseFragment(true) {
         recyclerView.fastScroll(songAdapter, songAdapter.itemHeightHelper)
 
         if (isPlainPlaylist) {
-            setUpPlaylistBatchAdd(songAdapter, collapsingToolbarLayout, id, itemList)
+            setUpPlaylistBatchAdd(
+                songAdapter, topAppBar, collapsingToolbarLayout, id, itemList
+            )
         }
 
         topAppBar.setNavigationOnClickListener {
@@ -208,13 +213,19 @@ class GeneralSubFragment : BaseFragment(true) {
      * The action is hidden entirely for an empty playlist: there is nothing to mark, and a
      * button that leads to an empty list is worse than no button.
      */
+    /**
+     * The toolbar is passed in rather than looked up. This runs from onCreateView, and the
+     * fragment's view is not published until onCreateView returns, so requireView() throws
+     * "did not return a View from onCreateView()" right here. onCreateView already holds the
+     * real, inflated toolbar, so there is no reason to go back through the fragment for it.
+     */
     private fun setUpPlaylistBatchAdd(
         adapter: SongAdapter,
+        topAppBar: MaterialToolbar,
         collapsingToolbarLayout: CollapsingToolbarLayout,
         playlistId: Long?,
         songList: Flow<List<MediaItem>?>
     ) {
-        val topAppBar = requireView().findViewById<MaterialToolbar>(R.id.topAppBar)
         topAppBar.inflateMenu(R.menu.playlist_subfragment_menu)
         val menu = topAppBar.menu
         val addItem = menu.findItem(R.id.add_to_playlist)
@@ -234,7 +245,7 @@ class GeneralSubFragment : BaseFragment(true) {
 
         // Hide the action until there is at least one song to mark. Collects the same flow the
         // adapter does, which is a shared flow with a replay cache, so this does not re-query.
-        lifecycleScope.launch {
+        songListJob = lifecycleScope.launch {
             songList.collect { songs ->
                 if (!adapter.isSelecting()) {
                     addItem?.isVisible = !songs.isNullOrEmpty()
@@ -288,6 +299,15 @@ class GeneralSubFragment : BaseFragment(true) {
                 else -> false
             }
         }
+    }
+
+    override fun onDestroyView() {
+        // That collector closes over the toolbar and the adapter, both of which come from the
+        // view being torn down. The fragment itself can outlive its view, for instance on the back
+        // stack, and the fragment scope would keep the collector running against dead views.
+        songListJob?.cancel()
+        songListJob = null
+        super.onDestroyView()
     }
 
     private fun playlistUriOf(playlist: Playlist): Uri = ContentUris.withAppendedId(
