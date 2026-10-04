@@ -266,12 +266,15 @@ class GeneralSubFragment : BaseFragment(true) {
                             if (chosen == null) return@pickPlaylistDialog
                             destination = chosen
                             lifecycleScope.launch {
-                                // orEmpty() rather than "?: emptyList()": inside withContext there is no expected
-                                // type to drive inference, so a bare emptyList() is solved as
-                                // List<Any> on its own and the whole call fails to compile.
+                                // No elvis and no orEmpty() here. Playlist.songList carries a NON-null element type,
+                                // proven by LibraryTreeLoader calling item.songList.isNotEmpty()
+                                // without a safe call, so first() hands back a List<MediaItem>.
+                                // The "?: emptyList()" I first wrote was dead code that still
+                                // failed to compile, because an emptyList() with no expected type
+                                // is solved as List<Any> and rejected at the call site.
                                 val present: List<MediaItem> = withContext(Dispatchers.Default) {
                                     chosen.songList.first()
-                                }.orEmpty()
+                                }
                                 adapter.beginSelection(present)
                             }
                         }
