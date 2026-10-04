@@ -10,11 +10,13 @@
     Colours come from pill_surface / pill_stroke, so this follows values-night automatically:
     #201F19 with a #48473D border in dark.
 
-    The radius is 16dp against a 32dp tab (app:tabMinHeight in fragment_viewpager.xml), so the
-    corner radius is exactly half the height and the ends are true semicircles. A 100dp radius
-    here clamps to the same 16dp, but only because the tab is short; write the real number so
-    that raising tabMinHeight without touching this cannot silently turn it back into a stadium
-    that reads as a rounded rectangle.
+    The radius is 16dp against a 32dp tab, so the corner radius is exactly half the height
+    and the ends are true semicircles. A 100dp radius here clamps to the same 16dp, but only
+    because the tab is short; write the real number so that lengthening the tab in
+    fragment_viewpager.xml without touching this cannot silently turn it back into a stadium that
+    reads as a rounded rectangle. Note the 32dp lives on the TabLayout's own
+    android:layout_height, not on an app: attribute, because Material's TabLayout has
+    tabMinWidth but no tabMinHeight to set.
 -->
 <inset xmlns:android="http://schemas.android.com/apk/res/android"
     android:insetLeft="4dp"

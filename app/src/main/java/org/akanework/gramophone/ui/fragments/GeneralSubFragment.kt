@@ -266,9 +266,12 @@ class GeneralSubFragment : BaseFragment(true) {
                             if (chosen == null) return@pickPlaylistDialog
                             destination = chosen
                             lifecycleScope.launch {
-                                val present = withContext(Dispatchers.Default) {
-                                    chosen.songList.first() ?: emptyList()
-                                }
+                                // orEmpty() rather than "?: emptyList()": inside withContext there is no expected
+                                // type to drive inference, so a bare emptyList() is solved as
+                                // List<Any> on its own and the whole call fails to compile.
+                                val present: List<MediaItem> = withContext(Dispatchers.Default) {
+                                    chosen.songList.first()
+                                }.orEmpty()
                                 adapter.beginSelection(present)
                             }
                         }
