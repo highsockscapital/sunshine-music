@@ -257,7 +257,11 @@ class ViewPagerFragment : BaseFragment(true) {
                         this.duration = duration
                         this.interpolator = interpolator
                         addUpdateListener { running ->
-                            val px = running.animatedValue as Int
+                            // ofFloat drives Float values, so animatedValue is a Float
+                            // here. Casting it to Int crashed on every press. Reading it as
+                            // Float and converting afterwards keeps the sub-pixel values
+                            // during the overshoot instead of truncating each frame.
+                            val px = (running.animatedValue as Float).toInt()
                             layoutParams.width = px
                             layoutParams.height = px
                             avatar.layoutParams = layoutParams
