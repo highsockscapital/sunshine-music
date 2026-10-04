@@ -32,7 +32,6 @@ import com.google.android.material.appbar.MaterialToolbar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.SharingStarted.Companion.WhileSubscribed
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
@@ -265,18 +264,16 @@ class GeneralSubFragment : BaseFragment(true) {
                         mainActivity.pickPlaylistDialog(playlistId) { chosen ->
                             if (chosen == null) return@pickPlaylistDialog
                             destination = chosen
-                            lifecycleScope.launch {
-                                // No elvis and no orEmpty() here. Playlist.songList carries a NON-null element type,
-                                // proven by LibraryTreeLoader calling item.songList.isNotEmpty()
-                                // without a safe call, so first() hands back a List<MediaItem>.
-                                // The "?: emptyList()" I first wrote was dead code that still
-                                // failed to compile, because an emptyList() with no expected type
-                                // is solved as List<Any> and rejected at the call site.
-                                val present: List<MediaItem> = withContext(Dispatchers.Default) {
-                                    chosen.songList.first()
-                                }
-                                adapter.beginSelection(present)
-                            }
+                            // chosen.songList is a plain, already-materialised List<MediaItem>:
+                            // Playlist.toPlaylist builds every playlist the chooser hands over
+                            // through the public constructor, with its songs in place. So there is
+                            // nothing to await here, no coroutine, and no flow.
+                            //
+                            // Two earlier versions of this line were wrong. "first() ?: emptyList()"
+                            // and then "first().orEmpty()" both treated songList as a Flow, when
+                            // it is a plain property, so first() was resolving to List.first() and
+                            // handing back a single MediaItem. Read the declaration, not the name.
+                            adapter.beginSelection(chosen.songList)
                         }
                     }
                     true
