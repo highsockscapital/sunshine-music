@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="ic_launcher_background">#FFF8F2</color>
+    <!-- Sunshine Music: sampled from the four corners of Nihal's painted icon, #F6F4E7, not
+         guessed. It has to be the painting's exact paper or the mat around the artwork shows up
+         as a seam. It is one step off the theme paper #F6F3E7, which is the point: this one
+         belongs to the artwork, not to the UI. -->
+    <color name="ic_launcher_background">#F6F4E7</color>
 </resources>

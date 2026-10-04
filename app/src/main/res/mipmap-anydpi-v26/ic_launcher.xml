@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
     <background android:drawable="@color/ic_launcher_background" />
-    <foreground android:drawable="@drawable/ic_launcher_foreground" />
-    <monochrome android:drawable="@drawable/ic_launcher_foreground" />
+    <!-- Sunshine Music: Nihal's handpainted portrait, not the old Gramophone vector.
+         The artwork is inset to 92% of the 108dp canvas because Android only guarantees the
+         central 72x72dp stays visible under any launcher mask, and at full bleed the tips of the
+         hair fall outside that. The mat around it is the painting's own paper colour, so it is
+         invisible rather than a beige frame.
+         There is deliberately no monochrome layer. A themed icon needs a single flat silhouette,
+         and this is a painting: its face is within six units of the background in every channel,
+         so any automatic cut-out erases the face and leaves an orange wig. Better no themed icon
+         than that. -->
+    <foreground android:drawable="@mipmap/ic_launcher_foreground" />
 </adaptive-icon>

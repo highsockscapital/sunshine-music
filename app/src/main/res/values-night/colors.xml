@@ -17,7 +17,9 @@
     <color name="md_theme_onErrorContainer">#FFDAD6</color>
     <color name="md_theme_background">#161610</color>
     <color name="md_theme_onBackground">#E8E6DE</color>
-    <color name="md_theme_surface">#201F19</color>
+    <!-- Sunshine Music: paper. Matches md_theme_background so surfaces do not read as a separate
+         grey card. The container ramp below carries the elevation instead. -->
+    <color name="md_theme_surface">#161610</color>
     <color name="md_theme_onSurface">#E8E6DE</color>
     <color name="md_theme_surfaceVariant">#343229</color>
     <color name="md_theme_onSurfaceVariant">#A8A599</color>

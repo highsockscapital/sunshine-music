@@ -33,7 +33,6 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import org.akanework.gramophone.R
 import org.akanework.gramophone.logic.getStringStrict
-import org.akanework.gramophone.logic.hasImprovedMediaStore
 import org.akanework.gramophone.ui.MainActivity
 import org.akanework.gramophone.ui.fragments.AdapterFragment
 
@@ -105,14 +104,12 @@ class ViewPager2Adapter(
         enum class Tab(val id: Int, val label: Int) {
             // Do not rename entries here, names are written to disk.
             // Order below is the DEFAULT tab order, used when the user has never reordered tabs.
+            // Albums, Artists, Genres, Dates and FileSystem were removed on request: pills of
+            // clutter for something never used. Folders is kept, it is the browsable tree, while
+            // FileSystem was the raw path-per-file view of the same thing.
             Songs(R.id.songs, R.string.category_songs),
             Playlist(R.id.playlists, R.string.category_playlists),
-            Albums(R.id.albums, R.string.category_albums),
-            Artists(R.id.artists, R.string.category_artists),
-            Genres(R.id.genres, R.string.category_genres),
-            Dates(R.id.dates, R.string.category_dates),
-            Folders(R.id.folders, R.string.folders),
-            FileSystem(R.id.detailed_folders, R.string.filesystem)
+            Folders(R.id.folders, R.string.folders)
         }
 
         fun mapSettingToTabList(setting: String): List<Tab?> {
@@ -122,9 +119,7 @@ class ViewPager2Adapter(
                         listOf(null)
                     else
                         try {
-                            val t = Tab.valueOf(it)
-                            if (!hasImprovedMediaStore() && t == Tab.Genres)
-                                listOf() else listOf(t)
+                            listOf(Tab.valueOf(it))
                         } catch (_: IllegalArgumentException) {
                             listOf() // this tab was removed
                         }
@@ -133,7 +128,7 @@ class ViewPager2Adapter(
             Tab.entries.forEach {
                 if (stList.indexOf(it) != stList.lastIndexOf(it))
                     stList.removeAll { i -> i == it }
-                if (!stList.contains(it) && (it != Tab.Genres || hasImprovedMediaStore()))
+                if (!stList.contains(it))
                     stList.add(it)
             }
             if (!stList.contains(null))

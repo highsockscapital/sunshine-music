@@ -17,7 +17,12 @@
     <color name="md_theme_onErrorContainer">#410002</color>
     <color name="md_theme_background">#F6F3E7</color>
     <color name="md_theme_onBackground">#161610</color>
-    <color name="md_theme_surface">#FFFFFF</color>
+    <!-- Sunshine Music: paper, not Material's #FFFFFF. md_theme_background is already paper, so
+         leaving surface white meant every Material surface (dialogs, menus, bottom sheets, the
+         home-screen lyric widgets) stayed baseline white while the pages around them were cream.
+         Pills deliberately do NOT use this, they use pill_surface below, so a song card stays a
+         white sheet laid on cream paper instead of dissolving into it. -->
+    <color name="md_theme_surface">#F6F3E7</color>
     <color name="md_theme_onSurface">#161610</color>
     <color name="md_theme_surfaceVariant">#E4DFCD</color>
     <color name="md_theme_onSurfaceVariant">#5F5B4E</color>
@@ -39,8 +44,8 @@
     <color name="md_theme_tertiaryFixedDim">#FFB866</color>
     <color name="md_theme_onTertiaryFixedVariant">#3D2400</color>
     <color name="md_theme_surfaceDim">#EDE9DA</color>
-    <color name="md_theme_surfaceBright">#FFFFFF</color>
-    <color name="md_theme_surfaceContainerLowest">#FFFFFF</color>
+    <color name="md_theme_surfaceBright">#FBF9F0</color>
+    <color name="md_theme_surfaceContainerLowest">#FBF9F0</color>
     <color name="md_theme_surfaceContainerLow">#F6F3E7</color>
     <color name="md_theme_surfaceContainer">#FBF9F0</color>
     <color name="md_theme_surfaceContainerHigh">#F3F0E4</color>

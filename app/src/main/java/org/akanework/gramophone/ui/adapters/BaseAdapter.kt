@@ -42,6 +42,7 @@ import coil3.load
 import coil3.request.crossfade
 import coil3.request.error
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.checkbox.MaterialCheckBox
 import com.google.common.collect.Comparators
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.CoroutineScope
@@ -289,6 +290,7 @@ abstract class BaseAdapter<T : Any>(
         val subTitle: TextView = view.findViewById(R.id.artist)
         val trackCount: TextView? = view.findViewById(R.id.track_count)
         val moreButton: MaterialButton? = view.findViewById(R.id.more)
+        val selectionCheckbox: MaterialCheckBox? = view.findViewById(R.id.selection_checkbox)
     }
 
     override fun onAttachedToRecyclerView(recyclerView: MyRecyclerView) {
@@ -335,6 +337,58 @@ abstract class BaseAdapter<T : Any>(
         }
     }
 
+    /**
+     * Sunshine Music: multi-select, used by the playlist screen to mark songs for a batch
+     * "add to playlist".
+     *
+     * This lives in [BaseAdapter] rather than in the fragment because the row click is bound
+     * here, and that click has to become a toggle while selecting. The fragment only flips
+     * [selectionMode] and listens to [onSelectionChanged] to drive its own toolbar.
+     *
+     * Selection is keyed by item identity, not by adapter position, so a resort or a library
+     * refresh cannot silently move the marks onto different songs.
+     */
+    var selectionMode: Boolean = false
+        private set
+    private val selectedItems = LinkedHashSet<T>()
+
+    /**
+     * Songs the destination playlist already holds. These are shown ticked and cannot be
+     * unticked, so a second run through the same destination cannot add a duplicate. The guard
+     * is structural: a duplicate is unrepresentable, rather than filtered out afterwards and
+     * silently counted.
+     */
+    private val alreadyPresent = LinkedHashSet<T>()
+
+    /** Fired with the number of marked items whenever it changes. */
+    var onSelectionChanged: ((Int) -> Unit)? = null
+
+    fun isSelecting(): Boolean = selectionMode
+
+    fun getSelectedItems(): List<T> = selectedItems.toList()
+
+    /**
+     * @param alreadyPresent songs already in the target playlist, shown ticked and locked.
+     */
+    fun beginSelection(alreadyPresent: Collection<T> = emptyList()) {
+        if (selectionMode) return
+        selectionMode = true
+        selectedItems.clear()
+        this.alreadyPresent.clear()
+        this.alreadyPresent.addAll(alreadyPresent)
+        notifyDataSetChanged()
+        onSelectionChanged?.invoke(0)
+    }
+
+    fun endSelection() {
+        if (!selectionMode) return
+        selectionMode = false
+        selectedItems.clear()
+        alreadyPresent.clear()
+        notifyDataSetChanged()
+        onSelectionChanged?.invoke(0)
+    }
+
     override fun onBindViewHolder(
         holder: ViewHolder,
         position: Int
@@ -365,10 +419,29 @@ abstract class BaseAdapter<T : Any>(
             crossfade(true)
             error(defaultCover)
         }
+        holder.selectionCheckbox?.let { box ->
+            val present = alreadyPresent.contains(item)
+            box.visibility = if (selectionMode) View.VISIBLE else View.GONE
+            // Present songs read as ticked and stay ticked. Disabled so a tap cannot contradict
+            // what the row is showing.
+            box.isEnabled = !present
+            box.isChecked = present || (selectionMode && selectedItems.contains(item))
+        }
+        holder.itemView.isActivated = selectionMode && selectedItems.contains(item)
         holder.itemView.setOnClickListener {
             val pos = holder.bindingAdapterPosition
-            if (pos != RecyclerView.NO_POSITION && pos < getItemCount())
-                onClick(item, pos)
+            if (pos != RecyclerView.NO_POSITION && pos < getItemCount()) {
+                if (selectionMode) {
+                    if (alreadyPresent.contains(item)) return@setOnClickListener
+                    // Toggled in place. Rebinding here would reload the cover and make the whole
+                    // list flicker every time a song is marked, which is the opposite of quick.
+                    if (!selectedItems.add(item)) selectedItems.remove(item)
+                    val marked = selectedItems.contains(item)
+                    holder.selectionCheckbox?.isChecked = marked
+                    holder.itemView.isActivated = marked
+                    onSelectionChanged?.invoke(selectedItems.size)
+                } else onClick(item, pos)
+            }
         }
         if (hasMenu) {
             holder.moreButton?.setOnClickListener {
@@ -429,6 +502,13 @@ abstract class BaseAdapter<T : Any>(
         holder.itemView.setOnClickListener(null)
         holder.itemView.setOnLongClickListener(null)
         holder.moreButton?.setOnClickListener(null)
+        // Sunshine: a recycled row must not carry a mark onto whatever song lands in it.
+        holder.selectionCheckbox?.let {
+            it.isChecked = false
+            it.isEnabled = true
+            it.visibility = View.GONE
+        }
+        holder.itemView.isActivated = false
         (holder.nowPlaying.drawable as? NowPlayingDrawable?)?.level2Done = null
         holder.nowPlaying.setImageDrawable(null)
         holder.nowPlaying.visibility = View.GONE

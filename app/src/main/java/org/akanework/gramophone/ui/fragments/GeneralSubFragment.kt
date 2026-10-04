@@ -17,7 +17,10 @@
 
 package org.akanework.gramophone.ui.fragments
 
+import android.content.ContentUris
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -29,6 +32,7 @@ import com.google.android.material.appbar.MaterialToolbar
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.SharingStarted.Companion.WhileSubscribed
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
@@ -44,6 +48,7 @@ import org.akanework.gramophone.ui.adapters.Sorter
 import uk.akane.libphonograph.dynamicitem.Favorite
 import uk.akane.libphonograph.dynamicitem.RecentlyAdded
 import uk.akane.libphonograph.items.Playlist
+import uk.akane.libphonograph.manipulator.PlaylistSerializer.Entry
 
 /**
  * GeneralSubFragment:
@@ -80,6 +85,7 @@ class GeneralSubFragment : BaseFragment(true) {
 
         val title: Flow<String>
         var rawOrderExposed: Sorter.Type? = null
+        var isPlainPlaylist = false
 
         when (itemType) {
             R.id.album -> {
@@ -140,21 +146,9 @@ class GeneralSubFragment : BaseFragment(true) {
                 }
                 itemList = item.map { it?.songList }
                 rawOrderExposed = Sorter.Type.NaturalOrder
-                if (clazz == Playlist::class.java.name) {
-                    topAppBar.inflateMenu(R.menu.playlist_subfragment_menu)
-                    topAppBar.setOnMenuItemClickListener {
-                        when (it.itemId) {
-                            R.id.edit -> {
-                                mainActivity.startFragment(PlaylistEditFragment()) {
-                                    putString("Id", id?.toString())
-                                }
-                                true
-                            }
-
-                            else -> false
-                        }
-                    }
-                }
+                // Sunshine Music: batch add lives on the playlist screen only, and is wired up
+                // after the adapter exists. See setUpPlaylistBatchAdd.
+                isPlainPlaylist = clazz == Playlist::class.java.name
             }
 
             else -> throw IllegalArgumentException()
@@ -187,10 +181,117 @@ class GeneralSubFragment : BaseFragment(true) {
         // Build FastScroller.
         recyclerView.fastScroll(songAdapter, songAdapter.itemHeightHelper)
 
+        if (isPlainPlaylist) {
+            setUpPlaylistBatchAdd(songAdapter, collapsingToolbarLayout, id, itemList)
+        }
+
         topAppBar.setNavigationOnClickListener {
             requireActivity().supportFragmentManager.popBackStack()
         }
 
         return rootView
     }
+
+    /**
+     * Sunshine Music: mark songs in this playlist and add them somewhere else in one go.
+     *
+     * Order is: choose the destination first, then mark. That is not a preference, it is what
+     * makes the duplicate guard possible. Once the destination is known, the songs it already
+     * holds are shown ticked and cannot be unticked, so a second run against the same playlist
+     * cannot add anything twice and the user can see what is already there without guessing.
+     * Choosing the destination last would leave the screen with no way to tell which songs are
+     * already in there.
+     *
+     * The marked count goes in the collapsing toolbar subtitle rather than into the action title,
+     * because the action has to keep saying "Add to playlist" to stay unambiguous, and the title
+     * is already bound to the playlist name by the title flow.
+     *
+     * The action is hidden entirely for an empty playlist: there is nothing to mark, and a
+     * button that leads to an empty list is worse than no button.
+     */
+    private fun setUpPlaylistBatchAdd(
+        adapter: SongAdapter,
+        collapsingToolbarLayout: CollapsingToolbarLayout,
+        playlistId: Long?,
+        songList: Flow<List<MediaItem>?>
+    ) {
+        val topAppBar = requireView().findViewById<MaterialToolbar>(R.id.topAppBar)
+        topAppBar.inflateMenu(R.menu.playlist_subfragment_menu)
+        val menu = topAppBar.menu
+        val addItem = menu.findItem(R.id.add_to_playlist)
+        var destination: Playlist? = null
+
+        fun render(count: Int) {
+            val selecting = adapter.isSelecting()
+            addItem?.isEnabled = count > 0
+            menu.findItem(R.id.edit)?.isVisible = !selecting
+            menu.findItem(R.id.cancel_selection)?.isVisible = selecting
+            collapsingToolbarLayout.subtitle = if (selecting && count > 0) {
+                resources.getQuantityString(R.plurals.songs_selected, count, count)
+            } else null
+        }
+
+        adapter.onSelectionChanged = { count -> render(count) }
+
+        // Hide the action until there is at least one song to mark. Collects the same flow the
+        // adapter does, which is a shared flow with a replay cache, so this does not re-query.
+        lifecycleScope.launch {
+            songList.collect { songs ->
+                if (!adapter.isSelecting()) {
+                    addItem?.isVisible = !songs.isNullOrEmpty()
+                }
+            }
+        }
+
+        topAppBar.setOnMenuItemClickListener { item ->
+            when (item.itemId) {
+                R.id.edit -> {
+                    mainActivity.startFragment(PlaylistEditFragment()) {
+                        putString("Id", playlistId?.toString())
+                    }
+                    true
+                }
+
+                R.id.add_to_playlist -> {
+                    val picked = destination
+                    if (picked != null && adapter.isSelecting()) {
+                        val chosen = adapter.getSelectedItems()
+                        if (chosen.isNotEmpty()) {
+                            mainActivity.addToPlaylist(playlistUriOf(picked), null, entriesOf(chosen))
+                        }
+                        adapter.endSelection()
+                    } else {
+                        // Step one: destination.
+                        mainActivity.pickPlaylistDialog(playlistId) { chosen ->
+                            if (chosen == null) return@pickPlaylistDialog
+                            destination = chosen
+                            lifecycleScope.launch {
+                                val present = withContext(Dispatchers.Default) {
+                                    chosen.songList.first() ?: emptyList()
+                                }
+                                adapter.beginSelection(present)
+                            }
+                        }
+                    }
+                    true
+                }
+
+                R.id.cancel_selection -> {
+                    destination = null
+                    adapter.endSelection()
+                    true
+                }
+
+                else -> false
+            }
+        }
+    }
+
+    private fun playlistUriOf(playlist: Playlist): Uri = ContentUris.withAppendedId(
+        @Suppress("deprecation") MediaStore.Audio.Playlists.EXTERNAL_CONTENT_URI,
+        playlist.id!!
+    )
+
+    private fun entriesOf(items: List<MediaItem>): List<Entry> =
+        items.mapNotNull { Entry.ofMediaItem(it) }
 }

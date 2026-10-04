@@ -17,6 +17,7 @@
 
 package org.akanework.gramophone.ui.fragments
 
+import android.animation.ValueAnimator
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.media.audiofx.AudioEffect
@@ -24,9 +25,13 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.view.MenuItem
+import android.view.MotionEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.Interpolator
+import android.view.animation.DecelerateInterpolator
+import android.view.animation.OvershootInterpolator
 import android.widget.Toast
 import androidx.appcompat.widget.PopupMenu
 import androidx.core.content.pm.ShortcutManagerCompat
@@ -223,6 +228,59 @@ class ViewPagerFragment : BaseFragment(true) {
                 inflate(R.menu.home_popup_menu)
                 setOnMenuItemClickListener { item -> handleHomeMenuItem(item) }
             }.show()
+        }
+
+        // Sunshine Music: press feedback for the avatar, in real dp and not as a transform.
+        //
+        // This changes the LayoutParams, so the view is genuinely 48dp -> about 39dp -> 48dp.
+        // scaleX/scaleY would look similar but is not the same thing: that shrinks the drawing
+        // around the centre while the layout box stays 48dp, which is why the ripple kept drawing
+        // its square in the space the view still occupied.
+        //
+        // The overshoot is therefore genuinely visible. On the way back the box briefly measures
+        // LARGER than 48dp before settling on it, because the last animated value is the real
+        // measured size rather than an approximation of it.
+        //
+        // The full size is captured on the first press rather than hardcoded, so the animation
+        // follows whatever the layout actually measured instead of a number that can drift.
+        val avatarPressedFraction = 0.82f
+        var avatarFullSizePx = 0
+        var avatarSizeAnimator: ValueAnimator? = null
+        headerAvatar.setOnTouchListener { avatar, event ->
+            if (avatarFullSizePx == 0 && avatar.width > 0) avatarFullSizePx = avatar.width
+            val layoutParams = avatar.layoutParams
+
+            fun animateSize(target: Int, duration: Long, interpolator: Interpolator) {
+                avatarSizeAnimator?.cancel()
+                avatarSizeAnimator =
+                    ValueAnimator.ofFloat(avatar.width.toFloat(), target.toFloat()).apply {
+                        this.duration = duration
+                        this.interpolator = interpolator
+                        addUpdateListener { running ->
+                            val px = running.animatedValue as Int
+                            layoutParams.width = px
+                            layoutParams.height = px
+                            avatar.layoutParams = layoutParams
+                        }
+                        start()
+                    }
+            }
+
+            when (event.actionMasked) {
+                MotionEvent.ACTION_DOWN ->
+                    if (avatarFullSizePx > 0)
+                        animateSize(
+                            (avatarFullSizePx * avatarPressedFraction).toInt(),
+                            90, DecelerateInterpolator()
+                        )
+
+                // ACTION_CANCEL is the branch people forget: dragging off the avatar cancels the
+                // press, and without restoring here it would sit there at 39dp until the next tap.
+                MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL ->
+                    if (avatarFullSizePx > 0)
+                        animateSize(avatarFullSizePx, 200, OvershootInterpolator(2f))
+            }
+            false
         }
 
         // Connect ViewPager2.

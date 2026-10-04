@@ -52,9 +52,9 @@ class LibraryTreeLoader(
 
     private fun getEnabledTabs(): List<ViewPager2Adapter.Companion.Tab> {
         val tabs = ViewPager2Adapter.mapSettingToTabList(prefs.getString("tabs", "")!!)
-        return tabs.takeWhile { it != null }
-            .filterNotNull()
-            .filter { it != ViewPager2Adapter.Companion.Tab.FileSystem }
+        // No trailing .filter needed: the FileSystem tab it used to exclude here is gone from the
+        // enum, and the browse tree never showed it anyway.
+        return tabs.takeWhile { it != null }.filterNotNull()
     }
 
     private fun getCategoryItem(id: String): MediaItem? {
@@ -228,13 +228,8 @@ class LibraryTreeLoader(
 
     private fun mapTabToMediaId(tab: ViewPager2Adapter.Companion.Tab) = when (tab) {
         ViewPager2Adapter.Companion.Tab.Songs -> "songs"
-        ViewPager2Adapter.Companion.Tab.Albums -> "albums"
-        ViewPager2Adapter.Companion.Tab.Artists -> "artists"
-        ViewPager2Adapter.Companion.Tab.Genres -> "genres"
-        ViewPager2Adapter.Companion.Tab.Dates -> "dates"
         ViewPager2Adapter.Companion.Tab.Folders -> "folders"
         ViewPager2Adapter.Companion.Tab.Playlist -> "playlists"
-        ViewPager2Adapter.Companion.Tab.FileSystem -> "detailed_folders"
     }
 
     fun getItem(mediaId: String): ListenableFuture<LibraryResult<MediaItem>> = scope.future(Dispatchers.Default) {

@@ -18,13 +18,17 @@
         app:cardBackgroundColor="?attr/colorSecondaryContainer"
         app:cardCornerRadius="128dp">
 
+        <!-- Sunshine Music: shows the actual painted icon, and the tint is gone with it. app:tint
+             collapses every opaque pixel to one colour, and in this painting the face and the
+             hair are both opaque, so tinting turned the whole portrait into a single flat blob.
+             The 92% adaptive foreground is used rather than the legacy bitmap because its mat is
+             the painting's own paper, so it reads as the artwork with no frame. -->
         <ImageView
             android:layout_width="52dp"
             android:layout_height="52dp"
             android:importantForAccessibility="no"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/ic_launcher_foreground"
-            app:tint="?attr/colorOnSecondaryContainer" />
+            app:srcCompat="@mipmap/ic_launcher_foreground" />
 
     </com.google.android.material.card.MaterialCardView>
 

@@ -30,11 +30,16 @@
         android:alpha="0"
         android:visibility="gone">
 
+        <!-- Sunshine Music: this was ?attr/colorSurface, which is md_theme_surface = #FFFFFF in
+             light. That is the Material baseline white and it painted a white sheet over the
+             cream player the moment the lyrics were shown. The full player reads
+             android:colorBackground (md_theme_background = #F6F3E7 by day, #161610 at night),
+             so the lyrics have to read the same role or they do not match their own sheet. -->
         <org.akanework.gramophone.ui.components.LyricsView
             android:id="@+id/lyric_frame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="?attr/colorSurface"
+            android:background="?android:attr/colorBackground"
             android:clipChildren="false"
             android:clipToPadding="false"
             android:keepScreenOn="true"

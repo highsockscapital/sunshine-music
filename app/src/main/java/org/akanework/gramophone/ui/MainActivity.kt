@@ -100,6 +100,7 @@ import org.akanework.gramophone.ui.fragments.SearchFragment
 import org.akanework.gramophone.ui.fragments.ViewPagerFragment
 import org.nift4.mediastorecompat.MediaStoreCompat
 import uk.akane.libphonograph.dynamicitem.Favorite
+import uk.akane.libphonograph.items.Playlist
 import uk.akane.libphonograph.manipulator.ItemManipulator
 import uk.akane.libphonograph.manipulator.PlaylistSerializer
 import uk.akane.libphonograph.manipulator.PlaylistSerializer.Entry
@@ -260,10 +261,17 @@ class MainActivity : BaseActivity() {
             handler.post { maybeReportFullyDrawn() }
     }
 
+    /**
+     * Sunshine Music: batch entry point. Adding N marked songs to a playlist is one chooser tap,
+     * not N rounds of three-dot, add-to-playlist, choose. [addToPlaylist] has always taken a
+     * list, only the dialog was hardwired to one song at a time.
+     */
+    fun addToPlaylistDialog(item: MediaItem) = addToPlaylistDialog(listOf(item))
+
     @OptIn(FlowPreview::class, InternalCoroutinesApi::class)
-    fun addToPlaylistDialog(item: MediaItem) {
-        val song = Entry.ofMediaItem(item)
-        if (song == null) {
+    fun addToPlaylistDialog(items: List<MediaItem>) {
+        val songs = items.mapNotNull { Entry.ofMediaItem(it) }
+        if (songs.isEmpty()) {
             Toast.makeText(
                 this@MainActivity,
                 getString(R.string.edit_playlist_failed, "song == null"),
@@ -314,7 +322,7 @@ class MainActivity : BaseActivity() {
                             PlaylistAdapter.playlistNameDialog(this@MainActivity,
                                 R.string.create_playlist, "",
                                 { ItemManipulator.getDefaultPlaylistFile(it) }) { name ->
-                                addToPlaylist(null, name, listOf(song))
+                                addToPlaylist(null, name, songs)
                             }
                             return@setItems
                         }
@@ -323,11 +331,83 @@ class MainActivity : BaseActivity() {
                             ContentUris.withAppendedId(
                                 @Suppress("deprecation") MediaStore.Audio.Playlists.EXTERNAL_CONTENT_URI,
                                 pl.id!!
-                            ), null, listOf(song)
+                            ), null, songs
                         )
                     }
                     .setNegativeButton(android.R.string.cancel) { _, _ -> }
                     .show()
+            }
+        }
+    }
+
+    /**
+     * Sunshine Music: chooser only, returns the picked playlist instead of adding to it.
+     *
+     * The batch-add flow has to know the destination BEFORE marking, because that is what lets
+     * already-present songs be shown ticked and locked. So it cannot use [addToPlaylistDialog],
+     * which adds the moment a row is tapped.
+     *
+     * [excludeId] drops one playlist from the list. The source playlist is passed here: choosing
+     * yourself as the destination would tick every row and leave nothing addable, which reads as
+     * a broken button rather than as a no-op.
+     *
+     * The callback fires with null on cancel or dismiss. Create-playlist is deliberately absent
+     * here: a new playlist has no songs, so there is nothing to compare against, and creating one
+     * mid-flow would leave the user picking songs for a playlist that does not exist yet.
+     */
+    @OptIn(FlowPreview::class, InternalCoroutinesApi::class)
+    fun pickPlaylistDialog(excludeId: Long?, onPicked: (Playlist?) -> Unit) {
+        lifecycleScope.launch(Dispatchers.Default) {
+            val job = async(start = CoroutineStart.UNDISPATCHED) {
+                reader.playlistListFlow.first().filter { it.title != null && it.id != excludeId }
+            }
+            val maybeValue = withTimeoutOrNull(300.milliseconds) { job.await() }
+            val playlists = maybeValue ?: run {
+                launch(Dispatchers.Main) {
+                    withContext(NonCancellable) {
+                        val progressBar = ProgressBar(this@MainActivity)
+                        val padding = 20.dpToPx(this@MainActivity)
+                        progressBar.isIndeterminate = true
+                        progressBar.setPadding(0, padding / 2, 0, padding)
+                        val d = MaterialAlertDialogBuilder(this@MainActivity)
+                            .setTitle(R.string.loading_playlists)
+                            .setView(progressBar)
+                            .setCancelable(false)
+                            .show()
+                        job.invokeOnCompletion {
+                            launch(Dispatchers.Main, start = CoroutineStart.ATOMIC) {
+                                withContext(NonCancellable) { d.dismiss() }
+                            }
+                        }
+                    }
+                }
+                job.await()
+            }
+            launch(Dispatchers.Main) {
+                // Picking a row dismisses the dialog, and dismissing also fires onDismiss, so
+                // the callback would otherwise run twice: once with the playlist, then once with
+                // null from its own dismissal, and the null would wipe the selection just made.
+                var delivered = false
+                fun deliver(picked: Playlist?) {
+                    if (!delivered) {
+                        delivered = true
+                        onPicked(picked)
+                    }
+                }
+                MaterialAlertDialogBuilder(this@MainActivity)
+                    .setTitle(R.string.playlist_picker_activity)
+                    .setIcon(R.drawable.ic_playlist_play)
+                    .setItems(playlists.map {
+                        if (it is Favorite) getString(R.string.playlist_favourite)
+                        else it.title ?: it.path?.absolutePath ?: it.id.toString()
+                    }.toTypedArray()) { _, item -> deliver(playlists[item]) }
+                    .setNegativeButton(android.R.string.cancel) { _, _ -> deliver(null) }
+                    .show()
+                    .also { dialog ->
+                        // Cancel also arrives by tapping outside or the back gesture, and
+                        // cancelling the whole marking session is right in every one of those.
+                        dialog.setOnDismissListener { deliver(null) }
+                    }
             }
         }
     }

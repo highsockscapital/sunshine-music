@@ -77,7 +77,6 @@
                 android:clickable="true"
                 android:contentDescription="@string/more"
                 android:focusable="true"
-                android:foreground="?attr/selectableItemBackgroundBorderless"
                 android:scaleType="fitCenter"
                 android:src="@drawable/sunshine_avatar" />
 
@@ -112,6 +111,7 @@
             app:tabGravity="start"
             app:tabIndicator="@android:color/transparent"
             app:tabMinWidth="0dp"
+            app:tabMinHeight="32dp"
             app:tabMode="scrollable"
             app:tabPaddingEnd="14dp"
             app:tabPaddingStart="14dp"

@@ -1072,6 +1072,12 @@
     <string name="edit_favorites_failed">Editing favorites failed: %s</string>
     <!-- Context menu item to add song to playlist -->
     <string name="add_to_playlist">Add to playlist</string>
+    <!-- Sunshine Music: count of songs marked for a batch add, shown under the playlist title
+         while selecting. -->
+    <plurals name="songs_selected">
+        <item quantity="one">%d song selected</item>
+        <item quantity="other">%d songs selected</item>
+    </plurals>
     <!-- Error if no internet browser is installed but user clicks a link -->
     <string name="no_app_found">No app found that can do this</string>
     <!-- Shown below the lead developer's nickname in about screen -->
