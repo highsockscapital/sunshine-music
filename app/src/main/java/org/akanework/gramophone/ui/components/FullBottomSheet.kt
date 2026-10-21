@@ -132,6 +132,12 @@ class FullBottomSheet
         get() = activity.getPlayer()
     var minimize: (() -> Unit)? = null
 
+    /**
+     * Sunshine Music: called when the lyrics page is shown, so the sheet that owns the window
+     * can hide the status bar around it.
+     */
+    var onLyricsVisibilityChanged: (() -> Unit)? = null
+
     private val viewModel by activity.viewModels<MyViewModel>()
     private var isUserTracking = false
     private var runnableRunning = false
@@ -518,6 +524,9 @@ class FullBottomSheet
         bottomSheetLyricButton.setOnClickListener {
             ViewCompat.performHapticFeedback(it, HapticFeedbackConstantsCompat.CONTEXT_CLICK)
             bottomSheetFullLyricView.fadInAnimation(LYRIC_FADE_TRANSITION_SEC)
+            // Sunshine Music: the lyrics page hides the status bar, and this is the moment the
+            // lyrics page starts. The sheet that owns the window has to hear about it.
+            onLyricsVisibilityChanged?.invoke()
         }
 
         bottomSheetShuffleButton.setOnClickListener {

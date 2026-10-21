@@ -33,6 +33,7 @@ import androidx.activity.OnBackPressedCallback
 import androidx.core.graphics.Insets
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.doOnLayout
 import androidx.core.view.doOnNextLayout
 import androidx.core.view.isVisible
@@ -131,6 +132,34 @@ class PlayerBottomSheet private constructor(
         }
     }
 
+    /**
+     * Sunshine Music: the lyrics page hides the status bar, so the lyrics run to the very top of
+     * the screen and the page reads as one surface instead of a sheet with a system bar sitting on
+     * top of it.
+     *
+     * Both the sheet state and the lyrics state have to agree. The lyrics view keeps its own
+     * VISIBLE flag after the sheet is collapsed, because collapsing only hides the frame around
+     * it, so testing the lyrics alone would leave the status bar hidden on the home screen.
+     *
+     * A swipe from the top brings the status bar back temporarily, and it fades away again on
+     * its own, so the immersive view is not a trap.
+     */
+    private fun updateStatusBarForLyrics() {
+        val state = standardBottomSheetBehavior?.state
+        val sheetUp = state == BottomSheetBehavior.STATE_EXPANDED ||
+            state == BottomSheetBehavior.STATE_HALF_EXPANDED
+        val lyricsShowing = sheetUp && fullPlayer.bottomSheetFullLyricView.isVisible
+        val window = activity.window
+        val controller = WindowInsetsControllerCompat(window, window.decorView)
+        if (lyricsShowing) {
+            controller.hide(WindowInsetsCompat.Type.statusBars())
+            controller.systemBarsBehavior =
+                WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+        } else {
+            controller.show(WindowInsetsCompat.Type.statusBars())
+        }
+    }
+
     private val bottomSheetCallback = object : BottomSheetCallback() {
         override fun onStateChanged(
             bottomSheet: View,
@@ -189,6 +218,9 @@ class PlayerBottomSheet private constructor(
                 }
             }
             dispatchBottomSheetInsets()
+            // The sheet moving changes whether the lyrics are on screen, and the lyrics page
+            // owns the status bar, so it has to be told.
+            updateStatusBarForLyrics()
         }
 
         override fun onSlide(
@@ -214,6 +246,11 @@ class PlayerBottomSheet private constructor(
             standardBottomSheetBehavior = MyBottomSheetBehavior.from(this)
             fullPlayer.minimize = {
                 standardBottomSheetBehavior!!.state = BottomSheetBehavior.STATE_COLLAPSED
+            }
+            // Sunshine Music: the lyrics page hides the status bar, and this sheet is the only
+            // place that knows both the sheet state and the lyrics state.
+            fullPlayer.onLyricsVisibilityChanged = {
+                updateStatusBarForLyrics()
             }
             @SuppressLint("RestrictedApi")
             lyricsBackHelper =
@@ -244,7 +281,12 @@ class PlayerBottomSheet private constructor(
                         if (backEvent == null || backEvent.progress == 0f
                             || Build.VERSION.SDK_INT < Build.VERSION_CODES.UPSIDE_DOWN_CAKE
                         ) {
-                            fullPlayer.bottomSheetFullLyricView.fadOutAnimation(FullBottomSheet.LYRIC_FADE_TRANSITION_SEC)
+                            fullPlayer.bottomSheetFullLyricView.fadOutAnimation(
+                                FullBottomSheet.LYRIC_FADE_TRANSITION_SEC
+                            ) {
+                                // The lyrics are gone now, so the status bar has to come back.
+                                updateStatusBarForLyrics()
+                            }
                             return
                         }
                         @SuppressLint("RestrictedApi")
@@ -252,7 +294,11 @@ class PlayerBottomSheet private constructor(
                             backEvent,
                             object : AnimatorListenerAdapter() {
                                 override fun onAnimationStart(animation: Animator) {
-                                    fullPlayer.bottomSheetFullLyricView.fadOutAnimation(FullBottomSheet.LYRIC_FADE_TRANSITION_SEC)
+                                    fullPlayer.bottomSheetFullLyricView.fadOutAnimation(
+                                        FullBottomSheet.LYRIC_FADE_TRANSITION_SEC
+                                    ) {
+                                        updateStatusBarForLyrics()
+                                    }
                                 }
                             })
                     } else {

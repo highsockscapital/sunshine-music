@@ -1072,6 +1072,17 @@
     <string name="edit_favorites_failed">Editing favorites failed: %s</string>
     <!-- Context menu item to add song to playlist -->
     <string name="add_to_playlist">Add to playlist</string>
+    <!-- Sunshine Music: shown in the collapsing toolbar once marking has started but nothing is marked yet, so the screen is not silently waiting for a tap. -->
+    <string name="select_songs_hint">Tap songs to select</string>
+    <!-- Sunshine Music: the batch action lives inside a playlist, so "Add to playlist" reads as
+         the question the user is already standing inside of. The action really means "copy these
+         songs into some other playlist". -->
+    <string name="add_songs_to_another_playlist">Add songs to another playlist</string>
+    <!-- Sunshine Music: destination step. States the direction rather than just "choose playlist". -->
+    <string name="add_to_playlist_choose_destination">Add these songs to</string>
+    <!-- Sunshine Music: explains the one genuinely surprising thing, which is that the playlist
+         being viewed is absent from the list. Without this it looks like the app forgot it. -->
+    <string name="add_to_playlist_destination_hint">The playlist you are viewing is not listed. Songs are copied into the one you pick.</string>
     <!-- Sunshine Music: count of songs marked for a batch add, shown under the playlist title
          while selecting. -->
     <plurals name="songs_selected">

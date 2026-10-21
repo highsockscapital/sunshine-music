@@ -17,10 +17,7 @@
 
 package org.akanework.gramophone.ui.fragments
 
-import android.content.ContentUris
-import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -47,7 +44,6 @@ import org.akanework.gramophone.ui.adapters.SongAdapter
 import org.akanework.gramophone.ui.adapters.Sorter
 import uk.akane.libphonograph.dynamicitem.Favorite
 import uk.akane.libphonograph.dynamicitem.RecentlyAdded
-import uk.akane.libphonograph.items.Playlist
 import uk.akane.libphonograph.manipulator.PlaylistSerializer.Entry
 
 /**
@@ -237,16 +233,20 @@ class GeneralSubFragment : BaseFragment(true) {
         topAppBar.inflateMenu(R.menu.playlist_subfragment_menu)
         val menu = topAppBar.menu
         val addItem = menu.findItem(R.id.add_to_playlist)
-        var destination: Playlist? = null
+        var destination: MainActivity.PlaylistDestination? = null
 
         fun render(count: Int) {
             val selecting = adapter.isSelecting()
             addItem?.isEnabled = count > 0
             menu.findItem(R.id.edit)?.isVisible = !selecting
             menu.findItem(R.id.cancel_selection)?.isVisible = selecting
-            collapsingToolbarLayout.subtitle = if (selecting && count > 0) {
-                resources.getQuantityString(R.plurals.songs_selected, count, count)
-            } else null
+            collapsingToolbarLayout.subtitle = when {
+                !selecting -> null
+                count > 0 -> resources.getQuantityString(R.plurals.songs_selected, count, count)
+                // Marking has started but nothing is marked yet. Silence here left the screen
+                // looking unchanged, which is most of why the flow read as meaningless.
+                else -> getString(R.string.select_songs_hint)
+            }
         }
 
         adapter.onSelectionChanged = { count -> render(count) }
@@ -275,7 +275,9 @@ class GeneralSubFragment : BaseFragment(true) {
                     if (picked != null && adapter.isSelecting()) {
                         val chosen = adapter.getSelectedItems()
                         if (chosen.isNotEmpty()) {
-                            mainActivity.addToPlaylist(playlistUriOf(picked), null, entriesOf(chosen))
+                            mainActivity.addToPlaylist(
+                                picked.uri, picked.name, entriesOf(chosen)
+                            )
                         }
                         adapter.endSelection()
                     } else {
@@ -292,7 +294,9 @@ class GeneralSubFragment : BaseFragment(true) {
                             // and then "first().orEmpty()" both treated songList as a Flow, when
                             // it is a plain property, so first() was resolving to List.first() and
                             // handing back a single MediaItem. Read the declaration, not the name.
-                            adapter.beginSelection(chosen.songList)
+                            // chosen.existingSongs is empty for a playlist created from inside the chooser, so
+                            // nothing is pre-ticked and every song is addable.
+                            adapter.beginSelection(chosen.existingSongs)
                         }
                     }
                     true
@@ -317,11 +321,6 @@ class GeneralSubFragment : BaseFragment(true) {
         songListJob = null
         super.onDestroyView()
     }
-
-    private fun playlistUriOf(playlist: Playlist): Uri = ContentUris.withAppendedId(
-        @Suppress("deprecation") MediaStore.Audio.Playlists.EXTERNAL_CONTENT_URI,
-        playlist.id!!
-    )
 
     private fun entriesOf(items: List<MediaItem>): List<Entry> =
         items.mapNotNull { Entry.ofMediaItem(it) }

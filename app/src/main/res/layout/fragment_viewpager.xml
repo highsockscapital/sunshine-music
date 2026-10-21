@@ -19,15 +19,15 @@
         Only the media control stays its own layer; that is the PlayerBottomSheet in
         activity_main.xml and it is deliberately untouched.
 
-        The ids appbarlayout, topAppBar, tab_layout and headerAvatar are kept even though the
-        collapsing toolbar is gone, because ViewPagerFragment still resolves all four.
+        The ids appbarlayout, topAppBar and tab_layout are kept even though the collapsing
+        toolbar is gone, because ViewPagerFragment still resolves all three.
 
         The three-dot overflow button has been removed from this header, and the toolbar carries no
         app:menu at all. That matters: the three dots were never a widget, they were Android
         drawing an overflow affordance because the old home menu held "never" items, so any menu on
         this toolbar risks bringing them back. The five options that used to sit behind them moved
-        to home_popup_menu.xml and now open when the avatar is tapped. Search left the toolbar too
-        and became the pill below.
+        to home_popup_menu.xml and now open from the three dot button beside the search pill.
+        Search left the toolbar too and became the pill below.
     -->
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbarlayout"
@@ -45,16 +45,15 @@
             android:paddingEnd="24dp">
 
             <!--
-                Sunshine Music header row: avatar, then search as a long pill.
+                Sunshine Music header row: search as a long pill, then the three dot button.
 
-                The two live in one horizontal LinearLayout rather than as separate toolbar children,
+                They live in one horizontal LinearLayout rather than as separate toolbar children,
                 because Toolbar lays custom views out by gravity and does not hand a leftover width
                 to anything. A LinearLayout with layout_weight is the only way to say "fill
-                whatever is left between the avatar and the right edge" and have it actually work.
+                whatever is left between the search pill and the button" and have it actually work.
 
-                16dp on each side of the pill is deliberate: it keeps the pill clear of the avatar
-                on the left and clear of the screen edge on the right, which is what Nihal asked
-                for. The avatar keeps its own 24dp inset from the toolbar paddingStart.
+                The 8dp between the pill and the three dot button keeps the two from touching, and
+                the toolbar's own 24dp padding keeps the button off the screen edge.
             -->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -62,30 +61,11 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-            <!--
-                Sunshine Music header: Sunshine's own cutout. Derived from Sunshinussy's
-                drawable-nodpi/sunshine_avatar.png (858x1023 RGBA), downscaled to these
-                density buckets as lossless WebP with alpha. The JPEG sent over has no alpha
-                channel at all and would show a white square against the cream background.
-                Sunshinussy's own master is deliberately left at full resolution.
-            -->
-            <ImageView
-                android:id="@+id/headerAvatar"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_gravity="start|center_vertical"
-                android:clickable="true"
-                android:contentDescription="@string/more"
-                android:focusable="true"
-                android:scaleType="fitCenter"
-                android:src="@drawable/sunshine_avatar" />
-
                 <TextView
                     android:id="@+id/searchPill"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_weight="1"
                     android:background="@drawable/bg_pill"
                     android:clickable="true"
@@ -98,15 +78,50 @@
                     android:textColor="@color/pill_on"
                     android:textSize="15sp" />
 
+                <!--
+                    Sunshine Music: the avatar that used to sit here is gone, so the home options
+                    moved to this three dot button on the right of the search pill.
+
+                    It is a plain ImageButton that opens a PopupMenu, deliberately NOT app:menu on
+                    the toolbar. The old home menu held "never" items, and that is exactly what
+                    made Android draw the overflow affordance in the first place, with a whole
+                    column of dots that were never a widget. An explicit button cannot bring
+                    that back, because there is no menu on the toolbar for it to overflow.
+
+                    selectableItemBackgroundBorderless gives it a round ripple that follows the
+                    icon, not a rectangle around the 40dp box.
+                -->
+                <ImageButton
+                    android:id="@+id/headerMenuButton"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="end|center_vertical"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/more"
+                    android:focusable="true"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_more_vert_alt_topappbar" />
+
             </LinearLayout>
 
         </com.google.android.material.appbar.MaterialToolbar>
 
+        <!--
+            Sunshine Music: the home pills are hidden on request. Nihal navigates by swiping,
+            so the strip was never used and only took up room that the lists could have had.
+
+            The tab strip is NOT removed. The ViewPager2 still holds all three pages and the
+            swipe still moves between them, so the tabs keep working, they are just not drawn.
+
+            android:visibility="gone" here as well as in the code, so the strip is never laid
+            out for a frame before onCreateView gets to hide it.
+        -->
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="32dp"
             android:background="@android:color/transparent"
+            android:visibility="gone"
             app:tabBackground="@drawable/tab_pill"
             app:tabGravity="start"
             app:tabIndicator="@android:color/transparent"

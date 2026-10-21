@@ -341,6 +341,65 @@ class MainActivity : BaseActivity() {
     }
 
     /**
+     * Sunshine Music: where a batch of songs is going.
+     *
+     * A destination is not necessarily a playlist that already existed. Creating one from inside
+     * the chooser is what makes "make a playlist and fill it" a single flow instead of making an
+     * empty playlist and then finding no way into it: an empty playlist has no songs to mark, so
+     * the batch action is hidden there by design and a new playlist would be a dead end. A freshly
+     * created playlist is empty, so [existingSongs] is empty for it and the duplicate guard has
+     * nothing to do, which is exactly why creating one mid-flow is safe.
+     */
+    data class PlaylistDestination(
+        val uri: Uri,
+        val name: File?,
+        val existingSongs: List<MediaItem>,
+    )
+
+    private fun playlistUriOf(playlist: Playlist): Uri = ContentUris.withAppendedId(
+        @Suppress("deprecation") MediaStore.Audio.Playlists.EXTERNAL_CONTENT_URI,
+        playlist.id!!,
+    )
+
+    /**
+     * Sunshine Music: ask for a name, create the playlist, hand it back as the destination.
+     *
+     * Reuses [PlaylistAdapter.playlistNameDialog] so this looks and behaves exactly like creating
+     * a playlist anywhere else in the app, rather than inventing a second name prompt.
+     */
+    private fun createPlaylistAsDestination(deliver: (PlaylistDestination?) -> Unit) {
+        PlaylistAdapter.playlistNameDialog(
+            this, R.string.create_playlist, "",
+            { ItemManipulator.getDefaultPlaylistFile(it) },
+        ) { path ->
+            lifecycleScope.launch(Dispatchers.IO) {
+                val destination = try {
+                    val uri = ItemManipulator.createPlaylist(this@MainActivity, path)
+                    ItemManipulator.setPlaylistContent(
+                        this@MainActivity, uri,
+                        PlaylistSerializer.Playlist.create(), true,
+                    )
+                    PlaylistDestination(uri, path, emptyList())
+                } catch (e: Exception) {
+                    Log.e("MainActivity", Log.getThrowableString(e)!!)
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(
+                            this@MainActivity,
+                            getString(
+                                R.string.create_failed_playlist,
+                                e.javaClass.name + ": " + e.message,
+                            ),
+                            Toast.LENGTH_LONG,
+                        ).show()
+                    }
+                    null
+                }
+                withContext(Dispatchers.Main) { deliver(destination) }
+            }
+        }
+    }
+
+    /**
      * Sunshine Music: chooser only, returns the picked playlist instead of adding to it.
      *
      * The batch-add flow has to know the destination BEFORE marking, because that is what lets
@@ -356,7 +415,7 @@ class MainActivity : BaseActivity() {
      * mid-flow would leave the user picking songs for a playlist that does not exist yet.
      */
     @OptIn(FlowPreview::class, InternalCoroutinesApi::class)
-    fun pickPlaylistDialog(excludeId: Long?, onPicked: (Playlist?) -> Unit) {
+    fun pickPlaylistDialog(excludeId: Long?, onPicked: (PlaylistDestination?) -> Unit) {
         lifecycleScope.launch(Dispatchers.Default) {
             val job = async(start = CoroutineStart.UNDISPATCHED) {
                 reader.playlistListFlow.first().filter { it.title != null && it.id != excludeId }
@@ -388,19 +447,46 @@ class MainActivity : BaseActivity() {
                 // the callback would otherwise run twice: once with the playlist, then once with
                 // null from its own dismissal, and the null would wipe the selection just made.
                 var delivered = false
-                fun deliver(picked: Playlist?) {
+                fun deliver(picked: PlaylistDestination?) {
                     if (!delivered) {
                         delivered = true
                         onPicked(picked)
                     }
                 }
                 MaterialAlertDialogBuilder(this@MainActivity)
-                    .setTitle(R.string.playlist_picker_activity)
-                    .setIcon(R.drawable.ic_playlist_play)
-                    .setItems(playlists.map {
-                        if (it is Favorite) getString(R.string.playlist_favourite)
-                        else it.title ?: it.path?.absolutePath ?: it.id.toString()
-                    }.toTypedArray()) { _, item -> deliver(playlists[item]) }
+                    // "Choose playlist" gave no hint that this is the destination step of a
+                    // batch add, and ic_playlist_play (stacked bars plus a play arrow) reads as a
+                    // sort control. Only the batch add calls this, so retitling is safe.
+                    .setTitle(R.string.add_to_playlist_choose_destination)
+                    // The genuinely surprising part of this dialog is that the playlist you are
+                    // standing in is missing from the list, so say so rather than let it look
+                    // like the app forgot it.
+                    .setMessage(R.string.add_to_playlist_destination_hint)
+                    .setIcon(R.drawable.outline_library_add_24)
+                    .setItems(
+                        (
+                            playlists.map {
+                                if (it is Favorite) getString(R.string.playlist_favourite)
+                                else it.title ?: it.path?.absolutePath ?: it.id.toString()
+                            } + getString(R.string.create_playlist)
+                            ).toTypedArray()
+                    ) { _, item ->
+                        if (item < playlists.size) {
+                            val picked = playlists[item]
+                            deliver(
+                                PlaylistDestination(
+                                    playlistUriOf(picked),
+                                    picked.path,
+                                    picked.songList,
+                                )
+                            )
+                        } else {
+                            // "Create playlist" as the last row. Creating the destination from
+                            // here is what makes making a playlist and filling it one flow,
+                            // rather than making an empty one and then finding no way in.
+                            createPlaylistAsDestination(deliver)
+                        }
+                    }
                     .setNegativeButton(android.R.string.cancel) { _, _ -> deliver(null) }
                     .show()
                     .also { dialog ->

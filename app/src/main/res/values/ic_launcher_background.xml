@@ -3,6 +3,8 @@
     <!-- Sunshine Music: sampled from the four corners of Nihal's painted icon, #F6F4E7, not
          guessed. It has to be the painting's exact paper or the mat around the artwork shows up
          as a seam. It is one step off the theme paper #F6F3E7, which is the point: this one
-         belongs to the artwork, not to the UI. -->
+         belongs to the artwork, not to the UI.
+         The profile portrait was measured to have the same cream in its corners, so this colour
+         did not have to change when the icon did. -->
     <color name="ic_launcher_background">#F6F4E7</color>
 </resources>

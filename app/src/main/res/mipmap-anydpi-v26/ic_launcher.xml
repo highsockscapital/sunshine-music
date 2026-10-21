@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
     <background android:drawable="@color/ic_launcher_background" />
-    <!-- Sunshine Music: Nihal's handpainted portrait, not the old Gramophone vector.
-         The artwork is inset to 92% of the 108dp canvas because Android only guarantees the
-         central 72x72dp stays visible under any launcher mask, and at full bleed the tips of the
-         hair fall outside that. The mat around it is the painting's own paper colour, so it is
-         invisible rather than a beige frame.
+    <!-- Sunshine Music: Nihal's handpainted profile portrait, not the old Gramophone vector.
+         The artwork is inset to 84% of the 108dp canvas, and the crop keeps the whole head
+         inside it with air on every side, because a face jammed against the edge looks cramped:
+         24dp at the left, 21dp at the right, 15dp at the top, 12dp at the bottom. Android only
+         guarantees the central 72x72dp stays visible under any launcher mask, and this framing
+         keeps the whole portrait inside it: the eye 23.6dp from the centre, the nose 30.5dp,
+         the chin 30.5dp, all inside the 36dp radius. The mat around it is the painting's own
+         paper colour, so it is invisible rather than a beige frame.
          There is deliberately no monochrome layer. A themed icon needs a single flat silhouette,
-         and this is a painting: its face is within six units of the background in every channel,
-         so any automatic cut-out erases the face and leaves an orange wig. Better no themed icon
-         than that. -->
+         and this is a painting: the cheek is within fifteen units of the background in two
+         channels, so any automatic cut-out erases the face and leaves an orange wig. Better no
+         themed icon than that. -->
     <foreground android:drawable="@mipmap/ic_launcher_foreground" />
 </adaptive-icon>

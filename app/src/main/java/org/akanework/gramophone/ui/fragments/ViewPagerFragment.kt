@@ -17,7 +17,6 @@
 
 package org.akanework.gramophone.ui.fragments
 
-import android.animation.ValueAnimator
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.media.audiofx.AudioEffect
@@ -25,13 +24,9 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.view.MenuItem
-import android.view.MotionEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.Interpolator
-import android.view.animation.DecelerateInterpolator
-import android.view.animation.OvershootInterpolator
 import android.widget.Toast
 import androidx.appcompat.widget.PopupMenu
 import androidx.core.content.pm.ShortcutManagerCompat
@@ -93,9 +88,10 @@ class ViewPagerFragment : BaseFragment(true) {
         appBarLayout = rootView.findViewById(R.id.appbarlayout)
         appBarLayout.enableEdgeToEdgePaddingListener()
         // Sunshine Music: the three-dot overflow button is gone from the home header, and so is the
-        // magnifier icon. Search is the long pill beside the avatar now. The avatar opens the
-        // options popup the three dots used to show, and both that popup and the toolbar route
-        // through this one handler so the two entry points cannot drift apart as the menu grows.
+        // magnifier icon. Search is the long pill in the header now, and the three dot button
+        // beside it opens the options popup the overflow used to show. The popup and the toolbar
+        // both route through this one handler so the two entry points cannot drift apart as the
+        // menu grows.
         fun handleHomeMenuItem(item: MenuItem): Boolean {
             val activity = requireActivity() as MainActivity
             when (item.itemId) {
@@ -217,74 +213,19 @@ class ViewPagerFragment : BaseFragment(true) {
         topAppBar.setOnMenuItemClickListener(::handleHomeMenuItem)
 
         // Sunshine Music: the magnifier icon is gone from the header. Search is the long pill
-        // beside the avatar now, and it opens the same SearchFragment the icon used to.
+        // now, and it opens the same SearchFragment the icon used to.
         rootView.findViewById<View>(R.id.searchPill).setOnClickListener {
             (requireActivity() as MainActivity).startFragment(SearchFragment())
         }
 
-        val headerAvatar = rootView.findViewById<View>(R.id.headerAvatar)
-        headerAvatar.setOnClickListener { anchor ->
+        // Sunshine Music: the avatar that used to sit in the header is gone. The five home
+        // options it opened moved to the three dot button beside the search pill, and the
+        // popup itself is unchanged, same menu, same items, same handler.
+        rootView.findViewById<View>(R.id.headerMenuButton).setOnClickListener { anchor ->
             PopupMenu(requireContext(), anchor).apply {
                 inflate(R.menu.home_popup_menu)
                 setOnMenuItemClickListener { item -> handleHomeMenuItem(item) }
             }.show()
-        }
-
-        // Sunshine Music: press feedback for the avatar, in real dp and not as a transform.
-        //
-        // This changes the LayoutParams, so the view is genuinely 48dp -> about 39dp -> 48dp.
-        // scaleX/scaleY would look similar but is not the same thing: that shrinks the drawing
-        // around the centre while the layout box stays 48dp, which is why the ripple kept drawing
-        // its square in the space the view still occupied.
-        //
-        // The overshoot is therefore genuinely visible. On the way back the box briefly measures
-        // LARGER than 48dp before settling on it, because the last animated value is the real
-        // measured size rather than an approximation of it.
-        //
-        // The full size is captured on the first press rather than hardcoded, so the animation
-        // follows whatever the layout actually measured instead of a number that can drift.
-        val avatarPressedFraction = 0.82f
-        var avatarFullSizePx = 0
-        var avatarSizeAnimator: ValueAnimator? = null
-        headerAvatar.setOnTouchListener { avatar, event ->
-            if (avatarFullSizePx == 0 && avatar.width > 0) avatarFullSizePx = avatar.width
-            val layoutParams = avatar.layoutParams
-
-            fun animateSize(target: Int, duration: Long, interpolator: Interpolator) {
-                avatarSizeAnimator?.cancel()
-                avatarSizeAnimator =
-                    ValueAnimator.ofFloat(avatar.width.toFloat(), target.toFloat()).apply {
-                        this.duration = duration
-                        this.interpolator = interpolator
-                        addUpdateListener { running ->
-                            // ofFloat drives Float values, so animatedValue is a Float
-                            // here. Casting it to Int crashed on every press. Reading it as
-                            // Float and converting afterwards keeps the sub-pixel values
-                            // during the overshoot instead of truncating each frame.
-                            val px = (running.animatedValue as Float).toInt()
-                            layoutParams.width = px
-                            layoutParams.height = px
-                            avatar.layoutParams = layoutParams
-                        }
-                        start()
-                    }
-            }
-
-            when (event.actionMasked) {
-                MotionEvent.ACTION_DOWN ->
-                    if (avatarFullSizePx > 0)
-                        animateSize(
-                            (avatarFullSizePx * avatarPressedFraction).toInt(),
-                            90, DecelerateInterpolator()
-                        )
-
-                // ACTION_CANCEL is the branch people forget: dragging off the avatar cancels the
-                // press, and without restoring here it would sit there at 39dp until the next tap.
-                MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL ->
-                    if (avatarFullSizePx > 0)
-                        animateSize(avatarFullSizePx, 200, OvershootInterpolator(2f))
-            }
-            false
         }
 
         // Connect ViewPager2.
@@ -334,11 +275,18 @@ class ViewPagerFragment : BaseFragment(true) {
             }
         })
 
+                // Sunshine Music: the home pills are hidden on request, navigation is by swiping.
+        //
+        // The strip is always gone, but the swipe is left exactly as it was: it is still
+        // switched off when there is only one page, because with nothing to swipe to a
+        // horizontal drag would fight with the list instead of helping it.
+        //
+        // The tabs themselves are untouched. The mediator above still builds all of them and
+        // keeps them in step with the pager, so bringing the strip back is one line.
+        tabLayout.visibility = View.GONE
         if (adapter.itemCount < 2) {
-            tabLayout.visibility = View.GONE
             viewPager2.isUserInputEnabled = false
         } else {
-            tabLayout.visibility = View.VISIBLE
             viewPager2.isUserInputEnabled = true
         }
 

@@ -5,14 +5,18 @@
          Shown once selecting starts, which is why it is the action that toggles selection on the
          first tap and confirms the batch on the second.
 
-         Deliberately an overflow item rather than an icon in the toolbar. As a bare always-shown
-         icon it was invisible in practice: there was no label, so on a playlist screen there was
-         nothing telling you that tapping it started a selection. With a title it reads as what it
-         is, which is the whole point of the entry point. -->
+         Deliberately an overflow item rather than an icon in the toolbar, and deliberately with
+         no icon at all. As a pinned icon it was drawn with ic_playlist_play, which is three
+         stacked bars and a play arrow and therefore reads as a sort or queue control. With no
+         label either, nothing on screen said that tapping it began a selection. A plain titled
+         overflow entry cannot be misread that way.
+
+         Titled "Add songs to another playlist", not "Add to playlist". You are already inside a
+         playlist when this shows, so the generic wording asked the question the user is standing
+         in the middle of. -->
     <item
         android:id="@+id/add_to_playlist"
-        android:icon="@drawable/ic_playlist_play"
-        android:title="@string/add_to_playlist"
+        android:title="@string/add_songs_to_another_playlist"
         app:showAsAction="never" />
 
     <item
