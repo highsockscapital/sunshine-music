@@ -484,7 +484,12 @@ class MainActivity : BaseActivity() {
                             // "Create playlist" as the last row. Creating the destination from
                             // here is what makes making a playlist and filling it one flow,
                             // rather than making an empty one and then finding no way in.
-                            createPlaylistAsDestination(deliver)
+                            //
+                            // The lambda is written out rather than passing "deliver" by name.
+                            // Kotlin reads a bare function name in an expression position as a
+                            // call to that function, and deliver needs an argument, so the
+                            // compiler complained that an invocation was expected.
+                            createPlaylistAsDestination { created -> deliver(created) }
                         }
                     }
                     .setNegativeButton(android.R.string.cancel) { _, _ -> deliver(null) }
