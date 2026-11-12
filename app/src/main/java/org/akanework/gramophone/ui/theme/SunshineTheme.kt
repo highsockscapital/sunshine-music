@@ -67,18 +67,6 @@ fun SunshinePalette.toColorScheme(dark: Boolean): ColorScheme {
         surfaceContainer = surfaceContainer,
         surfaceContainerHigh = surfaceContainerHigh,
         surfaceContainerHighest = surfaceContainerHigh,
-        primaryFixed = background,
-        onPrimaryFixed = onSurface,
-        primaryFixedDim = onSurface,
-        onPrimaryFixedVariant = background,
-        secondaryFixed = background,
-        onSecondaryFixed = onSurface,
-        secondaryFixedDim = onSurface,
-        onSecondaryFixedVariant = background,
-        tertiaryFixed = background,
-        onTertiaryFixed = onSurface,
-        tertiaryFixedDim = onSurface,
-        onTertiaryFixedVariant = background,
     )
 }
 
