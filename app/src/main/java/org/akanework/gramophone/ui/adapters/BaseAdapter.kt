@@ -389,6 +389,25 @@ abstract class BaseAdapter<T : Any>(
         onSelectionChanged?.invoke(0)
     }
 
+    /**
+     * Sunshine Music: fill in the destination's contents after marking has already started.
+     *
+     * The song picker opens straight into selection mode so a tap can never start playback, but
+     * the set of songs the target playlist already holds is read off the library flow, which
+     * cannot be resolved synchronously without blocking the main thread. Rather than delay the
+     * whole screen, the picker starts with nothing marked as present and calls this once the
+     * playlist is known. Marks that turn out to be duplicates are dropped so the count and the
+     * write stay honest.
+     */
+    fun updateAlreadyPresent(items: Collection<T>) {
+        if (!selectionMode) return
+        alreadyPresent.clear()
+        alreadyPresent.addAll(items)
+        selectedItems.removeAll(alreadyPresent.toSet())
+        notifyDataSetChanged()
+        onSelectionChanged?.invoke(selectedItems.size)
+    }
+
     override fun onBindViewHolder(
         holder: ViewHolder,
         position: Int

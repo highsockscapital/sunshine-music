@@ -1078,6 +1078,11 @@
          the question the user is already standing inside of. The action really means "copy these
          songs into some other playlist". -->
     <string name="add_songs_to_another_playlist">Add songs to another playlist</string>
+    <!-- Sunshine Music: menu entry inside a playlist that opens the picker for filling this same
+         playlist. The counterpart of "Add songs to another playlist". -->
+    <string name="add_songs_to_this_playlist">Add songs to this playlist</string>
+    <!-- Sunshine Music: confirm action on the song picker that fills a playlist. -->
+    <string name="add_songs">Add songs</string>
     <!-- Sunshine Music: destination step. States the direction rather than just "choose playlist". -->
     <string name="add_to_playlist_choose_destination">Add these songs to</string>
     <!-- Sunshine Music: explains the one genuinely surprising thing, which is that the playlist

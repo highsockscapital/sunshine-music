@@ -19,6 +19,14 @@
         android:title="@string/add_songs_to_another_playlist"
         app:showAsAction="never" />
 
+    <!-- Sunshine Music: the direction the batch action above was missing. Opens the library as a
+         picker and appends the marked songs to this playlist. Unlike add_to_playlist this is
+         available even when the playlist is empty, which is exactly when it is needed most. -->
+    <item
+        android:id="@+id/add_songs"
+        android:title="@string/add_songs_to_this_playlist"
+        app:showAsAction="never" />
+
     <item
         android:id="@+id/cancel_selection"
         android:icon="@drawable/ic_close"

@@ -17,7 +17,9 @@
 
 package org.akanework.gramophone.ui.fragments
 
+import android.content.ContentUris
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -241,6 +243,9 @@ class GeneralSubFragment : BaseFragment(true) {
             addItem?.isEnabled = count > 0
             menu.findItem(R.id.edit)?.isVisible = !selecting
             menu.findItem(R.id.cancel_selection)?.isVisible = selecting
+            // Filling this playlist is a separate task from copying songs out of it; leaving
+            // both entries up while a selection is in progress invites mixing them up.
+            menu.findItem(R.id.add_songs)?.isVisible = !selecting
             collapsingToolbarLayout.subtitle = when {
                 !selecting -> null
                 count > 0 -> resources.getQuantityString(R.plurals.songs_selected, count, count)
@@ -267,6 +272,25 @@ class GeneralSubFragment : BaseFragment(true) {
                 R.id.edit -> {
                     mainActivity.startFragment(PlaylistEditFragment()) {
                         putString("Id", playlistId?.toString())
+                    }
+                    true
+                }
+
+                R.id.add_songs -> {
+                    val pid = playlistId
+                    if (pid != null) {
+                        val uri = ContentUris.withAppendedId(
+                            @Suppress("deprecation")
+                            MediaStore.Audio.Playlists.EXTERNAL_CONTENT_URI, pid
+                        )
+                        // The picker resolves the playlist's current songs itself, so that it
+                        // can start marking immediately and fill in the already-present set
+                        // afterwards instead of blocking on the library flow here.
+                        mainActivity.startFragment(AddSongsFragment()) {
+                            putString("Uri", uri.toString())
+                            putString("Id", pid.toString())
+                            putString("Title", collapsingToolbarLayout.title?.toString())
+                        }
                     }
                     true
                 }

@@ -51,6 +51,7 @@ import org.akanework.gramophone.R
 import org.akanework.gramophone.logic.gramophoneApplication
 import org.akanework.gramophone.ui.PlaylistPickerActivity
 import org.akanework.gramophone.ui.fragments.AdapterFragment
+import org.akanework.gramophone.ui.fragments.AddSongsFragment
 import org.akanework.gramophone.ui.fragments.GeneralSubFragment
 import org.nift4.mediastorecompat.MediaStoreCompat
 import uk.akane.libphonograph.dynamicitem.Favorite
@@ -312,6 +313,17 @@ class PlaylistAdapter(
                             val uri = ItemManipulator.createPlaylist(context, path)
                             ItemManipulator.setPlaylistContent(context, uri,
                                 PlaylistSerializer.Playlist.create(), true)
+                            withContext(Dispatchers.Main) {
+                                // Sunshine Music: creating a playlist is the moment the user
+                                // already has songs in mind, so go straight to the picker
+                                // instead of dropping them on an empty playlist with no way
+                                // to fill it. Backing out of the picker just leaves the new
+                                // (empty) playlist behind, which is what creation did before.
+                                mainActivity.startFragment(AddSongsFragment()) {
+                                    putString("Uri", uri.toString())
+                                    putString("Title", path.nameWithoutExtension)
+                                }
+                            }
                         } catch (e: Exception) {
                             Log.e("PlaylistAdapter", Log.getThrowableString(e)!!)
                             withContext(Dispatchers.Main) {
