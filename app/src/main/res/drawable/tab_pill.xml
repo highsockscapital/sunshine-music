@@ -2,13 +2,13 @@
 <!--
     Sunshine Music tab pill.
 
-    Structurally the same pill as bg_pill (white paper, ink border, fully rounded), but wrapped
-    in an inset. TabLayout gives every tab the full strip width including its horizontal padding,
-    so a bare pill drawable would make neighbouring pills touch edge to edge. The inset eats 4dp
-    off each side to create the gap, while the tab keeps its full width as a touch target.
+    Structurally the same pill as bg_pill (page colour, foreground border, fully rounded), but
+    wrapped in an inset. TabLayout gives every tab the full strip width including its horizontal
+    padding, so a bare pill drawable would make neighbouring pills touch edge to edge. The inset
+    eats 4dp off each side to create the gap, while the tab keeps its full width as a touch
+    target.
 
-    Colours come from pill_surface / pill_stroke, so this follows values-night automatically:
-    #201F19 with a #48473D border in dark.
+    Colours come from pill_surface / pill_stroke, so this follows values-night automatically.
 
     The radius is 16dp against a 32dp tab, so the corner radius is exactly half the height
     and the ends are true semicircles. A 100dp radius here clamps to the same 16dp, but only

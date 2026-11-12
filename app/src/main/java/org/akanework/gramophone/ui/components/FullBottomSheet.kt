@@ -47,6 +47,7 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.appcompat.widget.TooltipCompat
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.animation.doOnEnd
+import androidx.core.content.ContextCompat
 import androidx.core.content.edit
 import androidx.core.graphics.Insets
 import androidx.core.graphics.TypefaceCompat
@@ -102,7 +103,6 @@ import org.akanework.gramophone.logic.utils.AudioFormatDetector.AudioFormatInfo
 import org.akanework.gramophone.logic.utils.AudioFormatDetector.AudioQuality
 import org.akanework.gramophone.logic.utils.AudioFormatDetector.SpatialFormat
 import org.akanework.gramophone.logic.utils.CalculationUtils
-import org.akanework.gramophone.logic.utils.ColorUtils
 import org.akanework.gramophone.logic.utils.Flags
 import org.akanework.gramophone.ui.MainActivity
 import org.akanework.gramophone.ui.fragments.ArtistSubFragment
@@ -533,12 +533,6 @@ class FullBottomSheet
             ViewCompat.performHapticFeedback(it, HapticFeedbackConstantsCompat.CONTEXT_CLICK)
         }
 
-        val colorSecondaryContainer =
-            MaterialColors.getColor(
-                context,
-                com.google.android.material.R.attr.colorSecondaryContainer,
-                -1
-            )
         // Sunshine Music: this sheet and the lyrics page sit on the app's own paper. This used to
         // go through Material's COLOR_BACKGROUND mapping starting from colorSurface, so the base
         // depended on whichever colour scheme happened to be active. Reading android:colorBackground
@@ -548,10 +542,11 @@ class FullBottomSheet
             android.R.attr.colorBackground,
             -1
         )
-        val colorContrastFainted = ColorUtils.getColor(
-            colorSecondaryContainer,
-            ColorUtils.ColorType.COLOR_CONTRAST_FAINTED,
-            context
+        // The duotone theme has no secondary container colour; use the low-alpha foreground
+        // outline so the inactive seekbar track stays visible without introducing a third shade.
+        val colorContrastFainted = ContextCompat.getColor(
+            context,
+            R.color.md_theme_outlineVariant
         )
         setBackgroundColor(backgroundProcessedColor)
         bottomSheetFullSlider.trackInactiveTintList = ColorStateList.valueOf(colorContrastFainted)

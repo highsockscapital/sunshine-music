@@ -1,62 +1,66 @@
 <resources>
-    <color name="md_theme_primary">#FFAE56</color>
-    <color name="md_theme_onPrimary">#3D2400</color>
-    <color name="md_theme_primaryContainer">#5C3A10</color>
-    <color name="md_theme_onPrimaryContainer">#FFE3C2</color>
-    <color name="md_theme_secondary">#89C8AF</color>
-    <color name="md_theme_onSecondary">#143126</color>
-    <color name="md_theme_secondaryContainer">#24483A</color>
-    <color name="md_theme_onSecondaryContainer">#DDF6EA</color>
-    <color name="md_theme_tertiary">#FFC98A</color>
-    <color name="md_theme_onTertiary">#3D2400</color>
-    <color name="md_theme_tertiaryContainer">#5C3A10</color>
-    <color name="md_theme_onTertiaryContainer">#FFE3C2</color>
-    <color name="md_theme_error">#FF8E8E</color>
-    <color name="md_theme_onError">#3D2400</color>
-    <color name="md_theme_errorContainer">#5A2323</color>
-    <color name="md_theme_onErrorContainer">#FFDAD6</color>
+    <!-- Sunshine Music duotone: dark mode is ink (#161610) with paper (#F6F3E7).
+         Every Material colour role resolves to one of these two colours; hierarchy and
+         selection are expressed with alpha of the paper foreground only. -->
+    <color name="md_theme_primary">#F6F3E7</color>
+    <color name="md_theme_onPrimary">#161610</color>
+    <color name="md_theme_primaryContainer">#1AF6F3E7</color>
+    <color name="md_theme_onPrimaryContainer">#F6F3E7</color>
+    <color name="md_theme_secondary">#F6F3E7</color>
+    <color name="md_theme_onSecondary">#161610</color>
+    <color name="md_theme_secondaryContainer">#1AF6F3E7</color>
+    <color name="md_theme_onSecondaryContainer">#F6F3E7</color>
+    <color name="md_theme_tertiary">#F6F3E7</color>
+    <color name="md_theme_onTertiary">#161610</color>
+    <color name="md_theme_tertiaryContainer">#1AF6F3E7</color>
+    <color name="md_theme_onTertiaryContainer">#F6F3E7</color>
+    <color name="md_theme_error">#F6F3E7</color>
+    <color name="md_theme_onError">#161610</color>
+    <color name="md_theme_errorContainer">#1AF6F3E7</color>
+    <color name="md_theme_onErrorContainer">#F6F3E7</color>
     <color name="md_theme_background">#161610</color>
-    <color name="md_theme_onBackground">#E8E6DE</color>
-    <!-- Sunshine Music: paper. Matches md_theme_background so surfaces do not read as a separate
-         grey card. The container ramp below carries the elevation instead. -->
+    <color name="md_theme_onBackground">#F6F3E7</color>
+    <!-- Sunshine Music: ink. Every surface uses the page colour so cards and sheets do not
+         introduce a third shade; separation comes from paper borders and alpha fills. -->
     <color name="md_theme_surface">#161610</color>
-    <color name="md_theme_onSurface">#E8E6DE</color>
-    <color name="md_theme_surfaceVariant">#343229</color>
-    <color name="md_theme_onSurfaceVariant">#A8A599</color>
-    <color name="md_theme_outline">#4A483E</color>
-    <color name="md_theme_outlineVariant">#2E2C25</color>
-    <color name="md_theme_inverseSurface">#E8E6DE</color>
+    <color name="md_theme_onSurface">#F6F3E7</color>
+    <color name="md_theme_surfaceVariant">#1AF6F3E7</color>
+    <color name="md_theme_onSurfaceVariant">#B3F6F3E7</color>
+    <color name="md_theme_outline">#F6F3E7</color>
+    <color name="md_theme_outlineVariant">#3DF6F3E7</color>
+    <color name="md_theme_inverseSurface">#F6F3E7</color>
     <color name="md_theme_inverseOnSurface">#161610</color>
-    <color name="md_theme_inversePrimary">#FF9E43</color>
-    <color name="md_theme_primaryFixed">#5C3A10</color>
-    <color name="md_theme_onPrimaryFixed">#FFE3C2</color>
-    <color name="md_theme_primaryFixedDim">#FFAE56</color>
-    <color name="md_theme_onPrimaryFixedVariant">#FFE3C2</color>
-    <color name="md_theme_secondaryFixed">#24483A</color>
-    <color name="md_theme_onSecondaryFixed">#DDF6EA</color>
-    <color name="md_theme_secondaryFixedDim">#89C8AF</color>
-    <color name="md_theme_onSecondaryFixedVariant">#DDF6EA</color>
-    <color name="md_theme_tertiaryFixed">#5C3A10</color>
-    <color name="md_theme_onTertiaryFixed">#FFE3C2</color>
-    <color name="md_theme_tertiaryFixedDim">#FFC98A</color>
-    <color name="md_theme_onTertiaryFixedVariant">#FFE3C2</color>
+    <color name="md_theme_inversePrimary">#161610</color>
+    <color name="md_theme_primaryFixed">#F6F3E7</color>
+    <color name="md_theme_onPrimaryFixed">#161610</color>
+    <color name="md_theme_primaryFixedDim">#161610</color>
+    <color name="md_theme_onPrimaryFixedVariant">#F6F3E7</color>
+    <color name="md_theme_secondaryFixed">#F6F3E7</color>
+    <color name="md_theme_onSecondaryFixed">#161610</color>
+    <color name="md_theme_secondaryFixedDim">#161610</color>
+    <color name="md_theme_onSecondaryFixedVariant">#F6F3E7</color>
+    <color name="md_theme_tertiaryFixed">#F6F3E7</color>
+    <color name="md_theme_onTertiaryFixed">#161610</color>
+    <color name="md_theme_tertiaryFixedDim">#161610</color>
+    <color name="md_theme_onTertiaryFixedVariant">#F6F3E7</color>
     <color name="md_theme_surfaceDim">#161610</color>
-    <color name="md_theme_surfaceBright">#2C2B24</color>
+    <color name="md_theme_surfaceBright">#161610</color>
     <color name="md_theme_surfaceContainerLowest">#161610</color>
-    <color name="md_theme_surfaceContainerLow">#1E1D18</color>
-    <color name="md_theme_surfaceContainer">#26241E</color>
-    <color name="md_theme_surfaceContainerHigh">#2C2B24</color>
-    <color name="md_theme_surfaceContainerHighest">#343229</color>
-    <color name="md_theme_container">#343229</color>
-    <color name="md_theme_onContainer">#E8E6DE</color>
-    <color name="md_theme_containerChecked">#4A483E</color>
-    <color name="md_theme_containerUnchecked">#26241E</color>
-    <color name="md_theme_onContainerChecked">#E8E6DE</color>
-    <color name="md_theme_onContainerUnchecked">#A8A599</color>
+    <color name="md_theme_surfaceContainerLow">#161610</color>
+    <color name="md_theme_surfaceContainer">#161610</color>
+    <color name="md_theme_surfaceContainerHigh">#161610</color>
+    <color name="md_theme_surfaceContainerHighest">#161610</color>
+    <color name="md_theme_container">#161610</color>
+    <color name="md_theme_onContainer">#F6F3E7</color>
+    <color name="md_theme_containerChecked">#F6F3E7</color>
+    <color name="md_theme_containerUnchecked">#1AF6F3E7</color>
+    <color name="md_theme_onContainerChecked">#161610</color>
+    <color name="md_theme_onContainerUnchecked">#F6F3E7</color>
     <color name="md_theme_surfaceTint">#161610</color>
-    <!-- Sunshine Music pills in dark mode: warm ink surface, softened border, light ink text. -->
-    <color name="pill_surface">#201F19</color>
-    <color name="pill_stroke">#48473D</color>
-    <color name="pill_on">#E8E6DE</color>
-    <color name="splash_foreground_color">@color/md_theme_onSurfaceVariant</color>
+
+    <!-- Sunshine Music pills: ink surface with paper border and paper text, no extra shade. -->
+    <color name="pill_surface">#161610</color>
+    <color name="pill_stroke">#F6F3E7</color>
+    <color name="pill_on">#F6F3E7</color>
+    <color name="splash_foreground_color">#F6F3E7</color>
 </resources>

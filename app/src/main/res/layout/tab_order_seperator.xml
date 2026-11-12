@@ -10,12 +10,11 @@
     android:paddingHorizontal="18dp"
     tools:ignore="Overdraw">
 
-    <!-- this background/backgroundTint construction is for Android 5 -->
+    <!-- Sunshine Music: a low-alpha foreground divider; no hard-coded white. -->
     <View
         android:layout_width="0dp"
         android:layout_height="3dp"
-        android:background="#ffffff"
-        android:backgroundTint="?colorControlNormal"
+        android:background="?attr/colorOutlineVariant"
         android:contentDescription="@string/divider"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/dragHandle"

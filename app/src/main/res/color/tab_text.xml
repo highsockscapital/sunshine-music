@@ -2,13 +2,14 @@
 <!--
     Sunshine Music tab pill text.
 
-    Every tab is now the same white pill, so the old amber indicator no longer has anything to
-    sit under. Selection is carried by the label instead: amber when selected, ink when not.
-    That keeps the accent colour in the design without a second filled shape fighting the pill.
+    Every tab is the same flat pill, so selection is carried only by the label: full-strength
+    foreground when selected, a dimmed foreground when not. No accent colour, no second shape.
 -->
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:color="?attr/colorPrimary"
+        android:color="?attr/colorOnSurface"
         android:state_selected="true" />
-    <item android:color="@color/pill_on" />
+    <item
+        android:alpha="0.55"
+        android:color="?attr/colorOnSurface" />
 </selector>

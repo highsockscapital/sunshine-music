@@ -29,7 +29,6 @@ import com.google.android.material.color.MaterialColors
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import org.akanework.gramophone.BuildConfig
 import org.akanework.gramophone.R
-import org.akanework.gramophone.logic.utils.ColorUtils
 import org.akanework.gramophone.logic.utils.data.Contributors
 import org.akanework.gramophone.ui.fragments.BasePreferenceFragment
 import org.akanework.gramophone.ui.fragments.BaseSettingsActivity
@@ -54,13 +53,11 @@ class AboutSettingsFragment : BasePreferenceFragment() {
 
     override fun onPreferenceTreeClick(preference: Preference): Boolean {
         if (preference.key == "app_name") {
-            val processColor = ColorUtils.getColor(
-                MaterialColors.getColor(
-                    requireView(),
-                    android.R.attr.colorBackground
-                ),
-                ColorUtils.ColorType.COLOR_BACKGROUND,
-                requireContext()
+            // The duotone theme is flat: the about sheet is simply the page colour, not a
+            // derived shade between the two palette colours.
+            val processColor = MaterialColors.getColor(
+                requireView(),
+                android.R.attr.colorBackground
             )
             val drawable = GradientDrawable()
             drawable.color =

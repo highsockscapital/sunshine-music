@@ -35,26 +35,50 @@ fun SunshinePalette.toColorScheme(dark: Boolean): ColorScheme {
         onPrimary = onPrimary,
         primaryContainer = primaryContainer,
         onPrimaryContainer = onPrimaryContainer,
+        inversePrimary = background,
         secondary = secondary,
         onSecondary = onSecondary,
         secondaryContainer = secondaryContainer,
         onSecondaryContainer = onSecondaryContainer,
         tertiary = tertiary,
-        error = error,
+        onTertiary = onSecondary,
+        tertiaryContainer = secondaryContainer,
+        onTertiaryContainer = onSecondaryContainer,
         background = background,
+        onBackground = onSurface,
         surface = surface,
+        onSurface = onSurface,
         surfaceVariant = surfaceVariant,
-        surfaceContainerHighest = surfaceVariant,
+        onSurfaceVariant = onSurfaceVariant,
+        surfaceTint = surfaceTint,
+        inverseSurface = onSurface,
+        inverseOnSurface = background,
+        error = error,
+        onError = onSecondary,
+        errorContainer = secondaryContainer,
+        onErrorContainer = onSecondaryContainer,
+        outline = outline,
+        outlineVariant = outlineSoft,
+        scrim = scrim,
         surfaceBright = surfaceBright,
         surfaceDim = surfaceDim,
         surfaceContainerLowest = surfaceContainerLowest,
         surfaceContainerLow = surfaceContainerLow,
         surfaceContainer = surfaceContainer,
         surfaceContainerHigh = surfaceContainerHigh,
-        surfaceTint = surfaceTint,
-        onSurface = onSurface,
-        onSurfaceVariant = onSurfaceVariant,
-        outline = outline,
+        surfaceContainerHighest = surfaceContainerHigh,
+        primaryFixed = background,
+        onPrimaryFixed = onSurface,
+        primaryFixedDim = onSurface,
+        onPrimaryFixedVariant = background,
+        secondaryFixed = background,
+        onSecondaryFixed = onSurface,
+        secondaryFixedDim = onSurface,
+        onSecondaryFixedVariant = background,
+        tertiaryFixed = background,
+        onTertiaryFixed = onSurface,
+        tertiaryFixedDim = onSurface,
+        onTertiaryFixedVariant = background,
     )
 }
 
@@ -62,16 +86,8 @@ fun SunshinePalette.toColorScheme(dark: Boolean): ColorScheme {
 fun sunshinePalette(dark: Boolean): SunshinePalette = if (dark) DarkSunshinePalette else LightSunshinePalette
 
 /**
- * Gramophone's existing "pure dark" preference, kept because it is an existing user-facing setting.
- * It crushes every surface to true black rather than the palette's warm near-black.
+ * Gramophone's existing "pure dark" preference is kept because it is an existing user-facing
+ * setting, but the duotone palette already uses ink (#161610) as its darkest surface. There is no
+ * darker colour left to crush to, so this is deliberately a no-op.
  */
-fun ColorScheme.asPureDark(): ColorScheme = copy(
-    background = androidx.compose.ui.graphics.Color.Black,
-    surface = androidx.compose.ui.graphics.Color.Black,
-    surfaceVariant = androidx.compose.ui.graphics.Color.Black,
-    surfaceContainerLowest = androidx.compose.ui.graphics.Color.Black,
-    surfaceContainerLow = androidx.compose.ui.graphics.Color.Black,
-    surfaceContainer = androidx.compose.ui.graphics.Color.Black,
-    surfaceContainerHigh = androidx.compose.ui.graphics.Color.Black,
-    surfaceContainerHighest = androidx.compose.ui.graphics.Color.Black,
-)
+fun ColorScheme.asPureDark(): ColorScheme = this

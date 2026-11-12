@@ -94,7 +94,9 @@
                 android:background="@null"
                 android:contentDescription="@string/seekbar"
                 android:progress="50"
-                android:thumbTint="?colorAccent" />
+                android:progressBackgroundTint="?attr/colorOutlineVariant"
+                android:progressTint="?attr/colorPrimary"
+                android:thumbTint="?attr/colorPrimary" />
 
         </RelativeLayout>
 

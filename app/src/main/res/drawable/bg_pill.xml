@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-    Sunshine Music pill: white paper, ink border, fully rounded ends.
+    Sunshine Music pill: page-colour surface, foreground border, fully rounded ends.
 
-    Deliberately NOT theme-qualified. Nihal asked for a white pill with #161610 border and
-    #161610 text, and the ink-on-white pairing is the point, so it reads the same in light and
-    dark. The rows it sits on are also given an explicit margin, because the RecyclerView list
-    has no vertical item decoration and pills would otherwise touch.
+    pill_surface / pill_stroke / pill_on are defined per mode in values/ and values-night/ as the
+    two duotone colours, so the pill never introduces a third shade. The rows it sits on are also
+    given an explicit margin, because the RecyclerView list has no vertical item decoration and
+    pills would otherwise touch.
 
     The ripple is kept so the rows do not lose their touch feedback when they gain a background.
 -->
